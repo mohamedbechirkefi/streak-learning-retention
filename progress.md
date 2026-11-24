@@ -221,3 +221,43 @@ No confirmatory run and no push (brief: coordinator schedules M3 and pushes).
 ### Next action
 
 Coordinator: schedule M3 on a quiet machine.
+
+## 2026-11-25: M3 confirmatory runs
+
+**Milestone.** M3, on the owner's "Start next" (brief `_shared/M3-brief.md`). Starting state: clean at e51e5bd; every frozen hash equal to the files on disk; raw Duolingo SHA-256 equal to the manifest.
+
+### Commands and actual outputs
+
+```
+$ ../.tools/py/bin/uv sync --frozen --all-groups --all-extras   Audited 9 packages
+$ .venv/bin/python -m pytest                                    199 passed (start); 211 passed after 45ea4ec
+$ streak.cli smoke --config experiments/smoke-m3-exp001.json    400 learner-arms, 0 failed, 2.10 s (J-0011, smoke seeds)
+$ scripts/validate_smoke.py <smoke results>                     ALL PASS (11 known cases, all invariants; J-0012)
+$ scripts/run_confirmatory.py EXP-001                           4,000 learner-arms, 0 failed, 30.5 s (J-0013)
+$ scripts/heldout_test.py                                       ll/trial exp -0.3865, power -0.3710, constant -0.3352 (J-0014)
+$ scripts/run_confirmatory.py EXP-002                           54,000 learner-arms, 0 failed, 354.4 s (J-0015)
+$ scripts/run_confirmatory.py EXP-003 (first launch)            preflight refused, tree not clean, nothing run (J-0016)
+$ scripts/run_confirmatory.py EXP-003                           12,000 learner-arms, 0 failed, 82.9 s (J-0017)
+$ scripts/analyse_confirmatory.py EXP-001|EXP-002|EXP-003       generated/ tables, figures, frozen_analysis.json
+$ .venv/bin/python -m pytest                                    211 passed (end)
+```
+
+### Results (confirmatory, simulation only)
+
+- EXP-001: A2 - A1 in R30 -0.3068, 95% CI [-0.3093, -0.3042]; relevant negative; supports the expected direction. A3 - A1 +0.0114 (practically equivalent).
+- EXP-002: 27 of 27 cells relevant negative (-0.4709 to -0.1763), all relevant after Holm across cells; robustness not disconfirmed.
+- EXP-003: H-inv not triggered (flat gain: exponential -0.3887, power -0.2772); selection carries the gap, timing and interaction within the SESOI.
+- Held-out test (P§14.4): negative for the model; the exponential form does not beat a constant baseline; power-law better supported.
+
+### Deviations and decisions
+
+D-016: pre-run analysis code; EXP-002 manifest `git_dirty = true` (records edited during the run, no code change); first EXP-003 launch refused by preflight; 11.6 `report.md` files refused by the file tool, the EXP-001 one written by a shell workaround and then removed on the coordinator's instruction, none now in the tree.
+
+### Not done, and why
+
+- Standalone 11.6 reports for EXP-001 to EXP-003 (tool refusal; owner or coordinator to decide).
+- No PDF built; no push.
+
+### Next action
+
+Owner or coordinator: decide how the 11.6 reports are written; then M4 (evidence audit, synthesis, second review pass challenging the preferred hypothesis, including the negative held-out result).

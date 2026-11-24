@@ -1,0 +1,197 @@
+{
+  "schema_version": "streak.manifest/1.0",
+  "experiment_id": "EXP-003",
+  "label": "confirmatory",
+  "config_hash": "ab1c1799a45e0eab8091125a7d769e20ecdf642b5f8e1436e0d9a66c31450ff3",
+  "master_seeds": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "git_revision": "219c05473a3dc573621e54f15db153280cc08ee9",
+  "git_dirty": false,
+  "versions": {
+    "python": "3.12.1",
+    "numpy": "2.5.4",
+    "streak": "0.2.0",
+    "engine": "1.1.0"
+  },
+  "platform": {
+    "os": "Darwin",
+    "os_release": "24.3.0",
+    "machine": "arm64",
+    "cpu": "Apple M1 Pro",
+    "cpu_count": 10
+  },
+  "started_utc": "2026-11-24T23:41:57+00:00",
+  "finished_utc": "2026-11-24T23:43:20+00:00",
+  "runtime_s": 82.876,
+  "peak_memory_bytes": 156385280,
+  "runs": [
+    {
+      "run_id": "EXP-003/exp-diff/s1",
+      "cell_id": "exp-diff",
+      "master_seed": 1,
+      "n_learner_arms": 600,
+      "n_failed": 0,
+      "runtime_s": 3.721906
+    },
+    {
+      "run_id": "EXP-003/exp-diff/s2",
+      "cell_id": "exp-diff",
+      "master_seed": 2,
+      "n_learner_arms": 600,
+      "n_failed": 0,
+      "runtime_s": 3.447046
+    },
+    {
+      "run_id": "EXP-003/exp-diff/s3",
+      "cell_id": "exp-diff",
+      "master_seed": 3,
+      "n_learner_arms": 600,
+      "n_failed": 0,
+      "runtime_s": 3.383642
+    },
+    {
+      "run_id": "EXP-003/exp-diff/s4",
+      "cell_id": "exp-diff",
+      "master_seed": 4,
+      "n_learner_arms": 600,
+      "n_failed": 0,
+      "runtime_s": 3.679983
+    },
+    {
+      "run_id": "EXP-003/exp-diff/s5",
+      "cell_id": "exp-diff",
+      "master_seed": 5,
+      "n_learner_arms": 600,
+      "n_failed": 0,
+      "runtime_s": 4.553951
+    },
+    {
+      "run_id": "EXP-003/exp-flat/s1",
+      "cell_id": "exp-flat",
+      "master_seed": 1,
+      "n_learner_arms": 600,
+      "n_failed": 0,
+      "runtime_s": 4.276799
+    },
+    {
+      "run_id": "EXP-003/exp-flat/s2",
+      "cell_id": "exp-flat",
+      "master_seed": 2,
+      "n_learner_arms": 600,
+      "n_failed": 0,
+      "runtime_s": 4.245203
+    },
+    {
+      "run_id": "EXP-003/exp-flat/s3",
+      "cell_id": "exp-flat",
+      "master_seed": 3,
+      "n_learner_arms": 600,
+      "n_failed": 0,
+      "runtime_s": 3.971719
+    },
+    {
+      "run_id": "EXP-003/exp-flat/s4",
+      "cell_id": "exp-flat",
+      "master_seed": 4,
+      "n_learner_arms": 600,
+      "n_failed": 0,
+      "runtime_s": 4.524312
+    },
+    {
+      "run_id": "EXP-003/exp-flat/s5",
+      "cell_id": "exp-flat",
+      "master_seed": 5,
+      "n_learner_arms": 600,
+      "n_failed": 0,
+      "runtime_s": 4.299933
+    },
+    {
+      "run_id": "EXP-003/pow-diff/s1",
+      "cell_id": "pow-diff",
+      "master_seed": 1,
+      "n_learner_arms": 600,
+      "n_failed": 0,
+      "runtime_s": 4.452182
+    },
+    {
+      "run_id": "EXP-003/pow-diff/s2",
+      "cell_id": "pow-diff",
+      "master_seed": 2,
+      "n_learner_arms": 600,
+      "n_failed": 0,
+      "runtime_s": 4.986035
+    },
+    {
+      "run_id": "EXP-003/pow-diff/s3",
+      "cell_id": "pow-diff",
+      "master_seed": 3,
+      "n_learner_arms": 600,
+      "n_failed": 0,
+      "runtime_s": 4.443143
+    },
+    {
+      "run_id": "EXP-003/pow-diff/s4",
+      "cell_id": "pow-diff",
+      "master_seed": 4,
+      "n_learner_arms": 600,
+      "n_failed": 0,
+      "runtime_s": 4.621081
+    },
+    {
+      "run_id": "EXP-003/pow-diff/s5",
+      "cell_id": "pow-diff",
+      "master_seed": 5,
+      "n_learner_arms": 600,
+      "n_failed": 0,
+      "runtime_s": 3.984046
+    },
+    {
+      "run_id": "EXP-003/pow-flat/s1",
+      "cell_id": "pow-flat",
+      "master_seed": 1,
+      "n_learner_arms": 600,
+      "n_failed": 0,
+      "runtime_s": 4.337085
+    },
+    {
+      "run_id": "EXP-003/pow-flat/s2",
+      "cell_id": "pow-flat",
+      "master_seed": 2,
+      "n_learner_arms": 600,
+      "n_failed": 0,
+      "runtime_s": 4.116985
+    },
+    {
+      "run_id": "EXP-003/pow-flat/s3",
+      "cell_id": "pow-flat",
+      "master_seed": 3,
+      "n_learner_arms": 600,
+      "n_failed": 0,
+      "runtime_s": 3.811391
+    },
+    {
+      "run_id": "EXP-003/pow-flat/s4",
+      "cell_id": "pow-flat",
+      "master_seed": 4,
+      "n_learner_arms": 600,
+      "n_failed": 0,
+      "runtime_s": 3.676485
+    },
+    {
+      "run_id": "EXP-003/pow-flat/s5",
+      "cell_id": "pow-flat",
+      "master_seed": 5,
+      "n_learner_arms": 600,
+      "n_failed": 0,
+      "runtime_s": 3.738274
+    }
+  ],
+  "result_path": "results/confirmatory/EXP-003/results.json",
+  "result_sha256": "6eecffdbf1cf4d87c29705864eee4611758ca35df145c97f0fd7a7f24b404d9f",
+  "command": "python -m streak.cli run --config research/experiments/EXP-003/config.json --out results/confirmatory/EXP-003"
+}

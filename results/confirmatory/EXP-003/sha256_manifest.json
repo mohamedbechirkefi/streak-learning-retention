@@ -1,0 +1,18 @@
+{
+  "results/confirmatory/EXP-003/provenance.json": {
+    "sha256": "3c1fb53af6149f97eb488784fa1cba2c61593f78577d0d8f5b18563e2bfe0ebd",
+    "bytes": 15873
+  },
+  "results/confirmatory/EXP-003/results.json": {
+    "sha256": "6eecffdbf1cf4d87c29705864eee4611758ca35df145c97f0fd7a7f24b404d9f",
+    "bytes": 6864602
+  },
+  "results/confirmatory/EXP-003/run.log": {
+    "sha256": "6667067464f6ff228cf62c2032336539646adf229f8b24b3e64f91fc2c9ce2cc",
+    "bytes": 200
+  },
+  "results/confirmatory/EXP-003/run_manifest.json": {
+    "sha256": "6a4c42f92ef3246842487ec105392bee89bf8655da7b9395a267bbd8903440f6",
+    "bytes": 4684
+  }
+}

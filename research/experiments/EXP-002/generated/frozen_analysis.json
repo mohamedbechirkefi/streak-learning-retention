@@ -1,0 +1,699 @@
+{
+  "experiment_id": "EXP-002",
+  "label": "confirmatory",
+  "config_hash": "2ecfe90453c1663db0a03d1118e5d7b0e6cd97b4afc43f7fc4d2bf8d5f02dc46",
+  "result_path": "/Users/bechir/research/labs/streak-learning-retention/results/confirmatory/EXP-002/results.json",
+  "n_records": 54000,
+  "n_failed": 0,
+  "failure_rate": 0.0,
+  "analysis_halted_over_1pct_failures": false,
+  "grid": {
+    "cells": [
+      {
+        "cell_id": "h0=33.8|a=1.5|q=0.7",
+        "h0": 33.8,
+        "a": 1.5,
+        "q": 0.7,
+        "mean_R30_A1": 0.5795087014665139,
+        "mean_R30_A2": 0.31760481203571306,
+        "mean_diff": -0.2619038894308008,
+        "ci95": [
+          -0.2643958915724985,
+          -0.2593653301154682
+        ],
+        "ci90": [
+          -0.2639880089722652,
+          -0.25976609691113683
+        ],
+        "p_boot": 0.0,
+        "p_holm_across_cells": 0.0,
+        "classification": "relevant negative",
+        "relevant_holm_across_cells": true,
+        "uninformative_floor": false,
+        "category": "relevant negative",
+        "ci95_entirely_above_0": false
+      },
+      {
+        "cell_id": "h0=33.8|a=1.5|q=0.85",
+        "h0": 33.8,
+        "a": 1.5,
+        "q": 0.85,
+        "mean_R30_A1": 0.5788617523713228,
+        "mean_R30_A2": 0.2903372783747625,
+        "mean_diff": -0.2885244739965602,
+        "ci95": [
+          -0.29092584587435655,
+          -0.28601830956833296
+        ],
+        "ci90": [
+          -0.2905490923017298,
+          -0.28646253363518015
+        ],
+        "p_boot": 0.0,
+        "p_holm_across_cells": 0.0,
+        "classification": "relevant negative",
+        "relevant_holm_across_cells": true,
+        "uninformative_floor": false,
+        "category": "relevant negative",
+        "ci95_entirely_above_0": false
+      },
+      {
+        "cell_id": "h0=33.8|a=1.5|q=1",
+        "h0": 33.8,
+        "a": 1.5,
+        "q": 1.0,
+        "mean_R30_A1": 0.5777322319495206,
+        "mean_R30_A2": 0.25175759542056364,
+        "mean_diff": -0.325974636528957,
+        "ci95": [
+          -0.3282983929694868,
+          -0.3235261705796835
+        ],
+        "ci90": [
+          -0.3279338851681475,
+          -0.32390516769147
+        ],
+        "p_boot": 0.0,
+        "p_holm_across_cells": 0.0,
+        "classification": "relevant negative",
+        "relevant_holm_across_cells": true,
+        "uninformative_floor": false,
+        "category": "relevant negative",
+        "ci95_entirely_above_0": false
+      },
+      {
+        "cell_id": "h0=33.8|a=2.5|q=0.7",
+        "h0": 33.8,
+        "a": 2.5,
+        "q": 0.7,
+        "mean_R30_A1": 0.6536015120572402,
+        "mean_R30_A2": 0.3262824150560057,
+        "mean_diff": -0.32731909700123446,
+        "ci95": [
+          -0.3297367126413494,
+          -0.3248283699653486
+        ],
+        "ci90": [
+          -0.3294069461484614,
+          -0.3252516189791581
+        ],
+        "p_boot": 0.0,
+        "p_holm_across_cells": 0.0,
+        "classification": "relevant negative",
+        "relevant_holm_across_cells": true,
+        "uninformative_floor": false,
+        "category": "relevant negative",
+        "ci95_entirely_above_0": false
+      },
+      {
+        "cell_id": "h0=33.8|a=2.5|q=0.85",
+        "h0": 33.8,
+        "a": 2.5,
+        "q": 0.85,
+        "mean_R30_A1": 0.6533658428259932,
+        "mean_R30_A2": 0.29621571780646777,
+        "mean_diff": -0.35715012501952553,
+        "ci95": [
+          -0.35950532271019214,
+          -0.3547118972791561
+        ],
+        "ci90": [
+          -0.35912547725768795,
+          -0.35511550882659193
+        ],
+        "p_boot": 0.0,
+        "p_holm_across_cells": 0.0,
+        "classification": "relevant negative",
+        "relevant_holm_across_cells": true,
+        "uninformative_floor": false,
+        "category": "relevant negative",
+        "ci95_entirely_above_0": false
+      },
+      {
+        "cell_id": "h0=33.8|a=2.5|q=1",
+        "h0": 33.8,
+        "a": 2.5,
+        "q": 1.0,
+        "mean_R30_A1": 0.6519796391338153,
+        "mean_R30_A2": 0.2517944670084715,
+        "mean_diff": -0.4001851721253438,
+        "ci95": [
+          -0.40242087835850215,
+          -0.39781983531825044
+        ],
+        "ci90": [
+          -0.4020893522927172,
+          -0.398198556867972
+        ],
+        "p_boot": 0.0,
+        "p_holm_across_cells": 0.0,
+        "classification": "relevant negative",
+        "relevant_holm_across_cells": true,
+        "uninformative_floor": false,
+        "category": "relevant negative",
+        "ci95_entirely_above_0": false
+      },
+      {
+        "cell_id": "h0=33.8|a=4|q=0.7",
+        "h0": 33.8,
+        "a": 4.0,
+        "q": 0.7,
+        "mean_R30_A1": 0.7238018700000861,
+        "mean_R30_A2": 0.3345938338789681,
+        "mean_diff": -0.3892080361211179,
+        "ci95": [
+          -0.3919215575597088,
+          -0.3864871607789278
+        ],
+        "ci90": [
+          -0.3914915152452547,
+          -0.3869303086051221
+        ],
+        "p_boot": 0.0,
+        "p_holm_across_cells": 0.0,
+        "classification": "relevant negative",
+        "relevant_holm_across_cells": true,
+        "uninformative_floor": false,
+        "category": "relevant negative",
+        "ci95_entirely_above_0": false
+      },
+      {
+        "cell_id": "h0=33.8|a=4|q=0.85",
+        "h0": 33.8,
+        "a": 4.0,
+        "q": 0.85,
+        "mean_R30_A1": 0.7238592375818309,
+        "mean_R30_A2": 0.30158674117321627,
+        "mean_diff": -0.4222724964086147,
+        "ci95": [
+          -0.4248868786201743,
+          -0.4196009859974741
+        ],
+        "ci90": [
+          -0.4244580721536395,
+          -0.42004722832065916
+        ],
+        "p_boot": 0.0,
+        "p_holm_across_cells": 0.0,
+        "classification": "relevant negative",
+        "relevant_holm_across_cells": true,
+        "uninformative_floor": false,
+        "category": "relevant negative",
+        "ci95_entirely_above_0": false
+      },
+      {
+        "cell_id": "h0=33.8|a=4|q=1",
+        "h0": 33.8,
+        "a": 4.0,
+        "q": 1.0,
+        "mean_R30_A1": 0.7227044789077477,
+        "mean_R30_A2": 0.2518257506571514,
+        "mean_diff": -0.4708787282505963,
+        "ci95": [
+          -0.4734003534519529,
+          -0.4682144606988792
+        ],
+        "ci90": [
+          -0.47300632826090117,
+          -0.468695062943608
+        ],
+        "p_boot": 0.0,
+        "p_holm_across_cells": 0.0,
+        "classification": "relevant negative",
+        "relevant_holm_across_cells": true,
+        "uninformative_floor": false,
+        "category": "relevant negative",
+        "ci95_entirely_above_0": false
+      },
+      {
+        "cell_id": "h0=67.59|a=1.5|q=0.7",
+        "h0": 67.59,
+        "a": 1.5,
+        "q": 0.7,
+        "mean_R30_A1": 0.7496349764868551,
+        "mean_R30_A2": 0.5034905501415786,
+        "mean_diff": -0.24614442634527636,
+        "ci95": [
+          -0.2486574730704715,
+          -0.24359610945878285
+        ],
+        "ci90": [
+          -0.2482618533909868,
+          -0.24402842256340943
+        ],
+        "p_boot": 0.0,
+        "p_holm_across_cells": 0.0,
+        "classification": "relevant negative",
+        "relevant_holm_across_cells": true,
+        "uninformative_floor": false,
+        "category": "relevant negative",
+        "ci95_entirely_above_0": false
+      },
+      {
+        "cell_id": "h0=67.59|a=1.5|q=0.85",
+        "h0": 67.59,
+        "a": 1.5,
+        "q": 0.85,
+        "mean_R30_A1": 0.7489801361159466,
+        "mean_R30_A2": 0.4802747469364142,
+        "mean_diff": -0.26870538917953235,
+        "ci95": [
+          -0.27127586207914817,
+          -0.2660945720704168
+        ],
+        "ci90": [
+          -0.2708997309561124,
+          -0.2664926298765199
+        ],
+        "p_boot": 0.0,
+        "p_holm_across_cells": 0.0,
+        "classification": "relevant negative",
+        "relevant_holm_across_cells": true,
+        "uninformative_floor": false,
+        "category": "relevant negative",
+        "ci95_entirely_above_0": false
+      },
+      {
+        "cell_id": "h0=67.59|a=1.5|q=1",
+        "h0": 67.59,
+        "a": 1.5,
+        "q": 1.0,
+        "mean_R30_A1": 0.7484296306683155,
+        "mean_R30_A2": 0.44675939915632734,
+        "mean_diff": -0.3016702315119882,
+        "ci95": [
+          -0.30443439266415967,
+          -0.2988364996825701
+        ],
+        "ci90": [
+          -0.3039822348971236,
+          -0.2992984394206198
+        ],
+        "p_boot": 0.0,
+        "p_holm_across_cells": 0.0,
+        "classification": "relevant negative",
+        "relevant_holm_across_cells": true,
+        "uninformative_floor": false,
+        "category": "relevant negative",
+        "ci95_entirely_above_0": false
+      },
+      {
+        "cell_id": "h0=67.59|a=2.5|q=0.7",
+        "h0": 67.59,
+        "a": 2.5,
+        "q": 0.7,
+        "mean_R30_A1": 0.7931634768427721,
+        "mean_R30_A2": 0.5085593248605494,
+        "mean_diff": -0.2846041519822226,
+        "ci95": [
+          -0.2879264890626233,
+          -0.28122413669673324
+        ],
+        "ci90": [
+          -0.2874357519108444,
+          -0.28174293949776186
+        ],
+        "p_boot": 0.0,
+        "p_holm_across_cells": 0.0,
+        "classification": "relevant negative",
+        "relevant_holm_across_cells": true,
+        "uninformative_floor": false,
+        "category": "relevant negative",
+        "ci95_entirely_above_0": false
+      },
+      {
+        "cell_id": "h0=67.59|a=2.5|q=0.85",
+        "h0": 67.59,
+        "a": 2.5,
+        "q": 0.85,
+        "mean_R30_A1": 0.7924653335363645,
+        "mean_R30_A2": 0.4835940055122977,
+        "mean_diff": -0.30887132802406675,
+        "ci95": [
+          -0.31238602445980357,
+          -0.30538477542099574
+        ],
+        "ci90": [
+          -0.3118126195063644,
+          -0.30588573424379123
+        ],
+        "p_boot": 0.0,
+        "p_holm_across_cells": 0.0,
+        "classification": "relevant negative",
+        "relevant_holm_across_cells": true,
+        "uninformative_floor": false,
+        "category": "relevant negative",
+        "ci95_entirely_above_0": false
+      },
+      {
+        "cell_id": "h0=67.59|a=2.5|q=1",
+        "h0": 67.59,
+        "a": 2.5,
+        "q": 1.0,
+        "mean_R30_A1": 0.7919785309979727,
+        "mean_R30_A2": 0.44677152395442116,
+        "mean_diff": -0.3452070070435515,
+        "ci95": [
+          -0.34896528736060706,
+          -0.3414047258634285
+        ],
+        "ci90": [
+          -0.348379332453631,
+          -0.3419809098075573
+        ],
+        "p_boot": 0.0,
+        "p_holm_across_cells": 0.0,
+        "classification": "relevant negative",
+        "relevant_holm_across_cells": true,
+        "uninformative_floor": false,
+        "category": "relevant negative",
+        "ci95_entirely_above_0": false
+      },
+      {
+        "cell_id": "h0=67.59|a=4|q=0.7",
+        "h0": 67.59,
+        "a": 4.0,
+        "q": 0.7,
+        "mean_R30_A1": 0.83537745588577,
+        "mean_R30_A2": 0.5137880009895098,
+        "mean_diff": -0.3215894548962602,
+        "ci95": [
+          -0.3257648132291721,
+          -0.31739843916083554
+        ],
+        "ci90": [
+          -0.3250957879827775,
+          -0.31803875966275286
+        ],
+        "p_boot": 0.0,
+        "p_holm_across_cells": 0.0,
+        "classification": "relevant negative",
+        "relevant_holm_across_cells": true,
+        "uninformative_floor": false,
+        "category": "relevant negative",
+        "ci95_entirely_above_0": false
+      },
+      {
+        "cell_id": "h0=67.59|a=4|q=0.85",
+        "h0": 67.59,
+        "a": 4.0,
+        "q": 0.85,
+        "mean_R30_A1": 0.8349021212020908,
+        "mean_R30_A2": 0.4870247004495244,
+        "mean_diff": -0.34787742075256645,
+        "ci95": [
+          -0.3522081104971614,
+          -0.34349750713445815
+        ],
+        "ci90": [
+          -0.3515293318765925,
+          -0.34422224968186604
+        ],
+        "p_boot": 0.0,
+        "p_holm_across_cells": 0.0,
+        "classification": "relevant negative",
+        "relevant_holm_across_cells": true,
+        "uninformative_floor": false,
+        "category": "relevant negative",
+        "ci95_entirely_above_0": false
+      },
+      {
+        "cell_id": "h0=67.59|a=4|q=1",
+        "h0": 67.59,
+        "a": 4.0,
+        "q": 1.0,
+        "mean_R30_A1": 0.8344043427550217,
+        "mean_R30_A2": 0.4467839253520236,
+        "mean_diff": -0.3876204174029981,
+        "ci95": [
+          -0.3923152038052023,
+          -0.38290791687149656
+        ],
+        "ci90": [
+          -0.39159542064501807,
+          -0.38361800538569074
+        ],
+        "p_boot": 0.0,
+        "p_holm_across_cells": 0.0,
+        "classification": "relevant negative",
+        "relevant_holm_across_cells": true,
+        "uninformative_floor": false,
+        "category": "relevant negative",
+        "ci95_entirely_above_0": false
+      },
+      {
+        "cell_id": "h0=135.18|a=1.5|q=0.7",
+        "h0": 135.18,
+        "a": 1.5,
+        "q": 0.7,
+        "mean_R30_A1": 0.8596240719499458,
+        "mean_R30_A2": 0.6833736092278708,
+        "mean_diff": -0.17625046272207492,
+        "ci95": [
+          -0.17931430029635348,
+          -0.1731959252950382
+        ],
+        "ci90": [
+          -0.17879552155121894,
+          -0.17367557203470063
+        ],
+        "p_boot": 0.0,
+        "p_holm_across_cells": 0.0,
+        "classification": "relevant negative",
+        "relevant_holm_across_cells": true,
+        "uninformative_floor": false,
+        "category": "relevant negative",
+        "ci95_entirely_above_0": false
+      },
+      {
+        "cell_id": "h0=135.18|a=1.5|q=0.85",
+        "h0": 135.18,
+        "a": 1.5,
+        "q": 0.85,
+        "mean_R30_A1": 0.8590205855197361,
+        "mean_R30_A2": 0.6671731791521566,
+        "mean_diff": -0.19184740636757966,
+        "ci95": [
+          -0.1950931641063155,
+          -0.18862544173073478
+        ],
+        "ci90": [
+          -0.19455277834510917,
+          -0.1891222097083897
+        ],
+        "p_boot": 0.0,
+        "p_holm_across_cells": 0.0,
+        "classification": "relevant negative",
+        "relevant_holm_across_cells": true,
+        "uninformative_floor": false,
+        "category": "relevant negative",
+        "ci95_entirely_above_0": false
+      },
+      {
+        "cell_id": "h0=135.18|a=1.5|q=1",
+        "h0": 135.18,
+        "a": 1.5,
+        "q": 1.0,
+        "mean_R30_A1": 0.8586595416341758,
+        "mean_R30_A2": 0.64352275214441,
+        "mean_diff": -0.21513678948976578,
+        "ci95": [
+          -0.21866758616680473,
+          -0.21161807188100273
+        ],
+        "ci90": [
+          -0.218131065521224,
+          -0.2121816301130794
+        ],
+        "p_boot": 0.0,
+        "p_holm_across_cells": 0.0,
+        "classification": "relevant negative",
+        "relevant_holm_across_cells": true,
+        "uninformative_floor": false,
+        "category": "relevant negative",
+        "ci95_entirely_above_0": false
+      },
+      {
+        "cell_id": "h0=135.18|a=2.5|q=0.7",
+        "h0": 135.18,
+        "a": 2.5,
+        "q": 0.7,
+        "mean_R30_A1": 0.879236921554412,
+        "mean_R30_A2": 0.685761503184543,
+        "mean_diff": -0.19347541836986892,
+        "ci95": [
+          -0.1971277939490844,
+          -0.1898552605559949
+        ],
+        "ci90": [
+          -0.19649331851276347,
+          -0.19040638405257074
+        ],
+        "p_boot": 0.0,
+        "p_holm_across_cells": 0.0,
+        "classification": "relevant negative",
+        "relevant_holm_across_cells": true,
+        "uninformative_floor": false,
+        "category": "relevant negative",
+        "ci95_entirely_above_0": false
+      },
+      {
+        "cell_id": "h0=135.18|a=2.5|q=0.85",
+        "h0": 135.18,
+        "a": 2.5,
+        "q": 0.85,
+        "mean_R30_A1": 0.8786667807882719,
+        "mean_R30_A2": 0.6687507863713743,
+        "mean_diff": -0.2099159944168977,
+        "ci95": [
+          -0.21381056239938478,
+          -0.20607191875170766
+        ],
+        "ci90": [
+          -0.213143198372756,
+          -0.20668588253017453
+        ],
+        "p_boot": 0.0,
+        "p_holm_across_cells": 0.0,
+        "classification": "relevant negative",
+        "relevant_holm_across_cells": true,
+        "uninformative_floor": false,
+        "category": "relevant negative",
+        "ci95_entirely_above_0": false
+      },
+      {
+        "cell_id": "h0=135.18|a=2.5|q=1",
+        "h0": 135.18,
+        "a": 2.5,
+        "q": 1.0,
+        "mean_R30_A1": 0.8783406980188047,
+        "mean_R30_A2": 0.6435262965551907,
+        "mean_diff": -0.23481440146361393,
+        "ci95": [
+          -0.23902071512294754,
+          -0.23064730425578464
+        ],
+        "ci90": [
+          -0.2383841416527509,
+          -0.23127445866082752
+        ],
+        "p_boot": 0.0,
+        "p_holm_across_cells": 0.0,
+        "classification": "relevant negative",
+        "relevant_holm_across_cells": true,
+        "uninformative_floor": false,
+        "category": "relevant negative",
+        "ci95_entirely_above_0": false
+      },
+      {
+        "cell_id": "h0=135.18|a=4|q=0.7",
+        "h0": 135.18,
+        "a": 4.0,
+        "q": 0.7,
+        "mean_R30_A1": 0.9000126240930792,
+        "mean_R30_A2": 0.6884749407313913,
+        "mean_diff": -0.21153768336168788,
+        "ci95": [
+          -0.21578976566184593,
+          -0.20737659841246348
+        ],
+        "ci90": [
+          -0.21505676152529565,
+          -0.20798411311157444
+        ],
+        "p_boot": 0.0,
+        "p_holm_across_cells": 0.0,
+        "classification": "relevant negative",
+        "relevant_holm_across_cells": true,
+        "uninformative_floor": false,
+        "category": "relevant negative",
+        "ci95_entirely_above_0": false
+      },
+      {
+        "cell_id": "h0=135.18|a=4|q=0.85",
+        "h0": 135.18,
+        "a": 4.0,
+        "q": 0.85,
+        "mean_R30_A1": 0.8994977914406611,
+        "mean_R30_A2": 0.6704585772231935,
+        "mean_diff": -0.2290392142174677,
+        "ci95": [
+          -0.23354530655437217,
+          -0.22458549946696543
+        ],
+        "ci90": [
+          -0.2327890977183663,
+          -0.22530885494458924
+        ],
+        "p_boot": 0.0,
+        "p_holm_across_cells": 0.0,
+        "classification": "relevant negative",
+        "relevant_holm_across_cells": true,
+        "uninformative_floor": false,
+        "category": "relevant negative",
+        "ci95_entirely_above_0": false
+      },
+      {
+        "cell_id": "h0=135.18|a=4|q=1",
+        "h0": 135.18,
+        "a": 4.0,
+        "q": 1.0,
+        "mean_R30_A1": 0.8991804180112177,
+        "mean_R30_A2": 0.6435306539004698,
+        "mean_diff": -0.25564976411074786,
+        "ci95": [
+          -0.2605219438987578,
+          -0.25083477103330826
+        ],
+        "ci90": [
+          -0.2597443672423932,
+          -0.2515819517411706
+        ],
+        "p_boot": 0.0,
+        "p_holm_across_cells": 0.0,
+        "classification": "relevant negative",
+        "relevant_holm_across_cells": true,
+        "uninformative_floor": false,
+        "category": "relevant negative",
+        "ci95_entirely_above_0": false
+      }
+    ],
+    "n_cells": 27,
+    "n_uninformative_floor": 0,
+    "category_counts": {
+      "relevant negative": 27
+    },
+    "n_relevant_holm_across_cells": 27,
+    "grid_hypothesis_all_negative": {
+      "statement": "the sign of E[delta_c] is negative in all 27 cells (descriptive, not tested)",
+      "n_negative_mean": 27,
+      "n_informative": 27,
+      "holds": true
+    },
+    "robustness_disconfirmed": {
+      "cells_ci95_entirely_above_0": [],
+      "n_practically_equivalent": 0,
+      "rule": "any cell with 95% interval entirely above 0, or 9 or more practically equivalent cells",
+      "disconfirmed": false
+    },
+    "q1_sign_agreement": {
+      "q1_signs": {
+        "h0=33.8|a=1.5|q=1": -1,
+        "h0=33.8|a=2.5|q=1": -1,
+        "h0=33.8|a=4|q=1": -1,
+        "h0=67.59|a=1.5|q=1": -1,
+        "h0=67.59|a=2.5|q=1": -1,
+        "h0=67.59|a=4|q=1": -1,
+        "h0=135.18|a=1.5|q=1": -1,
+        "h0=135.18|a=2.5|q=1": -1,
+        "h0=135.18|a=4|q=1": -1
+      },
+      "other_signs_count": {
+        "-1": 18,
+        "0": 0,
+        "1": 0
+      },
+      "all_same_sign_as_majority_of_others": true
+    }
+  }
+}
