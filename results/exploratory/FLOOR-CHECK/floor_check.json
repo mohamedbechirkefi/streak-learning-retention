@@ -1,0 +1,45 @@
+{
+  "id": "FLOOR-CHECK",
+  "label": "exploratory",
+  "protocol_section": "14.3",
+  "arms": [
+    "A0",
+    "A1"
+  ],
+  "seeds": [
+    9001,
+    9002,
+    9003,
+    9004,
+    9005
+  ],
+  "learners_per_seed": 200,
+  "criterion": "A1 mean R30 in [0.2, 0.8]",
+  "engine_version": "1.1.0",
+  "git_revision": "08b4400ef729f9db73ebb77b118afbe74a621380",
+  "git_dirty": false,
+  "runtime_s": 6.25,
+  "steps": [
+    {
+      "n_items": 100,
+      "h0": 67.59,
+      "n_learners": 1000,
+      "mean_R30": {
+        "A0": 0.4101918559487524,
+        "A1": 0.8733246278631625
+      },
+      "meets_criterion": false
+    },
+    {
+      "n_items": 200,
+      "h0": 67.59,
+      "n_learners": 1000,
+      "mean_R30": {
+        "A0": 0.40976734535792364,
+        "A1": 0.7911202590884231
+      },
+      "meets_criterion": true
+    }
+  ],
+  "adopted_n_items": 200
+}

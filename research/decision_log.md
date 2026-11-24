@@ -81,3 +81,11 @@ These are the AI's readings, implemented in engine 1.0.x and listed for owner co
 - **Not applied.** AP-3, AP-4 and AP-6 are not in the owner's approved list for STREAK and are left as they were.
 - **Implementation.** `streak.duolingo` (pure ingestion with schema validation and counts; fit; held-out evaluation), `scripts/download_duolingo.py`, selection `due_threshold` for A3 and F-DUE (engine 1.1.0; the old `most_due` rule kept, used by no arm), optional `holm_primary_across_cells` in the analysis config (used by EXP-002).
 - **Decided by.** The owner approved the amendments; the concrete method is the AI's, fixed in the protocol for the owner's review at the freeze.
+
+## D-013 (2026-11-24): Fitted h0 = 67.59 days and K = 200 written into the configs
+
+- **Decision.** By the methods of protocol sections 14.2 and 14.3, fixed in commit 29d0dfb before fitting: h0 = 67.59 days (maximum likelihood on the fit user split, J-0009) replaces the planning value of 1 day in every confirmatory config; the EXP-002 h0 axis becomes {33.8, 67.59, 135.18} days; K = 200 replaces K = 100 because the control-only floor check put A1 at mean R30 0.873 with K = 100 (above 0.8) and 0.791 with K = 200 (J-0010). EXP-002 sets `holm_primary_across_cells`. Configs are labelled protocol 1.0.
+- **What was not looked at.** Neither the fit nor the floor check computed A2, A3 or any contrast. No smoke run of the new parameters with A2 was made before the freeze. The held-out split was not evaluated.
+- **Caveat.** The fitted h0 comes from in-session accuracy of Duolingo users on a word seen once before; it anchors the model's time scale to a real order of magnitude (weeks, not one day) and does not make the synthetic learners real. The naive interval (66.70 to 68.49 days) ignores within-user dependence.
+- **Smoke configs** in `experiments/` keep the draft parameters; they document the exploratory history (J-0004 to J-0007) and are not used for the frozen design.
+- **Decided by.** Method fixed by the AI under the owner's approval; values set by that method, not chosen.

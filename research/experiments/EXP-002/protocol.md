@@ -4,11 +4,11 @@
 | Field | Value |
 |---|---|
 | Experiment ID | EXP-002 |
-| Version | 0.1-draft, 2026-11-24 |
-| Status | planned (protocol draft, awaiting owner freeze) |
-| Parent protocol | `research/protocol.md` v0.1-draft (P§N) |
+| Version | 1.0, 2026-11-24 (frozen) |
+| Status | frozen (owner-approved 2026-11-24), not yet run |
+| Parent protocol | `research/protocol.md` v1.0 (P§N) |
 | Depends on | EXP-001 implementation and invariant tests (not on EXP-001 results; the grid is fixed now) |
-| Protocol hash | none until the owner freezes it |
+| Protocol hash | SHA-256 recorded in `research/experiment_registry.csv` and `research/freeze.json` |
 
 ## 1. Precise question
 
@@ -35,7 +35,7 @@ For each cell, the mean paired difference in R30 between A2 and A1; and the coun
 ## 6. Unit, scope and variables
 
 - Unit: synthetic learner. Scope: model of P§2.
-- Independent variables: arm (A0 to A3); h0 in {0.5, 1, 2} days; a in {1.5, 2.5, 4}; q in {0.7, 0.85, 1.0}.
+- Independent variables: arm (A0 to A3); h0 in {33.8, 67.59, 135.18} days (0.5, 1 and 2 times the fitted h0, P§14.2 and P§14.8); a in {1.5, 2.5, 4}; q in {0.7, 0.85, 1.0}.
 - Dependent: R30 (primary per cell), secondary metrics of P§5.
 - Treatment A2, control A1; A3 and A0 retained.
 
@@ -73,3 +73,13 @@ Residual exclusion per cell. Report whether the q = 1.0 cells (no carry-forward)
 uv run python -m streak.cli run --experiment EXP-002 --config research/experiments/EXP-002/config.json
 uv run python -m streak.cli report --experiment EXP-002
 ```
+
+## Amendments before freeze (owner-approved 2026-11-24, round 2)
+
+Parent protocol section 14 governs; summary for this experiment:
+
+- **Real data.** h0 = 67.59 days, fitted to the Duolingo traces (Settles and Meeder 2016, CC BY-NC 4.0) on the fit user split by the method of P§14.2 (journal J-0009), replaces the planning value of 1 day. K = 200 items, set by the control-only floor check of P§14.3 (A0 and A1 only, smoke seeds; J-0010), replaces K = 100. The held-out user split gives the preregistered second test of P§14.4, evaluated once after the freeze; it does not test this experiment's hypotheses.
+- **A3.** Threshold-based spaced repetition (P§14.5, r* = 0.9) replaces "most due first".
+- **Multiplicity wording.** P§14.6.
+- **Disclosure.** A2 > A1 was seen on smoke seeds at the draft parameters before this freeze (P§14.7, with values and paths).
+- **Holm across cells.** The primary-contrast p-values are Holm-adjusted across the 27 cells; a cell is "relevant (Holm across cells)" only if its unadjusted 95% interval lies beyond ±0.02 and its Holm-adjusted p is below 0.05 (P§14.6; config flag `holm_primary_across_cells`). The floor rule of section 4 of this protocol is unchanged (proposal AP-4 was not in the approved list).

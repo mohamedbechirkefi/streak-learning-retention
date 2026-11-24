@@ -3,10 +3,10 @@
 
 | Field | Value |
 |---|---|
-| Version | 0.1-draft |
+| Version | 1.0 (frozen) |
 | Date | 2026-11-24 |
-| Status | **DRAFT, NOT FROZEN.** Awaiting owner review and freeze (gate G-FREEZE). No confirmatory run may start before the owner freezes this file and the EXP protocols and their hashes are recorded in `research/experiment_registry.csv`. |
-| Protocol hash | none yet (assigned at freeze: SHA-256 of the frozen file) |
+| Status | **FROZEN, owner-approved 2026-11-24** ("yes for all others"; "Approve all"). Freeze record: `research/freeze.json` and `research/freeze_record.md`. Any later change is a dated amendment and makes dependent results exploratory. |
+| Protocol hash | SHA-256 of this file, recorded in `research/freeze.json` (a file cannot contain its own hash) |
 | Author role | Drafted by the AI assistant for owner review. The owner decides hypotheses, metrics and the freeze. |
 
 Planning values in this document (default parameters, smallest effect size of interest, assumed standard deviation) are **planning proposals**, not measurements. They are labelled as such where they appear.
@@ -53,7 +53,7 @@ Each item is reviewed at most once per day; reviews within a day happen at integ
 | A0 NoPractice | none after day 0 (M = 0) | none | negative control (zero practice minutes, not matched) |
 | A1 Fixed | 3 fixed weekdays per week (days with d mod 7 in {1, 3, 5}), 28 slots per scheduled session (24 sessions = 672 slots) | round-robin in a fixed item order | **primary baseline (simplest comparator: no learner model, no adaptivity)** |
 | A2 Streak | every available day, 12 slots per day plus carry-forward | easiest first: highest estimated recall probability first | treatment: streak-maintenance with quick wins |
-| A3 Spaced | every available day, 12 slots per day plus carry-forward | most due first: lowest estimated recall probability first | comparator: spaced repetition by estimated recall |
+| A3 Spaced | every available day, 12 slots per day plus carry-forward | threshold rule (section 14.5): items with estimated recall <= 0.9 first, highest estimate first; then the others, lowest estimate first | comparator: threshold-based spaced repetition |
 
 A2 and A3 have identical timing and therefore identical activity counts and streaks; they differ only in item selection. A1 and A2 differ in both timing and selection; EXP-003 decomposes that difference.
 
@@ -94,7 +94,7 @@ Let R30 be the primary metric (section 5) and, for each learner l, Δ_l = R30_l(
 - **Seeds:** confirmatory master seeds 1, 2, 3, 4, 5; each master seed generates an independent population of learners via NumPy `SeedSequence` spawning. Smoke and development seeds are 9001 to 9005 and are never pooled with confirmatory results. Confirmatory seeds are not run before the freeze.
 - **Sample size (EXP-001):** 5 master seeds × 200 learners = 1,000 learners per arm. Rationale (planning proposal): with an assumed standard deviation of the paired difference of 0.05, the 95% interval half-width is about 1.96 × 0.05 / sqrt(1000) ≈ 0.003, far below the SESOI of 0.02; even at a standard deviation of 0.15 it is about 0.009. Compute cost is negligible, so n is not the binding constraint. The smoke run measures the actual standard deviation on smoke seeds only; if it exceeds 0.3, the owner is asked whether to raise n before the freeze.
 - **Uncertainty method:** 95% (and 90% for equivalence) percentile bootstrap of the mean paired difference, 10,000 resamples, resampling learners within each master seed (stratified), bootstrap seed fixed and recorded. Also reported: per-master-seed mean differences (5 values), the paired effect size d_z, and the raw distribution of Δ (histogram and quantiles).
-- **Multiplicity:** one primary contrast (A2 vs A1). Secondary pairwise contrasts on R30 (A3 vs A1, A2 vs A3, and each practice arm vs A0) are reported with Holm-adjusted intervals and labelled secondary. Secondary metrics are descriptive.
+- **Multiplicity:** one primary contrast (A2 vs A1). Secondary pairwise contrasts on R30 (A3 vs A1, A2 vs A3, and each practice arm vs A0) are reported with Holm-adjusted bootstrap p-values and unadjusted intervals, labelled secondary (wording amended in section 14.6). Secondary metrics are descriptive.
 - **Stopping rule:** fixed sample size; the confirmatory matrix is run once in full. No optional stopping, no re-running with new seeds to change a result.
 
 ## 7. Inclusion, exclusion and failure handling
@@ -126,10 +126,10 @@ Let R30 be the primary metric (section 5) and, for each learner l, Δ_l = R30_l(
 |---|---|---|---|
 | Smoke | toolchain, invariants, runtime, variance check (exploratory) | 4 arms × smoke seeds 9001 to 9005 × 20 learners, default parameters | 400 |
 | EXP-001 | primary comparison at default parameters | 4 arms × 5 seeds × 200 learners | 4,000 |
-| EXP-002 | robustness across forgetting parameters and availability ("when") | 27 cells (h0 in {0.5, 1, 2} days × a in {1.5, 2.5, 4} × q in {0.7, 0.85, 1.0}) × 4 arms × 5 seeds × 100 learners | 54,000 |
+| EXP-002 | robustness across forgetting parameters and availability ("when") | 27 cells (h0 in {33.8, 67.59, 135.18} days, section 14.8, × a in {1.5, 2.5, 4} × q in {0.7, 0.85, 1.0}) × 4 arms × 5 seeds × 100 learners | 54,000 |
 | EXP-003 | mechanism decomposition and model-form sensitivity | 6 policy cells × 4 model variants (exponential or power-law × difficulty-dependent or flat gain) × 5 seeds × 100 learners | 12,000 |
 
-Fixed parameters for all experiments unless varied: K = 100, T = 56, M = 672 slots, slot = 0.5 minute, daily cap 60 slots, g_min = 0.1, a = 2.5, b = 0.6, h_min = 0.25, h0 = 1 day, q = 0.85, retention delays {1, 7, 30, 90} days.
+Fixed parameters for all experiments unless varied: K = 200 (section 14.8; draft value 100), T = 56, M = 672 slots, slot = 0.5 minute, daily cap 60 slots, g_min = 0.1, a = 2.5, b = 0.6, h_min = 0.25, h0 = 67.59 days (fitted, section 14.8; draft planning value 1 day), q = 0.85, retention delays {1, 7, 30, 90} days.
 
 Each experiment has its own protocol in `research/experiments/EXP-NNN/protocol.md`.
 
@@ -203,3 +203,11 @@ Section 6 "Holm-adjusted intervals" is replaced by: for the secondary contrasts,
 ### 14.7 Disclosure: A2 > A1 was seen before the freeze (amendment R2-4)
 
 Exploratory smoke runs on seeds 9001 to 9005 (engine 1.0.1, commit dfa9dd4, draft parameters h0 = 1 day, draft A3) computed the primary contrast before this freeze. A2 minus A1 in R30 was positive: +0.0801 (95% interval 0.0788 to 0.0813, n = 1,000, `results/exploratory/SMOKE-EXP-001-N200/report/contrasts.csv`, journal J-0005); +0.0768 (n = 100, `results/exploratory/SMOKE-EXP-001/`, J-0004); in the EXP-002 smoke grid the mean difference was above 0 in 23 of 27 cells, range -0.0787 to +0.0920 (`results/exploratory/SMOKE-EXP-002/report/contrasts.csv`, J-0006); in the EXP-003 smoke variants +0.0768 (exponential, difficulty gain), +0.0848 (exponential, flat), +0.0245 (power, difficulty) and +0.0855 (power, flat) (`results/exploratory/SMOKE-EXP-003/report/contrasts.csv`, J-0007). These values came from the floor regime that this section removes, so they say little about the frozen design, but they were seen by the AI and are visible to the owner. The amendments above were justified by the control arms and the operationalisation (DG-1 to DG-5), not by the primary contrast, and no new smoke run of A2 was made before the freeze.
+
+### 14.8 Fitted values (filled in after the fit by the methods above, methods unchanged)
+
+- **h0.** Fit split, 163,110 first-repeat rows (245,827 trials, pooled recall 0.895): maximum-likelihood h0 = 67.590 days, naive likelihood-ratio 95% interval 66.70 to 68.49 days, not on a grid edge (journal J-0009, `results/exploratory/CAL-H0/fit.json`, code revision 08b4400). Rounded: **h0 = 67.59 days** in every config; EXP-002 h0 axis **{33.8, 67.59, 135.18} days**.
+- **Ingestion counts** (J-0008): 12,854,226 rows read, no missing values, 0 schema-invalid, 12,294,326 not first repeats, 216,941 with delay below 1 day, 18,606 above 90 days, 324,353 kept (fit 163,110; held-out 161,243).
+- **Floor check** (J-0010, `results/exploratory/FLOOR-CHECK/floor_check.json`, A0 and A1 only, smoke seeds): K = 100 gave mean R30 A0 0.410 and A1 0.873 (above 0.8); K = 200 gave A0 0.410 and A1 0.791 (inside [0.2, 0.8]). **K = 200** is adopted. With K = 200 the round-robin baseline revisits each item about every two weeks.
+- No other parameter changed. The held-out split has not been evaluated; the second test of section 14.4 runs once after the freeze.
+

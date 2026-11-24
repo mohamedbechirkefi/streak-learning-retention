@@ -2,8 +2,8 @@
   "schema_version": "streak.config/1.0",
   "experiment_id": "EXP-003",
   "label": "confirmatory",
-  "protocol_version": "0.1-draft",
-  "description": "DRAFT confirmatory config for EXP-003 (protocol 0.1-draft, not frozen). The runner refuses it until the owner freezes the protocol.",
+  "protocol_version": "1.0",
+  "description": "Frozen confirmatory config for EXP-003 (protocol 1.0, owner-approved 2026-11-24). h0 = 67.59 days fitted to the Duolingo traces (journal J-0009) and K = 200 by the control-only floor check (J-0010), protocol section 14.",
   "master_seeds": [
     1,
     2,
@@ -21,7 +21,7 @@
     "A3"
   ],
   "base_params": {
-    "n_items": 100,
+    "n_items": 200,
     "horizon_days": 56,
     "budget_slots": 672,
     "slot_minutes": 0.5,
@@ -31,7 +31,7 @@
       3,
       5
     ],
-    "h0": 1.0,
+    "h0": 67.59,
     "sigma_item": 0.5,
     "sigma_learner": 0.3,
     "g_min": 0.1,

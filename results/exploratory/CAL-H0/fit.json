@@ -1,0 +1,30 @@
+{
+  "id": "CAL-H0",
+  "label": "exploratory",
+  "protocol_section": "14.2",
+  "split": "fit",
+  "processed_sha256": "6366c6de129bda967fcfa6f5ff44b3bccb1f0c0965a7d03e70d7913b5b2b02c7",
+  "git_revision": "08b4400ef729f9db73ebb77b118afbe74a621380",
+  "git_dirty": false,
+  "runtime_s": 5.079,
+  "fit": {
+    "form": "exponential",
+    "sigma": 0.58309518948453,
+    "h0_days": 67.58964795338962,
+    "log_likelihood": -95683.06535708225,
+    "lr95_naive_days": [
+      66.7041609836055,
+      68.48688961976382
+    ],
+    "on_grid_edge": false,
+    "n_rows": 163110,
+    "n_trials": 245827,
+    "n_successes": 219958
+  },
+  "h0_fitted_rounded_days": 67.59,
+  "exp002_h0_axis_days": [
+    33.8,
+    67.59,
+    135.18
+  ]
+}

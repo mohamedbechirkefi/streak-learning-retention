@@ -4,10 +4,10 @@
 | Field | Value |
 |---|---|
 | Experiment ID | EXP-001 |
-| Version | 0.1-draft, 2026-11-24 |
-| Status | planned (protocol draft, awaiting owner freeze) |
-| Parent protocol | `research/protocol.md` v0.1-draft (sections cited as P§N) |
-| Protocol hash | none until the owner freezes it |
+| Version | 1.0, 2026-11-24 (frozen) |
+| Status | frozen (owner-approved 2026-11-24), not yet run |
+| Parent protocol | `research/protocol.md` v1.0 (sections cited as P§N) |
+| Protocol hash | SHA-256 recorded in `research/experiment_registry.csv` and `research/freeze.json` |
 | Type | confirmatory after freeze; simulation of synthetic learners |
 
 ## 1. Precise question
@@ -55,13 +55,13 @@ Confirmatory master seeds 1 to 5, 200 learners each, 1,000 learners per arm, all
 ## 9. Metric formulas and units
 
 - p_i(t) = 2^(-(t - s_i) / h_i) (default exponential form).
-- R30 = (1/K) Σ_i p_i(T + 30), T = 56, K = 100; unitless proportion.
+- R30 = (1/K) Σ_i p_i(T + 30), T = 56, K = 200 (P§14.8); unitless proportion.
 - Δ_l as above; d_z = mean(Δ) / sd(Δ).
 - Other metrics as in P§5.
 
 ## 10. Uncertainty method
 
-Stratified percentile bootstrap over learners within master seeds, 10,000 resamples, 95% and 90% intervals, bootstrap seed 20261124. Per-seed means, d_z and raw distributions reported. Secondary contrasts Holm-adjusted (P§6).
+Stratified percentile bootstrap over learners within master seeds, 10,000 resamples, 95% and 90% intervals, bootstrap seed 20261124. Per-seed means, d_z and raw distributions reported. Secondary contrasts: Holm-adjusted bootstrap p-values within the cell, intervals unadjusted (P§14.6).
 
 ## 11. Exclusion and stopping rules
 
@@ -86,3 +86,12 @@ uv run python -m streak.cli report --experiment EXP-001
 ```
 
 Outputs (planned): `research/experiments/EXP-001/metrics.csv`, `run_manifest.json`, `figures/`, raw per-learner results under `results/raw/EXP-001/` (regenerated, not committed).
+
+## Amendments before freeze (owner-approved 2026-11-24, round 2)
+
+Parent protocol section 14 governs; summary for this experiment:
+
+- **Real data.** h0 = 67.59 days, fitted to the Duolingo traces (Settles and Meeder 2016, CC BY-NC 4.0) on the fit user split by the method of P§14.2 (journal J-0009), replaces the planning value of 1 day. K = 200 items, set by the control-only floor check of P§14.3 (A0 and A1 only, smoke seeds; J-0010), replaces K = 100. The held-out user split gives the preregistered second test of P§14.4, evaluated once after the freeze; it does not test this experiment's hypotheses.
+- **A3.** Threshold-based spaced repetition (P§14.5, r* = 0.9) replaces "most due first".
+- **Multiplicity wording.** P§14.6.
+- **Disclosure.** A2 > A1 was seen on smoke seeds at the draft parameters before this freeze (P§14.7, with values and paths).

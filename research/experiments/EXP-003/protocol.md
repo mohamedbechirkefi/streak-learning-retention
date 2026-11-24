@@ -4,11 +4,11 @@
 | Field | Value |
 |---|---|
 | Experiment ID | EXP-003 |
-| Version | 0.1-draft, 2026-11-24 |
-| Status | planned (protocol draft, awaiting owner freeze) |
-| Parent protocol | `research/protocol.md` v0.1-draft (P§N) |
+| Version | 1.0, 2026-11-24 (frozen) |
+| Status | frozen (owner-approved 2026-11-24), not yet run |
+| Parent protocol | `research/protocol.md` v1.0 (P§N) |
 | Depends on | EXP-001 implementation and invariant tests |
-| Protocol hash | none until the owner freezes it |
+| Protocol hash | SHA-256 recorded in `research/experiment_registry.csv` and `research/freeze.json` |
 | Role | contains the sensitivity analysis that can invalidate the main interpretation (P§9 item 1) |
 
 ## 1. Precise question
@@ -27,7 +27,7 @@ The expected streak penalty in EXP-001 rests on two assumptions: that reviewing 
 
 ## 4. Hypotheses and disconfirmation
 
-Policy cells (timing × selection): {daily, 3 per week} × {round-robin, easiest first, most due first}. A1 = (3 per week, round-robin), A2 = (daily, easiest first), A3 = (daily, most due first).
+Policy cells (timing × selection): {daily, 3 per week} × {round-robin, easiest first, threshold-based spaced repetition (P§14.5)}. A1 = (3 per week, round-robin), A2 = (daily, easiest first), A3 = (daily, threshold rule); F-DUE = (3 per week, threshold rule).
 
 Model variants: {exponential, power-law} × {difficulty-dependent gain, flat gain}.
 
@@ -63,7 +63,7 @@ Master seeds 1 to 5, 100 learners each (500 learners per condition). Planning ha
 
 ## 10. Uncertainty method
 
-Stratified percentile bootstrap, 10,000 resamples, 95% and 90% intervals for each contrast in each model variant. Holm adjustment across the planned contrasts within each model variant; H-inv is reported unadjusted as a preregistered single test per forgetting form.
+Stratified percentile bootstrap, 10,000 resamples, 95% and 90% intervals for each contrast in each model variant. Holm-adjusted bootstrap p-values across the planned secondary contrasts within each model variant, intervals unadjusted (P§14.6); H-inv is reported unadjusted as a preregistered single test per forgetting form.
 
 ## 11. Exclusion and stopping rules
 
@@ -83,3 +83,13 @@ This experiment is itself the sensitivity analysis. Residual exclusion applied a
 uv run python -m streak.cli run --experiment EXP-003 --config research/experiments/EXP-003/config.json
 uv run python -m streak.cli report --experiment EXP-003
 ```
+
+## Amendments before freeze (owner-approved 2026-11-24, round 2)
+
+Parent protocol section 14 governs; summary for this experiment:
+
+- **Real data.** h0 = 67.59 days, fitted to the Duolingo traces (Settles and Meeder 2016, CC BY-NC 4.0) on the fit user split by the method of P§14.2 (journal J-0009), replaces the planning value of 1 day. K = 200 items, set by the control-only floor check of P§14.3 (A0 and A1 only, smoke seeds; J-0010), replaces K = 100. The held-out user split gives the preregistered second test of P§14.4, evaluated once after the freeze; it does not test this experiment's hypotheses.
+- **A3.** Threshold-based spaced repetition (P§14.5, r* = 0.9) replaces "most due first".
+- **Multiplicity wording.** P§14.6.
+- **Disclosure.** A2 > A1 was seen on smoke seeds at the draft parameters before this freeze (P§14.7, with values and paths).
+- **F-DUE** uses the same threshold rule as A3.
