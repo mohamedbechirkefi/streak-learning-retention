@@ -2,6 +2,9 @@
 
 ---
 title: "Are we learning or just maintaining streaks? (working title)"
+author: "Mohamed Bechir Kefi"
+affiliation: "none"
+ai-assistance: "An AI system (Claude, Anthropic) was used as a disclosed research and development assistant. It is not an author."
 status: "Skeleton only (M0). Independent research manuscript, preprint draft, not peer reviewed. No content before results exist."
 ---
 

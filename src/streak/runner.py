@@ -4,8 +4,9 @@ and run manifest.
 
 Gate (G-FREEZE): a confirmatory config is refused unless the experiment's protocol
 is frozen, i.e. its row in research/experiment_registry.csv carries a SHA-256 hash
-that equals the hash of the protocol file on disk, and research/protocol.md is no
-longer marked "NOT FROZEN". Exploratory configs may only use the smoke seed range.
+that equals the hash of the protocol file on disk, research/protocol.md is no
+longer marked "NOT FROZEN", and the freeze record research/freeze.json matches the
+parent protocol, the data manifest and the config itself. Exploratory configs may only use the smoke seed range.
 """
 
 from __future__ import annotations
@@ -95,10 +96,37 @@ def protocol_freeze_status(experiment_id: str, root: Path | None = None) -> tupl
     return True, "frozen"
 
 
+FREEZE_RECORD = Path("research") / "freeze.json"
+
+
+def config_freeze_status(cfg: dict, root: Path | None = None) -> tuple[bool, str]:
+    """(frozen, reason) for a confirmatory config against the freeze record research/freeze.json:
+    the parent protocol and the data manifest must hash as recorded, and the config's canonical
+    hash must equal the frozen config's. Any change to a frozen config is refused."""
+    root = root or repo_root()
+    path = root / FREEZE_RECORD
+    if not path.exists():
+        return False, f"no freeze record at {FREEZE_RECORD}"
+    rec = json.loads(path.read_text())
+    if sha256_file(root / "research" / "protocol.md") != rec.get("protocol_sha256"):
+        return False, "research/protocol.md does not match the freeze record"
+    manifest = root / "data" / "manifest.json"
+    if not manifest.exists() or sha256_file(manifest) != rec.get("data_manifest_sha256"):
+        return False, "data/manifest.json does not match the freeze record"
+    exp = rec.get("experiments", {}).get(cfg["experiment_id"])
+    if exp is None:
+        return False, f"{cfg['experiment_id']} is not in the freeze record"
+    if config_hash(cfg) != exp.get("config_canonical_sha256"):
+        return False, f"{cfg['experiment_id']} config differs from the frozen config"
+    return True, "frozen"
+
+
 def require_runnable(cfg: dict, root: Path | None = None) -> None:
     check_config(cfg)
     if cfg["label"] == "confirmatory":
         frozen, reason = protocol_freeze_status(cfg["experiment_id"], root)
+        if frozen:
+            frozen, reason = config_freeze_status(cfg, root)
         if not frozen:
             raise GateError(f"refusing confirmatory run of {cfg['experiment_id']}: {reason}. "
                             "Freezing is the owner's decision (G-FREEZE).")

@@ -3,13 +3,13 @@
 # (custom, source-available, not OSI approved; see LICENSE). It is named here in a
 # comment because it has no standard SPDX license identifier.
 cff-version: 1.2.0
-message: "If you use this work, please cite it as below. Status: independent research project, not peer reviewed."
+message: "If you use this work, please cite it as below. Status: independent research project, not peer reviewed. Author: Mohamed Bechir Kefi (no affiliation). An AI system (Claude, Anthropic) was used as a disclosed research and development assistant and is not an author. Calibration data: Duolingo half-life regression traces (Settles and Meeder 2016), doi:10.7910/DVN/N8XJME, CC BY-NC 4.0."
 title: "STREAK: Are we learning or just maintaining streaks? A simulation study of activity streaks and retention"
 type: software
 authors:
   - family-names: Kefi
     given-names: Mohamed Bechir
-version: 0.0.0-m0
+version: 0.3.0-frozen-protocol-1.0
 date-released: 2026-11-24
 keywords:
   - spaced repetition
