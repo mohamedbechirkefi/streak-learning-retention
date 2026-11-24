@@ -100,3 +100,18 @@ def test_freeze_status_logic_on_a_copy(tmp_path):
     proto.write_text("edited after the freeze\n")
     assert protocol_freeze_status("EXP-001", tmp_path)[0] is False
     assert protocol_freeze_status("EXP-009", tmp_path)[0] is False
+
+
+def test_git_dirty_ignores_untracked_files(tmp_path):
+    import subprocess
+    from streak.manifest import git_info
+    g = ["git", "-C", str(tmp_path), "-c", "user.name=t", "-c", "user.email=test-only"]
+    subprocess.run(["git", "init", "-q", str(tmp_path)], check=True)
+    (tmp_path / "a.txt").write_text("a")
+    subprocess.run(g + ["add", "a.txt"], check=True)
+    subprocess.run(g + ["commit", "-qm", "init"], check=True)
+    (tmp_path / "untracked.json").write_text("{}")
+    rev, dirty = git_info(tmp_path)
+    assert len(rev) == 40 and dirty is False
+    (tmp_path / "a.txt").write_text("b")
+    assert git_info(tmp_path)[1] is True

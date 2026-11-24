@@ -45,7 +45,8 @@ def git_info(root: Path) -> tuple[str | None, bool | None]:
     try:
         rev = subprocess.run(["git", "-C", str(root), "rev-parse", "HEAD"], capture_output=True,
                              text=True, check=True).stdout.strip()
-        dirty = bool(subprocess.run(["git", "-C", str(root), "status", "--porcelain"],
+        # Tracked files only: untracked run outputs must not mark the source revision dirty.
+        dirty = bool(subprocess.run(["git", "-C", str(root), "status", "--porcelain", "--untracked-files=no"],
                                     capture_output=True, text=True, check=True).stdout.strip())
         return rev, dirty
     except (OSError, subprocess.CalledProcessError):
