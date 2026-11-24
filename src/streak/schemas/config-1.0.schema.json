@@ -2,25 +2,93 @@
   "$id": "streak.config/1.0",
   "title": "STREAK experiment configuration, version 1.0",
   "type": "object",
-  "required": ["schema_version", "experiment_id", "label", "protocol_version", "master_seeds", "learners_per_seed", "arms", "base_params", "analysis"],
+  "required": [
+    "schema_version",
+    "experiment_id",
+    "label",
+    "protocol_version",
+    "master_seeds",
+    "learners_per_seed",
+    "arms",
+    "base_params",
+    "analysis"
+  ],
   "additionalProperties": false,
   "properties": {
-    "schema_version": {"const": "streak.config/1.0"},
-    "experiment_id": {"type": "string", "pattern": "^(EXP-[0-9]{3}|SMOKE-[A-Z0-9-]+)$"},
-    "label": {"enum": ["exploratory", "confirmatory"]},
-    "protocol_version": {"type": "string"},
-    "description": {"type": "string"},
-    "master_seeds": {"type": "array", "minItems": 1, "items": {"type": "integer", "minimum": 0}},
-    "learners_per_seed": {"type": "integer", "minimum": 1},
-    "arms": {"type": "array", "minItems": 1, "items": {"enum": ["A0", "A1", "A2", "A3", "D-RR", "F-EASY", "F-DUE"]}},
-    "base_params": {"type": "object"},
+    "schema_version": {
+      "const": "streak.config/1.0"
+    },
+    "experiment_id": {
+      "type": "string",
+      "pattern": "^(EXP-[0-9]{3}|SMOKE-[A-Z0-9-]+)$"
+    },
+    "label": {
+      "enum": [
+        "exploratory",
+        "confirmatory"
+      ]
+    },
+    "protocol_version": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "master_seeds": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "integer",
+        "minimum": 0
+      }
+    },
+    "learners_per_seed": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "arms": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "enum": [
+          "A0",
+          "A1",
+          "A2",
+          "A3",
+          "D-RR",
+          "F-EASY",
+          "F-DUE"
+        ]
+      }
+    },
+    "base_params": {
+      "type": "object"
+    },
     "grid": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
-        "h0": {"type": "array", "minItems": 1, "items": {"type": "number"}},
-        "a": {"type": "array", "minItems": 1, "items": {"type": "number"}},
-        "q": {"type": "array", "minItems": 1, "items": {"type": "number"}}
+        "h0": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "number"
+          }
+        },
+        "a": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "number"
+          }
+        },
+        "q": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "number"
+          }
+        }
       }
     },
     "model_variants": {
@@ -28,21 +96,73 @@
       "minItems": 1,
       "items": {
         "type": "object",
-        "required": ["form", "gain_rule"],
+        "required": [
+          "form",
+          "gain_rule"
+        ],
         "additionalProperties": false,
-        "properties": {"form": {"enum": ["exponential", "power"]}, "gain_rule": {"enum": ["difficulty", "flat"]}}
+        "properties": {
+          "form": {
+            "enum": [
+              "exponential",
+              "power"
+            ]
+          },
+          "gain_rule": {
+            "enum": [
+              "difficulty",
+              "flat"
+            ]
+          }
+        }
       }
     },
     "analysis": {
       "type": "object",
-      "required": ["primary_contrast", "secondary_contrasts", "bootstrap_resamples", "bootstrap_seed", "sesoi"],
+      "required": [
+        "primary_contrast",
+        "secondary_contrasts",
+        "bootstrap_resamples",
+        "bootstrap_seed",
+        "sesoi"
+      ],
       "additionalProperties": false,
       "properties": {
-        "primary_contrast": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string"}},
-        "secondary_contrasts": {"type": "array", "items": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string"}}},
-        "bootstrap_resamples": {"type": "integer", "minimum": 1},
-        "bootstrap_seed": {"type": "integer", "minimum": 0},
-        "sesoi": {"type": "number", "minimum": 0}
+        "primary_contrast": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "string"
+          }
+        },
+        "secondary_contrasts": {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "bootstrap_resamples": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "bootstrap_seed": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "sesoi": {
+          "type": "number",
+          "minimum": 0
+        },
+        "holm_primary_across_cells": {
+          "type": "boolean",
+          "description": "Protocol section 14.6: Holm-adjust the primary-contrast p-values across cells (EXP-002)."
+        }
       }
     }
   }

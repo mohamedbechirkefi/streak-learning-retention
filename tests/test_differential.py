@@ -7,7 +7,7 @@ import math
 import pytest
 
 from streak.metrics import learner_arm_metrics
-from streak.params import ModelParams, get_arm
+from streak.params import ArmSpec, ModelParams, get_arm
 from streak.population import generate_learners
 from streak.simulate import simulate_arm
 
@@ -44,6 +44,8 @@ def reference(h_init, avail, U, timing, selection, P):
             ptr = (ptr + n) % K
         elif selection == "easiest":
             items = sorted(range(K), key=lambda i: (-est[i], i))[:n]
+        elif selection == "due_threshold":  # protocol section 14.5, r* = 0.9
+            items = sorted(range(K), key=lambda i: (0, -est[i], i) if est[i] <= 0.9 else (1, est[i], i))[:n]
         else:
             items = sorted(range(K), key=lambda i: (est[i], i))[:n]
         for i in items:
@@ -59,7 +61,7 @@ def reference(h_init, avail, U, timing, selection, P):
     return h, s, spent, owed, log, r30
 
 
-CASES = [(arm, form, gain, q) for arm in ["A0", "A1", "A2", "A3", "D-RR", "F-EASY", "F-DUE"]
+CASES = [(arm, form, gain, q) for arm in ["A0", "A1", "A2", "A3", "D-RR", "F-EASY", "F-DUE", "MOST-DUE"]
          for form, gain in [("exponential", "difficulty"), ("power", "flat")] for q in (0.6, 1.0)]
 
 
@@ -70,8 +72,8 @@ def test_engine_matches_reference(arm, form, gain, q):
     for lr in generate_learners(9101, 4, P):
         h_init = lr.initial_half_lives(P)
         avail = lr.availability(P)
-        res = simulate_arm(h_init, avail, lr.outcome_u, get_arm(arm), P)
-        spec = get_arm(arm)
+        spec = ArmSpec("MOST-DUE", "daily", "most_due") if arm == "MOST-DUE" else get_arm(arm)
+        res = simulate_arm(h_init, avail, lr.outcome_u, spec, P)
         h, s, spent, owed, log, r30 = reference(h_init.tolist(), avail.tolist(), lr.outcome_u.tolist(),
                                                 spec.timing, spec.selection, P)
         assert res.half_life.tolist() == pytest.approx(h, rel=1e-12)

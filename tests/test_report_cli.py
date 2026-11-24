@@ -72,3 +72,22 @@ def test_cli_smoke_and_report(tiny_config, tmp_path, capsys):
     assert (tmp_path / "out" / "report" / "report.md").exists()
     assert main(["report", "--results", str(tmp_path / "out" / "results.json"), "--out", str(tmp_path / "r2")]) == 0
     assert (tmp_path / "r2" / "contrasts.csv").exists()
+
+
+def test_holm_primary_across_cells(tiny_config):
+    """Protocol section 14.6: optional Holm adjustment of the primary contrast across cells."""
+    from streak.report import analyse
+    from streak.runner import run_experiment
+    from streak.stats import holm_adjust
+    cfg = dict(tiny_config, grid={"q": [0.7, 1.0]})
+    cfg["analysis"] = dict(cfg["analysis"], holm_primary_across_cells=True)
+    doc, _ = run_experiment(cfg)
+    out = analyse(doc)
+    prim = [c["primary"] for c in out["cells"]]
+    assert len(prim) == 2
+    assert [p["p_holm"] for p in prim] == holm_adjust([p["p_boot"] for p in prim])
+    for p in prim:
+        assert p["relevant_holm_across_cells"] == (p["classification"].startswith("relevant") and p["p_holm"] < 0.05)
+    # Without the flag the primary rows carry no Holm value.
+    doc2, _ = run_experiment(tiny_config)
+    assert "p_holm" not in analyse(doc2)["cells"][0]["primary"]

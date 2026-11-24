@@ -17,6 +17,8 @@ from .params import ArmSpec, ModelParams, ParameterError
 
 BELIEF_FORM = "exponential"
 BELIEF_GAIN = "difficulty"
+#: Target retention r* of the threshold-based spaced-repetition rule (protocol section 14.5).
+DUE_TARGET = 0.9
 
 
 def planned_slots(timing: str, p: ModelParams) -> np.ndarray:
@@ -51,7 +53,11 @@ def select_items(selection: str, n: int, p_hat: np.ndarray, rr_pointer: int) -> 
 
     round_robin: the next n items in fixed order 0..K-1, cyclically.
     easiest: highest estimated recall first (ties: lower index first).
-    most_due: lowest estimated recall first (ties: lower index first).
+    most_due: lowest estimated recall first (ties: lower index first). Retired draft A3
+        rule (protocol section 14.5); kept for the record, used by no arm.
+    due_threshold: items with estimated recall <= DUE_TARGET ("due") first, in decreasing
+        order of estimated recall; then the non-due items in increasing order of estimated
+        recall (ties: lower index first). Protocol section 14.5.
     """
     k = p_hat.shape[0]
     if not 0 <= n <= k:
@@ -63,6 +69,13 @@ def select_items(selection: str, n: int, p_hat: np.ndarray, rr_pointer: int) -> 
         return np.argsort(-p_hat, kind="stable")[:n], rr_pointer
     if selection == "most_due":
         return np.argsort(p_hat, kind="stable")[:n], rr_pointer
+    if selection == "due_threshold":
+        idx = np.arange(k)
+        due = p_hat <= DUE_TARGET
+        # lexsort: last key is primary. Due items first (key 0), then by the signed estimate.
+        key = np.where(due, -p_hat, p_hat)
+        order = np.lexsort((idx, key, np.where(due, 0, 1)))
+        return order[:n], rr_pointer
     raise ParameterError(f"unknown selection {selection!r}")
 
 

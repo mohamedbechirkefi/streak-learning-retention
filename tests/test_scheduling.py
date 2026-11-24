@@ -38,6 +38,18 @@ def test_round_robin_wraps():
     assert list(idx) == [3, 4, 0] and ptr == 1
 
 
+def test_due_threshold_rule():
+    # Protocol section 14.5: due (p_hat <= 0.9) first by decreasing p_hat, then non-due by increasing p_hat.
+    p_hat = np.array([0.95, 0.10, 0.90, 0.50, 0.99, 0.92, 0.50])
+    order, ptr = select_items("due_threshold", 7, p_hat, 3)
+    assert list(order) == [2, 3, 6, 1, 5, 0, 4] and ptr == 3
+    assert list(select_items("due_threshold", 2, p_hat, 0)[0]) == [2, 3]
+    # Nothing due: closest to becoming due first.
+    assert list(select_items("due_threshold", 2, np.array([0.99, 0.91, 0.95]), 0)[0]) == [1, 2]
+    # Everything due and tied: lower index first.
+    assert list(select_items("due_threshold", 3, np.full(4, 0.3), 0)[0]) == [0, 1, 2]
+
+
 def test_easiest_and_most_due_with_ties():
     p_hat = np.array([0.2, 0.9, 0.5, 0.9, 0.1])
     assert list(select_items("easiest", 3, p_hat, 0)[0]) == [1, 3, 2]

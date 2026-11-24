@@ -1,0 +1,13 @@
+p_recall,timestamp,delta,user_id,learning_language,ui_language,lexeme_id,lexeme_string,history_seen,history_correct,session_seen,session_correct
+1.0,1700000000,172800,synthU01,xx,yy,lexA,alpha/<n>,1,1,2,2
+0.5,1700000100,432000,synthU01,xx,yy,lexB,beta/<n>,1,1,2,1
+0.0,1700000200,1728000,synthU02,xx,yy,lexA,alpha/<n>,1,0,1,0
+0.75,1700000300,604800,synthU03,xx,yy,lexC,gamma/<v>,1,1,4,3
+1.0,1700000400,86400,synthU04,xx,yy,lexD,delta/<n>,1,1,1,1
+1.0,1700000500,3600,synthU05,xx,yy,lexA,alpha/<n>,1,1,1,1
+0.5,1700000600,8640000,synthU06,xx,yy,lexB,beta/<n>,1,1,2,1
+1.0,1700000700,172800,synthU07,xx,yy,lexC,gamma/<v>,3,3,1,1
+0.9,1700000800,172800,synthU08,xx,yy,lexD,delta/<n>,1,1,2,2
+1.0,1700000900,,synthU09,xx,yy,lexA,alpha/<n>,1,1,1,1
+1.0,1700001000,172800,,xx,yy,lexA,alpha/<n>,1,1,1,1
+0.5,1700001100,259200,synthU10,xx,yy,lexE,epsilon/<n>,1,2,2,1

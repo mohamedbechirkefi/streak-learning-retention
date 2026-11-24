@@ -154,4 +154,52 @@ These commands do not exist yet (M0). They will be recorded with their actual ou
 
 ## 13. Amendments
 
-None. Any amendment after the freeze is dated, justified, and kept separate from the frozen analysis; results that depend on it are labelled exploratory.
+Section 14 holds the amendments made before the freeze, on the owner's approvals. Where section 14 and sections 1 to 12 differ, section 14 governs. Any amendment after the freeze is dated, justified, and kept separate from the frozen analysis; results that depend on it are labelled exploratory.
+
+## 14. Amendments before freeze (owner-approved 2026-11-24, round 2)
+
+**Authority.** `_shared/owner-approvals-2026-11-24b.md` (coordinator file), sections 1 and 7. The owner answered "yes for all others" to the STREAK amendment proposals (first round, 2026-11-24) and "Approve all" to the second-round list (2026-11-24), which says for STREAK: adopt "the same Duolingo logs" only "if a licence recheck is clean", fallback "stay synthetic"; and the approved amendments "Move the parameters off the recall floor (fitted from Duolingo if the licence is clean). Replace the strawman arm A3 with a meaningful comparator under a stated rule. Fix the Holm wording. Disclose that A2 > A1 was seen." Proposals AP-3 (weakest-decile metric), AP-4 (EXP-002 floor rule) and AP-6 (D-007 readings) are not in that list and are not applied: the weakest-decile metric and the EXP-002 floor rule stay as written in sections 5 and EXP-002, and the D-007 implementation readings remain the AI's documented readings (decision log D-007).
+
+This section was written, and committed, before any model was fitted to the real data (decision D-011). Values marked "fitted" are filled in afterwards by the method below, without changing the method.
+
+### 14.1 Real data: licence check and role (amendment R2-1)
+
+- **Dataset.** Duolingo half-life regression learning traces (Settles and Meeder 2016), Harvard Dataverse, doi:10.7910/DVN/N8XJME, file `settles.acl16.learning_traces.13m.csv.gz` (Dataverse file id 3091087, 379,004,009 bytes). Licence, read on 2026-11-24 from the Dataverse dataset API (`termsOfUse` field): "This work is released under the Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)." This clearly permits non-commercial research use with attribution, so the licence recheck is clean and the data is adopted.
+- **Handling.** Downloaded by `scripts/download_duolingo.py` into `data/raw/` with SHA-256, size, URL and access date recorded in `data/manifest.json`. The file is larger than 20 MB and holds pseudonymous user ids at row level, so it is git-ignored and never committed; so is the processed form (`data/processed/`). Only aggregate counts and fitted values are committed.
+- **Role.** The simulation stays the controlled part of the study. The real data (a) calibrates exactly one parameter, the median initial half-life h0, and (b) supplies a second, descriptive test of the forgetting model on held-out users (14.3). It never enters the simulated arms, the primary contrast or any secondary contrast.
+
+### 14.2 Calibration of h0 (method fixed before fitting)
+
+- **Observations used.** Rows that pass schema validation (all twelve columns present with the expected types; 0 <= p_recall <= 1; delta >= 0; 0 <= history_correct <= history_seen; 1 <= session_seen; 0 <= session_correct <= session_seen; p_recall equal to session_correct / session_seen within 0.001), that are first repeats (history_seen = 1: the word was seen exactly once before this session, the closest analogue of the model's single initial study at day 0), and whose delay delta / 86,400 lies in [1, 90] days (the model's daily resolution up to its longest retention delay). Exclusions are counted in this order: schema invalid, not a first repeat, delay below 1 day, delay above 90 days. Missing values are counted per column.
+- **Split.** By user: a row belongs to the fit split if the first byte of SHA-256(user_id, UTF-8) is even, and to the held-out split otherwise. The fit uses the fit split only. The user id is used for nothing else and is not stored in the processed form.
+- **Model.** Each row is session_correct successes out of session_seen trials with recall probability E[2^(-Δ/h)], Δ the delay in days, and log h ~ Normal(log h0, σ²) with σ = sqrt(σ_item² + σ_learner²) = sqrt(0.5² + 0.3²) ≈ 0.5831, the heterogeneity the simulation already assumes (P§2, planning values, not fitted). The expectation is computed with 40-node Gauss-Hermite quadrature. Exponential form only (the default true model).
+- **Estimator.** Maximum likelihood of the binomial log-likelihood in log h0: a 121-point grid over h0 in [0.05, 1000] days, then golden-section refinement to a tolerance of 1e-6 in log h0 (`streak.duolingo.fit_h0`). A likelihood-ratio 95% interval is reported, labelled naive (it treats trials as independent). A maximum on a grid edge is reported as a failure of the method, not used.
+- **Use.** The fitted h0, rounded to two decimal places (days), replaces the planning value 1 day in every config. The EXP-002 h0 axis becomes {0.5, 1, 2} times the fitted value, each rounded to two decimals. No other parameter changes because of the fit. The fit is journaled as exploratory.
+- **Caveat stated in advance.** Duolingo session recall is in-session exercise accuracy of users of one product, not a free-recall test after a single study; the calibrated h0 anchors the model's time scale to a real order of magnitude, it does not make the synthetic learners real.
+
+### 14.3 Floor check after the fit (control arms only, rule fixed before fitting)
+
+Exploratory, on smoke seeds 9001 to 9005 with 200 learners each, at the fitted h0 and the other default parameters, running the arms A0 and A1 only (never A2 or A3, so the primary contrast is not computed): the parameters are off the recall floor if the mean R30 of A1 lies in [0.2, 0.8]. If it does, K = 100 stays. If it is below 0.2, K = 50 is checked; if it is above 0.8, K = 200 and then K = 400 are checked; the first K that meets the criterion is adopted. If none does, the item stops and is reported to the owner, and nothing is frozen. Results are journaled as exploratory.
+
+### 14.4 Second test on real data (preregistered, evaluated once after the freeze)
+
+On the held-out user split, never used to fit: h0 is fitted on the fit split by the 14.2 method for both the exponential and the power-law form, and on the held-out split the mean binomial log-likelihood per trial is reported for each form and for a constant-recall baseline (pooled fit-split recall), with a calibration table of observed versus predicted recall by delay bins [1, 2), [2, 4), [4, 8), [8, 16), [16, 32), [32, 90] days (`streak.duolingo.heldout_evaluation`). Reading, fixed now: the exponential model "describes the held-out first-repeat data better than the constant baseline" if its log-likelihood per trial is higher; the form with the higher held-out log-likelihood is reported as better supported, which informs how much weight the EXP-003 power-law variant deserves. This test is descriptive, does not test H1, is not run before the freeze, and is reported in the EXP-001 report and the manuscript as a check of the model's forgetting assumption on real data.
+
+### 14.5 A3 replaced by a threshold-based spaced-repetition comparator (amendment R2-2)
+
+The draft A3 ("lowest estimated recall first") reviewed items already lost (smoke DG-3). It is replaced, before any run of the new rule, by this stated rule, with selection id `due_threshold`:
+
+- With the scheduler's belief p̂ (P§2), an item is **due** if p̂ <= r*, with r* = 0.9 (the example value of the owner-approved proposal AP-2, fixed now).
+- Due items are reviewed first, in decreasing order of p̂ (the item closest to r* from below first, so salvageable items come before items that are already almost lost).
+- If slots remain, the non-due items are reviewed in increasing order of p̂ (those closest to becoming due first).
+- Ties: lower item index first. Timing is unchanged (every available day, 12 slots plus carry-forward), so A3 still has exactly the activity of A2.
+
+The same selection replaces "most due first" in the EXP-003 cell F-DUE (3 per week, `due_threshold`). The old rule is kept in the code under its old id `most_due` for the record but is used by no arm.
+
+### 14.6 Multiplicity wording (amendment R2-3)
+
+Section 6 "Holm-adjusted intervals" is replaced by: for the secondary contrasts, Holm-adjusted two-sided percentile-bootstrap p-values (p = 2 · min(share of bootstrap means <= 0, share >= 0), capped at 1), adjusted within each cell (in EXP-003, within each model variant); the 95% and 90% intervals are unadjusted and labelled as such; the primary contrast is not in that family. In EXP-002 the primary-contrast p-values are Holm-adjusted across the 27 cells, and a cell is reported as "relevant (Holm across cells)" only if its unadjusted 95% interval lies beyond ±0.02 and its Holm-adjusted p is below 0.05.
+
+### 14.7 Disclosure: A2 > A1 was seen before the freeze (amendment R2-4)
+
+Exploratory smoke runs on seeds 9001 to 9005 (engine 1.0.1, commit dfa9dd4, draft parameters h0 = 1 day, draft A3) computed the primary contrast before this freeze. A2 minus A1 in R30 was positive: +0.0801 (95% interval 0.0788 to 0.0813, n = 1,000, `results/exploratory/SMOKE-EXP-001-N200/report/contrasts.csv`, journal J-0005); +0.0768 (n = 100, `results/exploratory/SMOKE-EXP-001/`, J-0004); in the EXP-002 smoke grid the mean difference was above 0 in 23 of 27 cells, range -0.0787 to +0.0920 (`results/exploratory/SMOKE-EXP-002/report/contrasts.csv`, J-0006); in the EXP-003 smoke variants +0.0768 (exponential, difficulty gain), +0.0848 (exponential, flat), +0.0245 (power, difficulty) and +0.0855 (power, flat) (`results/exploratory/SMOKE-EXP-003/report/contrasts.csv`, J-0007). These values came from the floor regime that this section removes, so they say little about the frozen design, but they were seen by the AI and are visible to the owner. The amendments above were justified by the control arms and the operationalisation (DG-1 to DG-5), not by the primary contrast, and no new smoke run of A2 was made before the freeze.

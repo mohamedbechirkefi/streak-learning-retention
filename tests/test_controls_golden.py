@@ -55,7 +55,7 @@ def test_golden_round_robin_all_fail():
     assert learner_arm_metrics(res, p)["practice_success_rate"] == 0.0
 
 
-def test_golden_easiest_and_most_due():
+def test_golden_easiest_and_due_threshold():
     p = _tiny()
     h_init = np.array([1.0, 2.0])
     avail = np.array([False, True, True])
@@ -66,9 +66,15 @@ def test_golden_easiest_and_most_due():
     assert list(a2.review_item) == [0, 0]
     p2 = 2 ** (-1 / 2.35)
     assert a2.half_life == pytest.approx([2.35 * (1.1 + 2.5 * (1 - p2)), 2.0])
+    # A3 (threshold rule, r* = 0.9): day 1 both beliefs 0.5 <= 0.9, due, tie -> item 0.
+    # Day 2: beliefs [0.745, 0.25], both due; decreasing estimate -> item 0 again.
     a3 = simulate_arm(h_init, avail, u, get_arm("A3"), p)
-    assert list(a3.review_item) == [0, 1]
-    assert a3.half_life == pytest.approx([2.35, 4.7])
+    assert list(a3.review_item) == [0, 0]
+    # The retired most-due rule picks the lowest estimate on day 2 (item 1).
+    from streak.params import ArmSpec
+    old = simulate_arm(h_init, avail, u, ArmSpec("old", "daily", "most_due"), p)
+    assert list(old.review_item) == [0, 1]
+    assert old.half_life == pytest.approx([2.35, 4.7])
 
 
 def test_golden_fixed_makeup_and_cap():

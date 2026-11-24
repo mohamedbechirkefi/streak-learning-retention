@@ -14,7 +14,7 @@ from typing import Any
 FORMS = ("exponential", "power")
 GAIN_RULES = ("difficulty", "flat")
 TIMINGS = ("none", "daily", "fixed")
-SELECTIONS = ("none", "round_robin", "easiest", "most_due")
+SELECTIONS = ("none", "round_robin", "easiest", "most_due", "due_threshold")
 
 
 class ParameterError(ValueError):
@@ -152,10 +152,10 @@ ARMS: dict[str, ArmSpec] = {
     "A0": ArmSpec("A0", "none", "none", "negative control: no practice after day 0"),
     "A1": ArmSpec("A1", "fixed", "round_robin", "primary baseline: 3 fixed weekdays, round-robin"),
     "A2": ArmSpec("A2", "daily", "easiest", "treatment: streak-driven, easiest first"),
-    "A3": ArmSpec("A3", "daily", "most_due", "comparator: spaced, most due first"),
+    "A3": ArmSpec("A3", "daily", "due_threshold", "comparator: threshold-based spaced repetition (r* = 0.9)"),
     "D-RR": ArmSpec("D-RR", "daily", "round_robin", "EXP-003 cell: daily, round-robin"),
     "F-EASY": ArmSpec("F-EASY", "fixed", "easiest", "EXP-003 cell: 3 per week, easiest first"),
-    "F-DUE": ArmSpec("F-DUE", "fixed", "most_due", "EXP-003 cell: 3 per week, most due first"),
+    "F-DUE": ArmSpec("F-DUE", "fixed", "due_threshold", "EXP-003 cell: 3 per week, threshold-based spaced repetition"),
 }
 
 

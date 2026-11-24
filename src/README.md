@@ -1,7 +1,7 @@
 <!-- SPDX-License-Identifier: LicenseRef-STREAK-NC-Research-1.0 -->
 # src/
 
-Python package `streak` (M2, engine 1.0.1). All outputs are simulations of synthetic learners.
+Python package `streak` (M2, engine 1.1.0 since the round-2 amendments). All outputs are simulations of synthetic learners.
 
 | Module | Role |
 |---|---|

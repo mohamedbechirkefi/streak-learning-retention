@@ -67,3 +67,17 @@ These are the AI's readings, implemented in engine 1.0.x and listed for owner co
 ## D-010 (2026-11-24): Run manifests ignore untracked files when recording git_dirty
 
 - **Decision.** `git_dirty` is computed with `git status --porcelain --untracked-files=no`. Before this change, outputs written by one smoke run marked the manifests of later runs dirty although the source revision was clean.
+
+## D-011 (2026-11-24): Duolingo traces adopted after a clean licence recheck (supersedes D-003 for h0)
+
+- **Decision.** The Duolingo half-life regression traces (Settles and Meeder 2016; Harvard Dataverse doi:10.7910/DVN/N8XJME) are adopted to calibrate the median initial half-life h0 and for a preregistered second test of the forgetting model on held-out users (protocol section 14). Everything else stays synthetic.
+- **Licence check.** On 2026-11-24 the Dataverse dataset API (`https://dataverse.harvard.edu/api/datasets/:persistentId/?persistentId=doi:10.7910/DVN/N8XJME`, the same record as the dataset page `https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/N8XJME`) answered (at M0 it returned HTTP 503). Its `termsOfUse` field reads: "This work is released under the Creative Commons Attribution-NonCommercial 4.0 International License (CC BY-NC 4.0)." Version 1.0, released 2017-12-14; one file, `settles.acl16.learning_traces.13m.csv.gz`, 379,004,009 bytes, MD5 0a1cae5eb7ad4b0bd9c0de91d74fcced, not restricted. CC BY-NC 4.0 clearly permits non-commercial research use with attribution, which is the owner's condition (approvals 2026-11-24b, section 1: "Adopt only if a licence recheck is clean"). Blocker B-1 is resolved.
+- **Handling.** Above 20 MB and holding pseudonymous user ids at row level: downloaded by `scripts/download_duolingo.py` into `data/raw/` (git-ignored), never committed, nor is the processed form. User ids are used only for the split hash. Attribution to Settles and Meeder (2016) and the dataset DOI is carried in `data/manifest.json` and in the manuscript.
+- **Decided by.** The owner ("Approve all", 2026-11-24), conditional on this check, which the AI performed and recorded.
+
+## D-012 (2026-11-24): Calibration method, floor check and amendments written before fitting
+
+- **Decision.** Protocol section 14 (round-2 amendments) fixes, before any fit: the observations used (first repeats, delay 1 to 90 days), the user split (SHA-256 of user id, first byte even = fit), the estimator (marginal binomial maximum likelihood of h0 with the model's own heterogeneity σ = 0.5831 fixed, exponential form), the rounding and how the fitted value enters the configs (base h0 and the EXP-002 h0 axis {0.5, 1, 2} times the fit), a control-only floor check (A0 and A1 on smoke seeds; K ladder 100, 50 or 200, 400), the held-out second test, the threshold-based A3 (r* = 0.9), the Holm wording, and the disclosure of the A2 > A1 smoke values. The section was committed before the fit so the order is visible in git.
+- **Not applied.** AP-3, AP-4 and AP-6 are not in the owner's approved list for STREAK and are left as they were.
+- **Implementation.** `streak.duolingo` (pure ingestion with schema validation and counts; fit; held-out evaluation), `scripts/download_duolingo.py`, selection `due_threshold` for A3 and F-DUE (engine 1.1.0; the old `most_due` rule kept, used by no arm), optional `holm_primary_across_cells` in the analysis config (used by EXP-002).
+- **Decided by.** The owner approved the amendments; the concrete method is the AI's, fixed in the protocol for the owner's review at the freeze.

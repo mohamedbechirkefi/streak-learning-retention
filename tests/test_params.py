@@ -40,7 +40,10 @@ def test_unknown_key_rejected():
 def test_arms():
     assert get_arm("A1") == ArmSpec("A1", "fixed", "round_robin")
     assert get_arm("A2").timing == get_arm("A3").timing == "daily"
-    assert {a.selection for a in ARMS.values()} >= {"round_robin", "easiest", "most_due"}
+    assert {a.selection for a in ARMS.values()} >= {"round_robin", "easiest", "due_threshold"}
+    # Protocol section 14.5: the retired draft rule is used by no arm.
+    assert "most_due" not in {a.selection for a in ARMS.values()}
+    assert get_arm("A3").selection == get_arm("F-DUE").selection == "due_threshold"
     with pytest.raises(ParameterError):
         get_arm("A9")
     with pytest.raises(ParameterError):

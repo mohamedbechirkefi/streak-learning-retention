@@ -100,6 +100,15 @@ def analyse(doc: dict) -> dict:
         out["cells"].append({"cell_id": cell, "arms": arms_out, "primary": primary,
                              "primary_excluding_residual_flagged": primary_excl,
                              "secondary": secondary})
+    if an.get("holm_primary_across_cells"):
+        # Protocol section 14.6 (EXP-002): Holm across cells for the primary contrast; a cell is
+        # "relevant (Holm across cells)" only if its unadjusted 95% interval lies beyond the SESOI
+        # and its Holm-adjusted p is below 0.05.
+        prim = [c["primary"] for c in out["cells"] if c["primary"] is not None]
+        for s, adj in zip(prim, holm_adjust([s["p_boot"] for s in prim])):
+            s["p_holm"] = adj
+            relevant = s["classification"].startswith("relevant")
+            s["relevant_holm_across_cells"] = bool(relevant and adj < 0.05)
     return out
 
 
@@ -313,7 +322,9 @@ def markdown(analysis: dict, doc: dict, result_path: str, result_sha: str, figs:
               f"({doc['config']['analysis']['bootstrap_resamples']} resamples, seed {doc['config']['analysis']['bootstrap_seed']}).",
               "- Classes follow research/protocol.md section 4 with SESOI "
               f"{doc['config']['analysis']['sesoi']}. Non-significance is never equivalence.",
-              "- Holm adjustment is applied to bootstrap p-values of the secondary contrasts within each cell.", ""]
+              "- Holm adjustment is applied to bootstrap p-values of the secondary contrasts within each cell; "
+              "intervals are unadjusted (protocol section 14.6). If the config sets holm_primary_across_cells, "
+              "the primary p-values are also Holm-adjusted across cells (p (Holm) column of primary rows).", ""]
     return "\n".join(lines)
 
 
