@@ -194,3 +194,30 @@ R-5 (new): h0 = 67.59 days rests on in-session accuracy of Duolingo users after 
 ### Next action
 
 Coordinator: schedule M3 (EXP-001 to EXP-003 confirmatory runs and the held-out second test) on a quiet machine; push only as approved.
+
+## 2026-11-24: Round-3 ratification (K = 200)
+
+**Milestone.** Records only, after the M1 freeze (brief `_shared/ROUND3-brief.md`; authority `_shared/owner-approvals-2026-11-24c.md`, section 4). Starting state: clean at b9b7e7a.
+
+### Changes
+
+- `research/decision_log.md`: D-015 records the owner's ratification of K = 200 ("Approve all", 2026-11-24, round 3).
+- `research/freeze_record.md`: new "Ratifications after the freeze" table.
+- `research/freeze.json`: new `ratifications` field (not read by the run guard).
+- No frozen protocol, config or data manifest changed.
+
+### Commands and actual outputs
+
+```
+$ ../.tools/py/bin/uv sync --frozen --all-groups --all-extras   Audited 9 packages
+$ .venv/bin/python -m pytest                                    199 passed in 3.94s
+$ shasum -a 256 (protocol, EXP-001 to EXP-003 protocols and configs, data manifest)   all equal to the freeze record
+```
+
+### Not done, and why
+
+No confirmatory run and no push (brief: coordinator schedules M3 and pushes).
+
+### Next action
+
+Coordinator: schedule M3 on a quiet machine.

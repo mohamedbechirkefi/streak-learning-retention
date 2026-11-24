@@ -52,3 +52,9 @@ Canonical config hashes (what the guard compares) are in `research/freeze.json`.
 ## Run guard
 
 `streak.cli run` accepts a confirmatory config only if the registry hash matches the EXP protocol on disk, `research/protocol.md` is no longer marked as not frozen, and `research/freeze.json` matches the parent protocol, the data manifest and the config's canonical hash. Tests: `tests/test_runner.py` (frozen configs accepted at the gate without being run; 18 changed-config cases refused before any simulation; protocol or manifest edits refused on a copy) and `tests/test_report_cli.py` (CLI exit 3 on a changed config).
+
+## Ratifications after the freeze
+
+| Date | Item | Owner approval | Effect on hashes |
+|---|---|---|---|
+| 2026-11-24 (round 3) | K = 200 items, so that baseline A1 stays below the 0.8 ceiling (P§14.8, J-0010, D-013) | "Approve all" (`_shared/owner-approvals-2026-11-24c.md`, section 4); recorded as D-015 | none: the frozen files already contain K = 200 |

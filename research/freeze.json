@@ -61,5 +61,16 @@
       "config_file_sha256": "6d7ac466084124cf55a566dfa789e91088033ed2f98eae49404a667ea6e9d589",
       "config_canonical_sha256": "ab1c1799a45e0eab8091125a7d769e20ecdf642b5f8e1436e0d9a66c31450ff3"
     }
-  }
+  },
+  "ratifications": [
+    {
+      "date": "2026-11-24",
+      "round": 3,
+      "source": "_shared/owner-approvals-2026-11-24c.md, section 4",
+      "owner_quote": "Approve all",
+      "item": "K = 200 items, so that baseline A1 stays below the 0.8 ceiling.",
+      "effect": "Ratification only; the frozen files already contain K = 200, so no hash changes.",
+      "decision": "D-015"
+    }
+  ]
 }

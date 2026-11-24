@@ -96,3 +96,9 @@ These are the AI's readings, implemented in engine 1.0.x and listed for owner co
 - **Guard.** `streak.runner.require_runnable` now also requires `research/freeze.json` to match the parent protocol, `data/manifest.json` and the config's canonical hash, so any changed confirmatory config is refused before simulation. The test suite checks the frozen configs at the gate only and never runs them (the CLI refusal test now uses a changed copy instead of the real EXP-001 config, which would otherwise have started a confirmatory run once frozen).
 - **C1 to C4.** As in the freeze record: real data as approved (Duolingo, h0 only plus a held-out test), Typst PDFs, authorship Mohamed Bechir Kefi with the AI disclosed as assistant, and disclosure of the smoke values of A2 minus A1.
 - **Decided by.** The owner (freeze); the AI applied it.
+
+## D-015 (2026-11-24): K = 200 ratified by the owner (third round)
+
+- **Decision.** The owner ratified the choice of K = 200 items (D-013, protocol section 14.8, floor check J-0010). Source: `_shared/owner-approvals-2026-11-24c.md`, section 4: the owner answered "Approve all" (2026-11-24, round 3) to the coordinator's list, which reads for STREAK: "K = 200 items, so that baseline A1 stays below the 0.8 ceiling."
+- **Effect.** Ratification only. The frozen protocol 1.0 and the confirmatory configs already carry K = 200, so no frozen file changes and every hash in `research/freeze.json` stays as recorded. The ratification is listed in `research/freeze_record.md` and in the `ratifications` field of `research/freeze.json` (a field the run guard does not read).
+- **Decided by.** The owner; the AI recorded it.
