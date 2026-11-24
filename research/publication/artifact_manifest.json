@@ -1,0 +1,6 @@
+{
+  "schema_version": "0.1",
+  "updated": "2026-11-24",
+  "note": "Maps every quantitative figure, table and claim to experiment ID, run IDs, metric definition, result path, generator script, config or protocol hash and code revision (master prompt 11.5). Empty at M0: no results exist.",
+  "entries": []
+}

@@ -1,0 +1,25 @@
+# SPDX-License-Identifier: LicenseRef-STREAK-NC-Research-1.0
+[project]
+name = "streak"
+version = "0.0.0"
+description = "Simulation study: when can activity streaks diverge from retention in a learning model?"
+requires-python = ">=3.12,<3.13"
+license = { file = "LICENSE" }
+dependencies = [
+    "numpy>=2.1",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3",
+    "hypothesis>=6.100",
+]
+
+[tool.uv]
+# Package code is not written yet (M0); the project is not built as a package until M2.
+package = false
+# Only versions released at least two weeks before 2026-11-24 (decision D-005).
+exclude-newer = "2026-11-10T00:00:00Z"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

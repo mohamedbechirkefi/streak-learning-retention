@@ -35,3 +35,20 @@ Mohamed Bechir Kefi is the project owner and lead maintainer, and the only perso
 ## 5. Privacy and disclosure
 
 Never commit an e-mail address, a name or any other personal identifier in code, logs, fixtures or results. Report security issues privately through GitHub's private vulnerability reporting.
+
+## 6. Development commands
+
+Run from the repository root. Tools: uv 0.9.5 and Python 3.12.
+
+    uv sync --frozen                     # install the locked environment (uv.lock)
+    uv run pytest                        # test suite (tests are added in M2)
+    uv lock                              # refresh the lockfile; keeps exclude-newer from pyproject.toml
+
+Documents (no TeX needed, decision D-002):
+
+    pandoc research/paper/manuscript.md -s --number-sections -o research/paper/manuscript.tex
+    # then prepend the SPDX header comment line to manuscript.tex
+    pandoc research/paper/manuscript.md -s --number-sections -t typst -V mainfont="Libertinus Serif" -o manuscript.typ
+    python -c "import typst; typst.compile('manuscript.typ', output='research/paper/manuscript.pdf')"
+
+Experiment commands (`streak.cli smoke | run | report | test`) are planned for M2 and listed in `research/protocol.md` section 12.
