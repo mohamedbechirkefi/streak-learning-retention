@@ -14,9 +14,9 @@ and
 **Contributor:** The individual accepting this Agreement.
 
 The Agreement concerns contributions intentionally submitted
-for inclusion in STREAK (research repository), planned at:
+for inclusion in STREAK (research repository), at:
 
-https://github.com/mohamedbechirkefi/streak-research
+https://github.com/mohamedbechirkefi/streak-learning-retention
 
 ## 1. Ownership of contributions
 
