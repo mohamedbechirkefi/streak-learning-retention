@@ -9,7 +9,7 @@ import shutil
 import pytest
 
 import streak.runner as runner
-from streak.runner import (GateError, check_config, dump_result, execute, expand_cells,
+from streak.runner import (GateError, check_config, config_freeze_status, require_runnable, dump_result, execute, expand_cells,
                            protocol_freeze_status, run_experiment)
 from streak.schema import validate
 
@@ -65,12 +65,63 @@ def test_cells_expand():
 
 
 @pytest.mark.parametrize("exp", ["EXP-001", "EXP-002", "EXP-003"])
-def test_confirmatory_refused_while_unfrozen(exp):
+def test_frozen_confirmatory_configs_accepted(exp):
+    """The guard accepts the frozen configs. Only the gate is checked: the suite never runs them."""
     cfg = json.loads((ROOT / f"research/experiments/{exp}/config.json").read_text())
-    frozen, reason = protocol_freeze_status(exp, ROOT)
-    assert not frozen and "not frozen" in reason.lower() or "NOT FROZEN" in reason
-    with pytest.raises(GateError):
+    assert protocol_freeze_status(exp, ROOT) == (True, "frozen")
+    assert config_freeze_status(cfg, ROOT) == (True, "frozen")
+    require_runnable(cfg, ROOT)  # does not raise
+
+
+def _changes():
+    def h0(c): c["base_params"]["h0"] = 1.0
+    def k(c): c["base_params"]["n_items"] = 100
+    def seeds(c): c["master_seeds"] = [1, 2, 3, 4, 6]
+    def n(c): c["learners_per_seed"] += 1
+    def sesoi(c): c["analysis"]["sesoi"] = 0.03
+    def desc(c): c["description"] += " (edited)"
+    return [h0, k, seeds, n, sesoi, desc]
+
+
+@pytest.mark.parametrize("exp", ["EXP-001", "EXP-002", "EXP-003"])
+@pytest.mark.parametrize("change", _changes())
+def test_changed_confirmatory_configs_refused(exp, change, monkeypatch):
+    cfg = json.loads((ROOT / f"research/experiments/{exp}/config.json").read_text())
+    change(cfg)
+    try:
+        check_config(cfg)
+    except Exception:
+        return  # an invalid config is refused anyway
+    called = []
+    monkeypatch.setattr(runner, "simulate_arm", lambda *a: called.append(1))
+    with pytest.raises(GateError, match="differs from the frozen config"):
         run_experiment(cfg, root=ROOT)
+    assert not called
+
+
+def test_freeze_record_detects_protocol_and_manifest_edits(tmp_path):
+    """On a copy of the frozen files: editing the parent protocol or the data manifest is refused."""
+    import shutil
+    for rel in ["research/protocol.md", "research/freeze.json", "research/experiment_registry.csv",
+                "data/manifest.json"] + [f"research/experiments/EXP-00{i}/{f}" for i in (1, 2, 3)
+                                         for f in ("protocol.md", "config.json")]:
+        (tmp_path / rel).parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy(ROOT / rel, tmp_path / rel)
+    cfg = json.loads((tmp_path / "research/experiments/EXP-001/config.json").read_text())
+    require_runnable(cfg, tmp_path)
+    m = tmp_path / "data/manifest.json"
+    m.write_text(m.read_text() + " ")
+    assert config_freeze_status(cfg, tmp_path) == (False, "data/manifest.json does not match the freeze record")
+    with pytest.raises(GateError):
+        require_runnable(cfg, tmp_path)
+    shutil.copy(ROOT / "data/manifest.json", m)
+    proto = tmp_path / "research/protocol.md"
+    proto.write_text(proto.read_text() + "\nedit\n")
+    with pytest.raises(GateError):
+        require_runnable(cfg, tmp_path)
+    (tmp_path / "research/freeze.json").unlink()
+    shutil.copy(ROOT / "research/protocol.md", proto)
+    assert config_freeze_status(cfg, tmp_path)[0] is False
 
 
 def test_exploratory_with_confirmatory_seeds_refused(tiny_config):

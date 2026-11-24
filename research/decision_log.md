@@ -89,3 +89,10 @@ These are the AI's readings, implemented in engine 1.0.x and listed for owner co
 - **Caveat.** The fitted h0 comes from in-session accuracy of Duolingo users on a word seen once before; it anchors the model's time scale to a real order of magnitude (weeks, not one day) and does not make the synthetic learners real. The naive interval (66.70 to 68.49 days) ignores within-user dependence.
 - **Smoke configs** in `experiments/` keep the draft parameters; they document the exploratory history (J-0004 to J-0007) and are not used for the frozen design.
 - **Decided by.** Method fixed by the AI under the owner's approval; values set by that method, not chosen.
+
+## D-014 (2026-11-24): Protocol 1.0 frozen on the owner's approvals; guard extended to configs and data manifest
+
+- **Decision.** `research/protocol.md` and EXP-001 to EXP-003 are frozen as version 1.0 on the owner's approvals ("yes for all others"; "Approve all", 2026-11-24). Freeze record `research/freeze.json` (machine-readable) and `research/freeze_record.md`; protocol SHA-256 57a60597a93cfc07a1d25e9a2f6bac9f23009b554d3d9820828e7707210711ee; frozen content revision 02eb104; EXP protocol hashes in the registry.
+- **Guard.** `streak.runner.require_runnable` now also requires `research/freeze.json` to match the parent protocol, `data/manifest.json` and the config's canonical hash, so any changed confirmatory config is refused before simulation. The test suite checks the frozen configs at the gate only and never runs them (the CLI refusal test now uses a changed copy instead of the real EXP-001 config, which would otherwise have started a confirmatory run once frozen).
+- **C1 to C4.** As in the freeze record: real data as approved (Duolingo, h0 only plus a held-out test), Typst PDFs, authorship Mohamed Bechir Kefi with the AI disclosed as assistant, and disclosure of the smoke values of A2 minus A1.
+- **Decided by.** The owner (freeze); the AI applied it.

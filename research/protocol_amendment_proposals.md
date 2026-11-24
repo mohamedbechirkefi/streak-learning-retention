@@ -35,3 +35,7 @@ The smoke runs computed the primary contrast on smoke seeds, so the direction of
 ## 3. Runtime (planning values in EXP protocols section 8)
 
 Measured on the Apple M1 Pro under heavy concurrent load from other sessions (load average 25 to 80 on 10 cores during the runs), single process: 2.6 to 9.4 ms per learner-arm (5.4 ms for the full-size EXP-001 matrix on smoke seeds: 4,000 learner-arms in 21.6 s, peak RSS 79.5 MB). Projected wall time: EXP-001 about 10 to 40 s; EXP-002 (54,000 learner-arms) about 2.3 to 8.5 minutes; EXP-003 (12,000) about 0.5 to 1.9 minutes; full matrix about 3 to 11 minutes plus report generation (2 s for the 27-cell smoke report). All are far below the hard caps (2 h, 4 h, 2 h). No change proposed.
+
+## Outcome (2026-11-24)
+
+The owner approved, and protocol 1.0 section 14 applies: AP-1 (via the Duolingo fit of h0 and the control-only floor check, K = 200), AP-2 (threshold A3, r* = 0.9), AP-5 (Holm wording) and the disclosure. AP-3, AP-4 and AP-6 were not in the approved list and are not applied. AP-7 needed no change. See `research/freeze_record.md`.

@@ -154,3 +154,43 @@ R-1 now concrete: the primary contrast at the draft parameters is driven by a fl
 ### Next action
 
 Owner: decide OD-6 (AP-1 to AP-7), then OD-1 to OD-3 and freeze. AI, after the owner's decisions: implement any adopted amendment (for example threshold-based A3), repeat the smoke runs, then M3 on the frozen protocols.
+
+## 2026-11-24: Real data, round-2 amendments and freeze (protocol 1.0)
+
+**Milestone.** M1 freeze, on the owner's approvals (`_shared/owner-approvals-2026-11-24b.md` sections 1 and 7; brief `_shared/DATA-FREEZE-brief.md`). Starting state: clean at 83e0d8e.
+
+### Commands and actual outputs
+
+```
+$ curl https://dataverse.harvard.edu/api/datasets/:persistentId/?persistentId=doi:10.7910/DVN/N8XJME
+  termsOfUse: "This work is released under the ... (CC BY-NC 4.0)."; one file, 379,004,009 bytes, MD5 0a1cae5e...
+$ python scripts/download_duolingo.py            (about 37 min) MD5 matches; SHA-256 26cf9b33...6873
+$ .venv/bin/python scripts/ingest_duolingo.py    41.7 s; 12,854,226 rows; 0 missing; 0 invalid; 324,353 kept (fit 163,110, held-out 161,243)
+$ .venv/bin/python scripts/fit_h0.py             h0 = 67.590 days (naive LR 95% 66.70 to 68.49), not on grid edge, 5.1 s
+$ .venv/bin/python scripts/floor_check.py 67.59  K=100: A0 0.410, A1 0.873 (above 0.8); K=200: A0 0.410, A1 0.791 -> K = 200
+$ ../.tools/py/bin/uv sync --frozen --all-groups --all-extras    Audited 9 packages
+$ .venv/bin/python -m pytest                     199 passed in 3.73s
+$ guard check (require_runnable on the three frozen configs, gate only, not run): accepted; each with h0 changed: refused
+```
+
+### Order of work (visible in git)
+
+29d0dfb: licence check, download script, ingestion and fit code with tests on an invented fixture, threshold A3 (engine 1.1.0), Holm-across-cells option, and protocol section 14 with the calibration method, all before any fit. 08b4400: ingestion, fit and floor-check scripts; guard extended to configs and data manifest. 02eb104: fitted values (journal J-0008 to J-0010) written into the protocols and configs. Freeze commit: `research/freeze.json`, `research/freeze_record.md`, registry hashes, guard tests, records.
+
+### Decisions
+
+D-011 (Duolingo adopted, licence clean), D-012 (method before fit), D-013 (h0 = 67.59 days, K = 200), D-014 (freeze).
+
+### Not done, and why
+
+- No confirmatory run and no held-out evaluation: M3, scheduled by the coordinator.
+- No smoke run of A2 or A3 at the new parameters: deliberately avoided before the freeze (no new look at the primary contrast). Runtime at K = 200 is therefore not yet measured for the full arms (floor check: 6.3 s for 2,000 A0/A1 learner-arms at each of two K values).
+- AP-3, AP-4, AP-6 not applied (not approved). Smoke configs in `experiments/` keep the draft parameters (history only).
+
+### Outstanding risks
+
+R-5 (new): h0 = 67.59 days rests on in-session accuracy of Duolingo users after one prior exposure, not on a free-recall test; the second test (P§14.4) checks the forgetting form on held-out users. R-1 to R-4 as before; R-4 disclosed in P§14.7.
+
+### Next action
+
+Coordinator: schedule M3 (EXP-001 to EXP-003 confirmatory runs and the held-out second test) on a quiet machine; push only as approved.

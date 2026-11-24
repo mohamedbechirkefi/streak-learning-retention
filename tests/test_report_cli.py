@@ -55,10 +55,18 @@ def test_malformed_result_rejected(run_dir):
         build_report(bad, run_dir / "bad-report")
 
 
-def test_cli_run_refuses_confirmatory(capsys):
-    rc = main(["run", "--config", str(ROOT / "research/experiments/EXP-001/config.json"), "--out", "/nonexistent/x"])
+def test_cli_run_refuses_changed_confirmatory_config(capsys, tmp_path):
+    # Never run a frozen confirmatory config from the test suite (no unscheduled confirmatory run):
+    # only a changed copy is passed to the CLI, which must refuse it before simulating anything.
+    cfg = json.loads((ROOT / "research/experiments/EXP-001/config.json").read_text())
+    cfg["base_params"]["h0"] = 1.0
+    path = tmp_path / "changed.json"
+    path.write_text(json.dumps(cfg))
+    rc = main(["run", "--config", str(path), "--out", str(tmp_path / "out")])
     assert rc == 3
-    assert "G-FREEZE" in capsys.readouterr().err
+    err = capsys.readouterr().err
+    assert "G-FREEZE" in err and "differs from the frozen config" in err
+    assert not (tmp_path / "out").exists()
 
 
 def test_cli_smoke_rejects_confirmatory_config(capsys):
