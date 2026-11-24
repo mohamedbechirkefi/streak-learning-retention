@@ -1,0 +1,99 @@
+{
+  "schema_version": "streak.config/1.0",
+  "experiment_id": "EXP-002",
+  "label": "confirmatory",
+  "protocol_version": "0.1-draft",
+  "description": "DRAFT confirmatory config for EXP-002 (protocol 0.1-draft, not frozen). The runner refuses it until the owner freezes the protocol.",
+  "master_seeds": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "learners_per_seed": 100,
+  "arms": [
+    "A0",
+    "A1",
+    "A2",
+    "A3"
+  ],
+  "base_params": {
+    "n_items": 100,
+    "horizon_days": 56,
+    "budget_slots": 672,
+    "slot_minutes": 0.5,
+    "daily_cap_slots": 60,
+    "fixed_weekdays": [
+      1,
+      3,
+      5
+    ],
+    "h0": 1.0,
+    "sigma_item": 0.5,
+    "sigma_learner": 0.3,
+    "g_min": 0.1,
+    "a": 2.5,
+    "b": 0.6,
+    "h_min": 0.25,
+    "q": 0.85,
+    "form": "exponential",
+    "gain_rule": "difficulty",
+    "retention_delays": [
+      1,
+      7,
+      30,
+      90
+    ],
+    "auc_max_delay": 90,
+    "residual_flag_fraction": 0.05
+  },
+  "grid": {
+    "h0": [
+      0.5,
+      1,
+      2
+    ],
+    "a": [
+      1.5,
+      2.5,
+      4
+    ],
+    "q": [
+      0.7,
+      0.85,
+      1.0
+    ]
+  },
+  "analysis": {
+    "primary_contrast": [
+      "A2",
+      "A1"
+    ],
+    "secondary_contrasts": [
+      [
+        "A3",
+        "A1"
+      ],
+      [
+        "A2",
+        "A3"
+      ],
+      [
+        "A1",
+        "A0"
+      ],
+      [
+        "A2",
+        "A0"
+      ],
+      [
+        "A3",
+        "A0"
+      ]
+    ],
+    "bootstrap_resamples": 10000,
+    "bootstrap_seed": 20261124,
+    "sesoi": 0.02
+  }
+}

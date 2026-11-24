@@ -1,0 +1,41 @@
+{
+  "$id": "streak.manifest/1.0",
+  "title": "STREAK run manifest, version 1.0",
+  "type": "object",
+  "required": ["schema_version", "experiment_id", "label", "config_hash", "master_seeds", "git_revision", "git_dirty", "versions", "platform", "started_utc", "finished_utc", "runtime_s", "peak_memory_bytes", "runs", "result_path", "result_sha256", "command"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": "streak.manifest/1.0"},
+    "experiment_id": {"type": "string"},
+    "label": {"enum": ["exploratory", "confirmatory"]},
+    "config_hash": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "master_seeds": {"type": "array", "items": {"type": "integer"}},
+    "git_revision": {"type": ["string", "null"]},
+    "git_dirty": {"type": ["boolean", "null"]},
+    "versions": {"type": "object", "required": ["python", "numpy", "streak", "engine"]},
+    "platform": {"type": "object", "required": ["os", "os_release", "machine", "cpu", "cpu_count"]},
+    "started_utc": {"type": "string"},
+    "finished_utc": {"type": "string"},
+    "runtime_s": {"type": "number", "minimum": 0},
+    "peak_memory_bytes": {"type": ["integer", "null"], "minimum": 0},
+    "runs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["run_id", "cell_id", "master_seed", "n_learner_arms", "n_failed", "runtime_s"],
+        "additionalProperties": false,
+        "properties": {
+          "run_id": {"type": "string"},
+          "cell_id": {"type": "string"},
+          "master_seed": {"type": "integer"},
+          "n_learner_arms": {"type": "integer", "minimum": 0},
+          "n_failed": {"type": "integer", "minimum": 0},
+          "runtime_s": {"type": "number", "minimum": 0}
+        }
+      }
+    },
+    "result_path": {"type": "string"},
+    "result_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "command": {"type": "string"}
+  }
+}
