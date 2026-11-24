@@ -1,0 +1,77 @@
+{
+  "schema_version": "streak.manifest/1.0",
+  "experiment_id": "SMOKE-M3-EXP-001",
+  "label": "exploratory",
+  "config_hash": "cc6bd5a82c4cab6867dbc306aac10ebab03a42a082478f22d03ad929269c9e09",
+  "master_seeds": [
+    9001,
+    9002,
+    9003,
+    9004,
+    9005
+  ],
+  "git_revision": "45ea4ec5ea1158093f60c3e24f5042db968d1114",
+  "git_dirty": false,
+  "versions": {
+    "python": "3.12.1",
+    "numpy": "2.5.4",
+    "streak": "0.2.0",
+    "engine": "1.1.0"
+  },
+  "platform": {
+    "os": "Darwin",
+    "os_release": "24.3.0",
+    "machine": "arm64",
+    "cpu": "Apple M1 Pro",
+    "cpu_count": 10
+  },
+  "started_utc": "2026-11-24T23:34:40+00:00",
+  "finished_utc": "2026-11-24T23:34:43+00:00",
+  "runtime_s": 2.104,
+  "peak_memory_bytes": 47923200,
+  "runs": [
+    {
+      "run_id": "SMOKE-M3-EXP-001/default/s9001",
+      "cell_id": "default",
+      "master_seed": 9001,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.262936
+    },
+    {
+      "run_id": "SMOKE-M3-EXP-001/default/s9002",
+      "cell_id": "default",
+      "master_seed": 9002,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.434997
+    },
+    {
+      "run_id": "SMOKE-M3-EXP-001/default/s9003",
+      "cell_id": "default",
+      "master_seed": 9003,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.373997
+    },
+    {
+      "run_id": "SMOKE-M3-EXP-001/default/s9004",
+      "cell_id": "default",
+      "master_seed": 9004,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.505503
+    },
+    {
+      "run_id": "SMOKE-M3-EXP-001/default/s9005",
+      "cell_id": "default",
+      "master_seed": 9005,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.517241
+    }
+  ],
+  "result_path": "results/exploratory/SMOKE-M3-EXP-001/results.json",
+  "result_sha256": "edac1326fdd0bd333d183add20fb2d2267439311803fade0c05ae6ebc856ae11",
+  "command": "python -m streak.cli smoke --config experiments/smoke-m3-exp001.json --out results/exploratory/SMOKE-M3-EXP-001"
+}
