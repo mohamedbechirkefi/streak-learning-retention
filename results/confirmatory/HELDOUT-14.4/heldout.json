@@ -1,0 +1,160 @@
+{
+  "id": "HELDOUT-14.4",
+  "label": "confirmatory (preregistered descriptive second test, P\u00a714.4)",
+  "processed_sha256": "6366c6de129bda967fcfa6f5ff44b3bccb1f0c0965a7d03e70d7913b5b2b02c7",
+  "data_manifest_sha256": "60b024953faa4e164c83520fefd5b5a8d6e1154d8c18ed8067769ce4aed2ed9e",
+  "git_revision": "c942be096240103297fcab6f3cc9886961ce8137",
+  "git_dirty": false,
+  "environment": {
+    "versions": {
+      "python": "3.12.1",
+      "numpy": "2.5.4",
+      "streak": "0.2.0",
+      "engine": "1.1.0"
+    },
+    "platform": {
+      "os": "Darwin",
+      "os_release": "24.3.0",
+      "machine": "arm64",
+      "cpu": "Apple M1 Pro",
+      "cpu_count": 10
+    }
+  },
+  "started_utc": "2026-11-24T23:35:50+00:00",
+  "finished_utc": "2026-11-24T23:36:37+00:00",
+  "runtime_s": 46.838,
+  "evaluation": {
+    "sigma": 0.58309518948453,
+    "n_test_rows": 161243,
+    "n_test_trials": 243337,
+    "constant": {
+      "p": 0.8947674584158778,
+      "ll_per_trial": -0.3351990475715293
+    },
+    "exponential": {
+      "h0_days_train": 67.58964795338962,
+      "ll_per_trial": -0.3864654010781219,
+      "calibration": [
+        {
+          "bin": [
+            1.0,
+            2.0
+          ],
+          "trials": 52150,
+          "observed": 0.9038159156279961,
+          "predicted": 0.9827703180229556
+        },
+        {
+          "bin": [
+            2.0,
+            4.0
+          ],
+          "trials": 56949,
+          "observed": 0.901280092714534,
+          "predicted": 0.9654995411186439
+        },
+        {
+          "bin": [
+            4.0,
+            8.0
+          ],
+          "trials": 57652,
+          "observed": 0.8959099424130993,
+          "predicted": 0.9331689027333878
+        },
+        {
+          "bin": [
+            8.0,
+            16.0
+          ],
+          "trials": 38180,
+          "observed": 0.891566265060241,
+          "predicted": 0.8749821179737032
+        },
+        {
+          "bin": [
+            16.0,
+            32.0
+          ],
+          "trials": 22023,
+          "observed": 0.8820778277255596,
+          "predicted": 0.7740683869784666
+        },
+        {
+          "bin": [
+            32.0,
+            90.0
+          ],
+          "trials": 16383,
+          "observed": 0.8723676982237686,
+          "predicted": 0.5785029813303426
+        }
+      ]
+    },
+    "power": {
+      "h0_days_train": 96.62352454880657,
+      "ll_per_trial": -0.37098841402135785,
+      "calibration": [
+        {
+          "bin": [
+            1.0,
+            2.0
+          ],
+          "trials": 52150,
+          "observed": 0.9038159156279961,
+          "predicted": 0.9750057558657103
+        },
+        {
+          "bin": [
+            2.0,
+            4.0
+          ],
+          "trials": 56949,
+          "observed": 0.901280092714534,
+          "predicted": 0.9517775083085929
+        },
+        {
+          "bin": [
+            4.0,
+            8.0
+          ],
+          "trials": 57652,
+          "observed": 0.8959099424130993,
+          "predicted": 0.9121881932182401
+        },
+        {
+          "bin": [
+            8.0,
+            16.0
+          ],
+          "trials": 38180,
+          "observed": 0.891566265060241,
+          "predicted": 0.8502714739150622
+        },
+        {
+          "bin": [
+            16.0,
+            32.0
+          ],
+          "trials": 22023,
+          "observed": 0.8820778277255596,
+          "predicted": 0.7611913416504604
+        },
+        {
+          "bin": [
+            32.0,
+            90.0
+          ],
+          "trials": 16383,
+          "observed": 0.8723676982237686,
+          "predicted": 0.6251717016678022
+        }
+      ]
+    }
+  },
+  "reading": {
+    "exponential_beats_constant": false,
+    "better_supported_form": "power",
+    "rule": "P\u00a714.4: exponential describes held-out first-repeat data better than the constant baseline if its log-likelihood per trial is higher; the form with the higher held-out log-likelihood is reported as better supported. Descriptive; does not test H1."
+  }
+}

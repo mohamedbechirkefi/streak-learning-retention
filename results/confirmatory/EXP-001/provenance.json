@@ -1,0 +1,131 @@
+{
+  "experiment_id": "EXP-001",
+  "label": "confirmatory",
+  "command": "nice -n 10 /Users/bechir/research/labs/streak-learning-retention/.venv/bin/python -m streak.cli run --config research/experiments/EXP-001/config.json --out results/confirmatory/EXP-001",
+  "revision": "c942be096240103297fcab6f3cc9886961ce8137",
+  "preflight": {
+    "tracked_tree_clean": true,
+    "protocol": true,
+    "data_manifest": true,
+    "exp_protocol": true,
+    "exp_config": true,
+    "raw_data": true
+  },
+  "config_path": "research/experiments/EXP-001/config.json",
+  "config_canonical_sha256": "c34b1a07816d3f57ff26e1e1c99d66bebbd97a1866455ff2656ce521fffafdd7",
+  "data_manifest_sha256": "60b024953faa4e164c83520fefd5b5a8d6e1154d8c18ed8067769ce4aed2ed9e",
+  "raw_data_sha256": "26cf9b33f2e9b2e8aa9a8f262a017b30699ca2f625c56a12ce699d4ea7076873",
+  "started_utc": "2026-11-24T23:35:06+00:00",
+  "finished_utc": "2026-11-24T23:35:37+00:00",
+  "wall_clock_s": 30.826,
+  "process_exit_code": 0,
+  "n_runs": 5,
+  "runs": [
+    {
+      "run_id": "EXP-001/default/s1",
+      "cell_id": "default",
+      "seed": 1,
+      "config_hash": "c34b1a07816d3f57ff26e1e1c99d66bebbd97a1866455ff2656ce521fffafdd7",
+      "revision": "c942be096240103297fcab6f3cc9886961ce8137",
+      "data_manifest_sha256": "60b024953faa4e164c83520fefd5b5a8d6e1154d8c18ed8067769ce4aed2ed9e",
+      "hardware": {
+        "os": "Darwin",
+        "os_release": "24.3.0",
+        "machine": "arm64",
+        "cpu": "Apple M1 Pro",
+        "cpu_count": 10
+      },
+      "start_utc_derived": "2026-11-24T23:35:06.185+00:00",
+      "end_utc_derived": "2026-11-24T23:35:11.964+00:00",
+      "runtime_s": 5.778988,
+      "n_learner_arms": 800,
+      "n_failed": 0,
+      "exit_status": "ok"
+    },
+    {
+      "run_id": "EXP-001/default/s2",
+      "cell_id": "default",
+      "seed": 2,
+      "config_hash": "c34b1a07816d3f57ff26e1e1c99d66bebbd97a1866455ff2656ce521fffafdd7",
+      "revision": "c942be096240103297fcab6f3cc9886961ce8137",
+      "data_manifest_sha256": "60b024953faa4e164c83520fefd5b5a8d6e1154d8c18ed8067769ce4aed2ed9e",
+      "hardware": {
+        "os": "Darwin",
+        "os_release": "24.3.0",
+        "machine": "arm64",
+        "cpu": "Apple M1 Pro",
+        "cpu_count": 10
+      },
+      "start_utc_derived": "2026-11-24T23:35:11.964+00:00",
+      "end_utc_derived": "2026-11-24T23:35:18.347+00:00",
+      "runtime_s": 6.382661,
+      "n_learner_arms": 800,
+      "n_failed": 0,
+      "exit_status": "ok"
+    },
+    {
+      "run_id": "EXP-001/default/s3",
+      "cell_id": "default",
+      "seed": 3,
+      "config_hash": "c34b1a07816d3f57ff26e1e1c99d66bebbd97a1866455ff2656ce521fffafdd7",
+      "revision": "c942be096240103297fcab6f3cc9886961ce8137",
+      "data_manifest_sha256": "60b024953faa4e164c83520fefd5b5a8d6e1154d8c18ed8067769ce4aed2ed9e",
+      "hardware": {
+        "os": "Darwin",
+        "os_release": "24.3.0",
+        "machine": "arm64",
+        "cpu": "Apple M1 Pro",
+        "cpu_count": 10
+      },
+      "start_utc_derived": "2026-11-24T23:35:18.347+00:00",
+      "end_utc_derived": "2026-11-24T23:35:24.415+00:00",
+      "runtime_s": 6.068357,
+      "n_learner_arms": 800,
+      "n_failed": 0,
+      "exit_status": "ok"
+    },
+    {
+      "run_id": "EXP-001/default/s4",
+      "cell_id": "default",
+      "seed": 4,
+      "config_hash": "c34b1a07816d3f57ff26e1e1c99d66bebbd97a1866455ff2656ce521fffafdd7",
+      "revision": "c942be096240103297fcab6f3cc9886961ce8137",
+      "data_manifest_sha256": "60b024953faa4e164c83520fefd5b5a8d6e1154d8c18ed8067769ce4aed2ed9e",
+      "hardware": {
+        "os": "Darwin",
+        "os_release": "24.3.0",
+        "machine": "arm64",
+        "cpu": "Apple M1 Pro",
+        "cpu_count": 10
+      },
+      "start_utc_derived": "2026-11-24T23:35:24.415+00:00",
+      "end_utc_derived": "2026-11-24T23:35:30.560+00:00",
+      "runtime_s": 6.144907,
+      "n_learner_arms": 800,
+      "n_failed": 0,
+      "exit_status": "ok"
+    },
+    {
+      "run_id": "EXP-001/default/s5",
+      "cell_id": "default",
+      "seed": 5,
+      "config_hash": "c34b1a07816d3f57ff26e1e1c99d66bebbd97a1866455ff2656ce521fffafdd7",
+      "revision": "c942be096240103297fcab6f3cc9886961ce8137",
+      "data_manifest_sha256": "60b024953faa4e164c83520fefd5b5a8d6e1154d8c18ed8067769ce4aed2ed9e",
+      "hardware": {
+        "os": "Darwin",
+        "os_release": "24.3.0",
+        "machine": "arm64",
+        "cpu": "Apple M1 Pro",
+        "cpu_count": 10
+      },
+      "start_utc_derived": "2026-11-24T23:35:30.560+00:00",
+      "end_utc_derived": "2026-11-24T23:35:36.478+00:00",
+      "runtime_s": 5.917792,
+      "n_learner_arms": 800,
+      "n_failed": 0,
+      "exit_status": "ok"
+    }
+  ],
+  "note": "start_utc_derived and end_utc_derived: experiment start plus cumulative runner runtimes."
+}

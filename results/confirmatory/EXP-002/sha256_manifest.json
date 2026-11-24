@@ -1,0 +1,18 @@
+{
+  "results/confirmatory/EXP-002/provenance.json": {
+    "sha256": "1cc8f3aa6ee7f6a15da7e91e958acc73651818ab53bd568605c1be81c509df15",
+    "bytes": 103703
+  },
+  "results/confirmatory/EXP-002/results.json": {
+    "sha256": "4d4984ce1e45c3d91e924276d5d1a7a31a2e837b77a9e657ca5834dfd58c6fd1",
+    "bytes": 31769255
+  },
+  "results/confirmatory/EXP-002/run.log": {
+    "sha256": "837575577f2ff31da2fa12278e10d9288537cffdbb54ff452349e87e366a3865",
+    "bytes": 201
+  },
+  "results/confirmatory/EXP-002/run_manifest.json": {
+    "sha256": "dbad3ab851d8a04f4d320a646bfe384c92958063eb655f1da4f030ff95dfa972",
+    "bytes": 28687
+  }
+}

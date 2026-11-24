@@ -1,0 +1,77 @@
+{
+  "schema_version": "streak.manifest/1.0",
+  "experiment_id": "EXP-001",
+  "label": "confirmatory",
+  "config_hash": "c34b1a07816d3f57ff26e1e1c99d66bebbd97a1866455ff2656ce521fffafdd7",
+  "master_seeds": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "git_revision": "c942be096240103297fcab6f3cc9886961ce8137",
+  "git_dirty": false,
+  "versions": {
+    "python": "3.12.1",
+    "numpy": "2.5.4",
+    "streak": "0.2.0",
+    "engine": "1.1.0"
+  },
+  "platform": {
+    "os": "Darwin",
+    "os_release": "24.3.0",
+    "machine": "arm64",
+    "cpu": "Apple M1 Pro",
+    "cpu_count": 10
+  },
+  "started_utc": "2026-11-24T23:35:06+00:00",
+  "finished_utc": "2026-11-24T23:35:36+00:00",
+  "runtime_s": 30.534,
+  "peak_memory_bytes": 109936640,
+  "runs": [
+    {
+      "run_id": "EXP-001/default/s1",
+      "cell_id": "default",
+      "master_seed": 1,
+      "n_learner_arms": 800,
+      "n_failed": 0,
+      "runtime_s": 5.778988
+    },
+    {
+      "run_id": "EXP-001/default/s2",
+      "cell_id": "default",
+      "master_seed": 2,
+      "n_learner_arms": 800,
+      "n_failed": 0,
+      "runtime_s": 6.382661
+    },
+    {
+      "run_id": "EXP-001/default/s3",
+      "cell_id": "default",
+      "master_seed": 3,
+      "n_learner_arms": 800,
+      "n_failed": 0,
+      "runtime_s": 6.068357
+    },
+    {
+      "run_id": "EXP-001/default/s4",
+      "cell_id": "default",
+      "master_seed": 4,
+      "n_learner_arms": 800,
+      "n_failed": 0,
+      "runtime_s": 6.144907
+    },
+    {
+      "run_id": "EXP-001/default/s5",
+      "cell_id": "default",
+      "master_seed": 5,
+      "n_learner_arms": 800,
+      "n_failed": 0,
+      "runtime_s": 5.917792
+    }
+  ],
+  "result_path": "results/confirmatory/EXP-001/results.json",
+  "result_sha256": "0cd65c26fb370ee6718f8072ace2d980105248ef47d987ae77dfbd37ecc24c0f",
+  "command": "python -m streak.cli run --config research/experiments/EXP-001/config.json --out results/confirmatory/EXP-001"
+}

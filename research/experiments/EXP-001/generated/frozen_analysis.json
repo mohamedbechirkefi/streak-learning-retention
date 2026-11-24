@@ -1,0 +1,46 @@
+{
+  "experiment_id": "EXP-001",
+  "label": "confirmatory",
+  "config_hash": "c34b1a07816d3f57ff26e1e1c99d66bebbd97a1866455ff2656ce521fffafdd7",
+  "result_path": "/Users/bechir/research/labs/streak-learning-retention/results/confirmatory/EXP-001/results.json",
+  "n_records": 4000,
+  "n_failed": 0,
+  "failure_rate": 0.0,
+  "analysis_halted_over_1pct_failures": false,
+  "primary": {
+    "contrast": "A2 - A1",
+    "metric": "R30",
+    "n": 1000,
+    "mean_diff": -0.3067858045577255,
+    "sd_diff": 0.04146370827200197,
+    "d_z": -7.398899359054195,
+    "ci95": [
+      -0.3093061678427187,
+      -0.3042017051243542
+    ],
+    "ci90": [
+      -0.30891929566810816,
+      -0.3046201334037304
+    ],
+    "p_boot": 0.0,
+    "per_seed_mean": {
+      "1": -0.3063403428074125,
+      "2": -0.3102928849757008,
+      "3": -0.307916463652955,
+      "4": -0.30336305093267185,
+      "5": -0.3060162804198874
+    },
+    "quantiles": {
+      "min": -0.41353449998762315,
+      "q05": -0.3682187201806935,
+      "q25": -0.33668063538647497,
+      "median": -0.31052545290317535,
+      "q75": -0.2815670383410945,
+      "q95": -0.23148789643075104,
+      "max": -0.16530701512284707
+    },
+    "classification": "relevant negative"
+  },
+  "verdict": "supports the expected direction with practical relevance (95% interval entirely below -SESOI)",
+  "verdict_excluding_residual_flagged": "supports the expected direction with practical relevance (95% interval entirely below -SESOI)"
+}

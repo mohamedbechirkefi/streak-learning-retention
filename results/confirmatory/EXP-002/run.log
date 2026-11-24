@@ -1,0 +1,3 @@
+[confirmatory] EXP-002: 54000 learner-arms, 0 failed, 354.39 s, peak memory 308445184 bytes
+results:  results/confirmatory/EXP-002/results.json
+manifest: results/confirmatory/EXP-002/run_manifest.json
