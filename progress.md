@@ -89,3 +89,68 @@ B-1 (Duolingo dataset licence unverified), B-2 (freeze pending), R-1 (result may
 ### Next action
 
 Owner: review and freeze the protocol (OD-1 to OD-3 in roadmap.md). AI, meanwhile: M1 full-text reading of key sources; M2 implementation of the engine, A0 and A1 first, with invariant tests and the result schema; smoke run on seeds 9001 to 9005 only.
+
+## 2026-11-24: M2 core implementation and exploratory smoke runs
+
+**Milestone.** M2 (core implementation) while the freeze is pending. Next bounded task at session start: implement A0 and A1 first, then A2, A3 and the EXP-003 cells, with tests, schemas, manifests, report generator and CLI; then an exploratory smoke run on seeds 9001 to 9005.
+
+**Starting state.** `git status`: clean at e49e269. Protocols 0.1-draft, not frozen; no hash recorded.
+
+### What was built
+
+Package `streak` in `src/streak` (D-006): validated parameters and arms, memory model (exponential and power-law forgetting; difficulty-dependent and flat gain), synthetic learners with common random numbers, one-learner-arm simulation with carry-forward, daily cap and scheduler belief, protocol metrics, paired stratified bootstrap analysis with SESOI classes and Holm-adjusted p-values, versioned JSON schemas validated at export and import, run manifests, report generator and CLI (`smoke`, `run`, `report`, `test`). `run` refuses confirmatory configs while the protocol is unfrozen (tested on the three draft configs). Draft confirmatory configs `research/experiments/EXP-00N/config.json` (seeds 1 to 5, not run) and smoke configs `experiments/smoke-*.json`. Implementation readings of open protocol points: D-007.
+
+### Commands and actual outputs
+
+```
+$ uv lock --python /usr/local/bin/python3        Resolved 10 packages; streak v0.0.0 -> v0.2.0 (only change in uv.lock)
+$ uv sync --frozen                               installed numpy 2.5.4, pytest 9.2.0, hypothesis 6.170.15, streak 0.2.0 (editable)
+$ uv run pytest  (commit f914ddd)                163 passed in 2.40s
+  mutation checks (reverted): daily cap + 1 -> 14 failed, 149 passed; belief using the true gain rule -> 6 failed, 157 passed
+$ uv run pytest  (commit 1cc0d53, with regression test; same test on the unfixed engine: 1 failed, 163 passed)   164 passed
+$ uv run pytest  (commit dfa9dd4)                165 passed in 4.57s
+$ python -m streak.cli test  (final, before the last M2 commit)   165 passed in 1.54s
+$ python -m streak.cli run --config research/experiments/EXP-001/config.json
+  refused: ... EXP-001 protocol has no recorded hash ('none (not frozen)'): not frozen ... (G-FREEZE), exit 3
+```
+
+Exploratory smoke runs (all on seeds 9001 to 9005, label exploratory; final ones on dfa9dd4, git_dirty false):
+
+| Journal | ID | Learner-arms | Failed | Runtime | ms per learner-arm | Peak RSS |
+|---|---|---|---|---|---|---|
+| J-0004 | SMOKE-EXP-001 | 400 | 0 | 3.75 s | 9.37 | 40.9 MB |
+| J-0005 | SMOKE-EXP-001-N200 | 4,000 | 0 | 21.61 s | 5.40 | 79.5 MB |
+| J-0006 | SMOKE-EXP-002 | 10,800 | 0 | 28.32 s | 2.62 | 86.4 MB |
+| J-0007 | SMOKE-EXP-003 | 2,400 | 0 | 8.47 s | 3.53 | 52.1 MB |
+
+The machine was shared with other sessions (load average 25 to 80 on 10 cores), so runtimes are upper-side. Projected full confirmatory matrix (70,000 learner-arms): about 3 to 11 minutes. Seed spread at full EXP-001 size: SD of the paired A2 - A1 R30 difference 0.0207 (planning value 0.05), per-seed means 0.0789 to 0.0825; projected 95% half-width at n = 1,000 about 0.0013. Five seeds are adequate. Exploratory SMOKE-EXP-001 report PDF built with pandoc to Typst (`-V mainfont="Libertinus Serif"`), 3 pages, inspected as page images (tables and both SVG figures render; an earlier 17-column table overflowed and was split).
+
+### Failures and fixes
+
+- **D-008.** The first SMOKE-EXP-002 run (f914ddd) recorded 5,380 of 10,800 learner-arms as failed: integer grid values (`"h0": 1`) made the scheduler belief array integer-typed. Recorded by the runner, not dropped; fixed in 1cc0d53 (engine 1.0.1) with a regression test; outputs discarded (J-0002).
+- **D-010.** Manifests marked runs dirty because of untracked outputs; fixed in dfa9dd4; runs repeated (J-0003 superseded).
+- A shell command that would have removed scratch thumbnails with an unguarded variable was blocked by a safety check and not run; nothing in the repository was affected.
+
+### Degenerate cases and proposals for the owner
+
+Exploratory, not findings: floor regime at the draft parameters (A0 R30 0.0000, A1 R30 0.0281; A1 below 0.02 in 12 of 27 EXP-002 cells), weakest-decile R30 identically 0, A3 ("lowest estimated recall first") practically equivalent to no practice under exponential forgetting, overload of K = 100 items, and an EXP-002 floor rule that never triggers. The primary contrast on smoke seeds is positive at default (opposite to the expected direction) and most likely reflects that regime. Proposals AP-1 to AP-7 and a disclosure note are in `research/protocol_amendment_proposals.md`; owner decision OD-6 added to the roadmap. The protocol itself was not changed.
+
+### Files created or changed
+
+`pyproject.toml` (package build with uv_build, version 0.2.0, script entry), `uv.lock` (project entry only), `src/streak/*` and `src/streak/schemas/*`, `tests/*` (11 test files), `experiments/smoke-*.json`, `research/experiments/EXP-00N/config.json`, `research/protocol_amendment_proposals.md`, `research/decision_log.md` (D-006 to D-010), `research/experiment_journal.jsonl` (J-0002 to J-0007), `research/experiment_registry.csv` (status), `results/exploratory/` (manifests, generated reports, SMOKE-EXP-001 raw results and PDF), READMEs of src, tests, experiments, results, `CONTRIBUTING.md` (section 6 commands), `roadmap.md`.
+
+### Not done, and why
+
+- No confirmatory run, no protocol hash: G-FREEZE (owner).
+- No EXP-NNN `report.md`, `run_manifest.json` or `metrics.csv` in `research/experiments/`: those belong to confirmatory runs (M3). The report generator writes them; it was exercised on exploratory runs only.
+- Control-only calibration for AP-1 not run: left to the owner to avoid tuning on the primary contrast.
+- Manuscript and full-text reading (M1) not advanced in this session.
+- No demo UI (M5).
+
+### Outstanding risks
+
+R-1 now concrete: the primary contrast at the draft parameters is driven by a floor and overload regime (DG-1 to DG-4). R-4 (new): smoke directions were seen before the freeze; the frozen protocol must disclose this. B-1, B-2, R-3 unchanged.
+
+### Next action
+
+Owner: decide OD-6 (AP-1 to AP-7), then OD-1 to OD-3 and freeze. AI, after the owner's decisions: implement any adopted amendment (for example threshold-based A3), repeat the smoke runs, then M3 on the frozen protocols.

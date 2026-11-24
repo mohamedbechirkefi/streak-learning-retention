@@ -51,4 +51,9 @@ Documents (no TeX needed, decision D-002):
     pandoc research/paper/manuscript.md -s --number-sections -t typst -V mainfont="Libertinus Serif" -o manuscript.typ
     python -c "import typst; typst.compile('manuscript.typ', output='research/paper/manuscript.pdf')"
 
-Experiment commands (`streak.cli smoke | run | report | test`) are planned for M2 and listed in `research/protocol.md` section 12.
+Experiment commands (M2):
+
+    uv run python -m streak.cli test                       # test suite
+    uv run python -m streak.cli smoke [--pdf]              # exploratory smoke run (seeds 9001-9005) and report
+    uv run python -m streak.cli run --config PATH [--out DIR]   # refuses confirmatory configs until the owner freezes the protocol
+    uv run python -m streak.cli report --results PATH [--out DIR] [--pdf]

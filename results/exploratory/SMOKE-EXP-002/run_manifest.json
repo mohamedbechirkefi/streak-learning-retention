@@ -1,0 +1,1117 @@
+{
+  "schema_version": "streak.manifest/1.0",
+  "experiment_id": "SMOKE-EXP-002",
+  "label": "exploratory",
+  "config_hash": "b47759ac97cd65034004ded9aac7362df95b063edf014ad94d636634256a3e95",
+  "master_seeds": [
+    9001,
+    9002,
+    9003,
+    9004,
+    9005
+  ],
+  "git_revision": "dfa9dd43cd1237b36f3b32e719c494f3e46fb720",
+  "git_dirty": false,
+  "versions": {
+    "python": "3.12.1",
+    "numpy": "2.5.4",
+    "streak": "0.2.0",
+    "engine": "1.0.1"
+  },
+  "platform": {
+    "os": "Darwin",
+    "os_release": "24.3.0",
+    "machine": "arm64",
+    "cpu": "Apple M1 Pro",
+    "cpu_count": 10
+  },
+  "started_utc": "2026-11-24T16:09:11+00:00",
+  "finished_utc": "2026-11-24T16:09:39+00:00",
+  "runtime_s": 28.32,
+  "peak_memory_bytes": 86425600,
+  "runs": [
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=1.5|q=0.7/s9001",
+      "cell_id": "h0=0.5|a=1.5|q=0.7",
+      "master_seed": 9001,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.181857
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=1.5|q=0.7/s9002",
+      "cell_id": "h0=0.5|a=1.5|q=0.7",
+      "master_seed": 9002,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.174867
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=1.5|q=0.7/s9003",
+      "cell_id": "h0=0.5|a=1.5|q=0.7",
+      "master_seed": 9003,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.176472
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=1.5|q=0.7/s9004",
+      "cell_id": "h0=0.5|a=1.5|q=0.7",
+      "master_seed": 9004,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.180433
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=1.5|q=0.7/s9005",
+      "cell_id": "h0=0.5|a=1.5|q=0.7",
+      "master_seed": 9005,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.173945
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=1.5|q=0.85/s9001",
+      "cell_id": "h0=0.5|a=1.5|q=0.85",
+      "master_seed": 9001,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.188391
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=1.5|q=0.85/s9002",
+      "cell_id": "h0=0.5|a=1.5|q=0.85",
+      "master_seed": 9002,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.183982
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=1.5|q=0.85/s9003",
+      "cell_id": "h0=0.5|a=1.5|q=0.85",
+      "master_seed": 9003,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.188935
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=1.5|q=0.85/s9004",
+      "cell_id": "h0=0.5|a=1.5|q=0.85",
+      "master_seed": 9004,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.194276
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=1.5|q=0.85/s9005",
+      "cell_id": "h0=0.5|a=1.5|q=0.85",
+      "master_seed": 9005,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.197495
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=1.5|q=1/s9001",
+      "cell_id": "h0=0.5|a=1.5|q=1",
+      "master_seed": 9001,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.208907
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=1.5|q=1/s9002",
+      "cell_id": "h0=0.5|a=1.5|q=1",
+      "master_seed": 9002,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.207709
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=1.5|q=1/s9003",
+      "cell_id": "h0=0.5|a=1.5|q=1",
+      "master_seed": 9003,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.20919
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=1.5|q=1/s9004",
+      "cell_id": "h0=0.5|a=1.5|q=1",
+      "master_seed": 9004,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.210819
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=1.5|q=1/s9005",
+      "cell_id": "h0=0.5|a=1.5|q=1",
+      "master_seed": 9005,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.21153
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=2.5|q=0.7/s9001",
+      "cell_id": "h0=0.5|a=2.5|q=0.7",
+      "master_seed": 9001,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.180241
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=2.5|q=0.7/s9002",
+      "cell_id": "h0=0.5|a=2.5|q=0.7",
+      "master_seed": 9002,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.18044
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=2.5|q=0.7/s9003",
+      "cell_id": "h0=0.5|a=2.5|q=0.7",
+      "master_seed": 9003,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.178561
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=2.5|q=0.7/s9004",
+      "cell_id": "h0=0.5|a=2.5|q=0.7",
+      "master_seed": 9004,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.184377
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=2.5|q=0.7/s9005",
+      "cell_id": "h0=0.5|a=2.5|q=0.7",
+      "master_seed": 9005,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.179932
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=2.5|q=0.85/s9001",
+      "cell_id": "h0=0.5|a=2.5|q=0.85",
+      "master_seed": 9001,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.200718
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=2.5|q=0.85/s9002",
+      "cell_id": "h0=0.5|a=2.5|q=0.85",
+      "master_seed": 9002,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.193926
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=2.5|q=0.85/s9003",
+      "cell_id": "h0=0.5|a=2.5|q=0.85",
+      "master_seed": 9003,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.197598
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=2.5|q=0.85/s9004",
+      "cell_id": "h0=0.5|a=2.5|q=0.85",
+      "master_seed": 9004,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.197764
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=2.5|q=0.85/s9005",
+      "cell_id": "h0=0.5|a=2.5|q=0.85",
+      "master_seed": 9005,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.202207
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=2.5|q=1/s9001",
+      "cell_id": "h0=0.5|a=2.5|q=1",
+      "master_seed": 9001,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.209259
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=2.5|q=1/s9002",
+      "cell_id": "h0=0.5|a=2.5|q=1",
+      "master_seed": 9002,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.211659
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=2.5|q=1/s9003",
+      "cell_id": "h0=0.5|a=2.5|q=1",
+      "master_seed": 9003,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.212763
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=2.5|q=1/s9004",
+      "cell_id": "h0=0.5|a=2.5|q=1",
+      "master_seed": 9004,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.210664
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=2.5|q=1/s9005",
+      "cell_id": "h0=0.5|a=2.5|q=1",
+      "master_seed": 9005,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.210361
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=4|q=0.7/s9001",
+      "cell_id": "h0=0.5|a=4|q=0.7",
+      "master_seed": 9001,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.174677
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=4|q=0.7/s9002",
+      "cell_id": "h0=0.5|a=4|q=0.7",
+      "master_seed": 9002,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.178536
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=4|q=0.7/s9003",
+      "cell_id": "h0=0.5|a=4|q=0.7",
+      "master_seed": 9003,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.176824
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=4|q=0.7/s9004",
+      "cell_id": "h0=0.5|a=4|q=0.7",
+      "master_seed": 9004,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.183221
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=4|q=0.7/s9005",
+      "cell_id": "h0=0.5|a=4|q=0.7",
+      "master_seed": 9005,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.185528
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=4|q=0.85/s9001",
+      "cell_id": "h0=0.5|a=4|q=0.85",
+      "master_seed": 9001,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.194602
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=4|q=0.85/s9002",
+      "cell_id": "h0=0.5|a=4|q=0.85",
+      "master_seed": 9002,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.19512
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=4|q=0.85/s9003",
+      "cell_id": "h0=0.5|a=4|q=0.85",
+      "master_seed": 9003,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.193577
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=4|q=0.85/s9004",
+      "cell_id": "h0=0.5|a=4|q=0.85",
+      "master_seed": 9004,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.19651
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=4|q=0.85/s9005",
+      "cell_id": "h0=0.5|a=4|q=0.85",
+      "master_seed": 9005,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.205902
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=4|q=1/s9001",
+      "cell_id": "h0=0.5|a=4|q=1",
+      "master_seed": 9001,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.23094
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=4|q=1/s9002",
+      "cell_id": "h0=0.5|a=4|q=1",
+      "master_seed": 9002,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.213705
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=4|q=1/s9003",
+      "cell_id": "h0=0.5|a=4|q=1",
+      "master_seed": 9003,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.426839
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=4|q=1/s9004",
+      "cell_id": "h0=0.5|a=4|q=1",
+      "master_seed": 9004,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.277939
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=0.5|a=4|q=1/s9005",
+      "cell_id": "h0=0.5|a=4|q=1",
+      "master_seed": 9005,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.336828
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=1.5|q=0.7/s9001",
+      "cell_id": "h0=1|a=1.5|q=0.7",
+      "master_seed": 9001,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.181864
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=1.5|q=0.7/s9002",
+      "cell_id": "h0=1|a=1.5|q=0.7",
+      "master_seed": 9002,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.194722
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=1.5|q=0.7/s9003",
+      "cell_id": "h0=1|a=1.5|q=0.7",
+      "master_seed": 9003,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.192437
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=1.5|q=0.7/s9004",
+      "cell_id": "h0=1|a=1.5|q=0.7",
+      "master_seed": 9004,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.206642
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=1.5|q=0.7/s9005",
+      "cell_id": "h0=1|a=1.5|q=0.7",
+      "master_seed": 9005,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.210025
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=1.5|q=0.85/s9001",
+      "cell_id": "h0=1|a=1.5|q=0.85",
+      "master_seed": 9001,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.220994
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=1.5|q=0.85/s9002",
+      "cell_id": "h0=1|a=1.5|q=0.85",
+      "master_seed": 9002,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.233111
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=1.5|q=0.85/s9003",
+      "cell_id": "h0=1|a=1.5|q=0.85",
+      "master_seed": 9003,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.215216
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=1.5|q=0.85/s9004",
+      "cell_id": "h0=1|a=1.5|q=0.85",
+      "master_seed": 9004,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.320092
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=1.5|q=0.85/s9005",
+      "cell_id": "h0=1|a=1.5|q=0.85",
+      "master_seed": 9005,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.239424
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=1.5|q=1/s9001",
+      "cell_id": "h0=1|a=1.5|q=1",
+      "master_seed": 9001,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.257445
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=1.5|q=1/s9002",
+      "cell_id": "h0=1|a=1.5|q=1",
+      "master_seed": 9002,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.226208
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=1.5|q=1/s9003",
+      "cell_id": "h0=1|a=1.5|q=1",
+      "master_seed": 9003,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.207275
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=1.5|q=1/s9004",
+      "cell_id": "h0=1|a=1.5|q=1",
+      "master_seed": 9004,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.207147
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=1.5|q=1/s9005",
+      "cell_id": "h0=1|a=1.5|q=1",
+      "master_seed": 9005,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.216342
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=2.5|q=0.7/s9001",
+      "cell_id": "h0=1|a=2.5|q=0.7",
+      "master_seed": 9001,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.172698
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=2.5|q=0.7/s9002",
+      "cell_id": "h0=1|a=2.5|q=0.7",
+      "master_seed": 9002,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.240136
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=2.5|q=0.7/s9003",
+      "cell_id": "h0=1|a=2.5|q=0.7",
+      "master_seed": 9003,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.179781
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=2.5|q=0.7/s9004",
+      "cell_id": "h0=1|a=2.5|q=0.7",
+      "master_seed": 9004,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.200229
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=2.5|q=0.7/s9005",
+      "cell_id": "h0=1|a=2.5|q=0.7",
+      "master_seed": 9005,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.177882
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=2.5|q=0.85/s9001",
+      "cell_id": "h0=1|a=2.5|q=0.85",
+      "master_seed": 9001,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.193141
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=2.5|q=0.85/s9002",
+      "cell_id": "h0=1|a=2.5|q=0.85",
+      "master_seed": 9002,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.194237
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=2.5|q=0.85/s9003",
+      "cell_id": "h0=1|a=2.5|q=0.85",
+      "master_seed": 9003,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.205146
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=2.5|q=0.85/s9004",
+      "cell_id": "h0=1|a=2.5|q=0.85",
+      "master_seed": 9004,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.219736
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=2.5|q=0.85/s9005",
+      "cell_id": "h0=1|a=2.5|q=0.85",
+      "master_seed": 9005,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.214348
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=2.5|q=1/s9001",
+      "cell_id": "h0=1|a=2.5|q=1",
+      "master_seed": 9001,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.312496
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=2.5|q=1/s9002",
+      "cell_id": "h0=1|a=2.5|q=1",
+      "master_seed": 9002,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.251385
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=2.5|q=1/s9003",
+      "cell_id": "h0=1|a=2.5|q=1",
+      "master_seed": 9003,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.21948
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=2.5|q=1/s9004",
+      "cell_id": "h0=1|a=2.5|q=1",
+      "master_seed": 9004,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.226671
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=2.5|q=1/s9005",
+      "cell_id": "h0=1|a=2.5|q=1",
+      "master_seed": 9005,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.268078
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=4|q=0.7/s9001",
+      "cell_id": "h0=1|a=4|q=0.7",
+      "master_seed": 9001,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.197396
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=4|q=0.7/s9002",
+      "cell_id": "h0=1|a=4|q=0.7",
+      "master_seed": 9002,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.185253
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=4|q=0.7/s9003",
+      "cell_id": "h0=1|a=4|q=0.7",
+      "master_seed": 9003,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.186431
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=4|q=0.7/s9004",
+      "cell_id": "h0=1|a=4|q=0.7",
+      "master_seed": 9004,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.190468
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=4|q=0.7/s9005",
+      "cell_id": "h0=1|a=4|q=0.7",
+      "master_seed": 9005,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.18756
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=4|q=0.85/s9001",
+      "cell_id": "h0=1|a=4|q=0.85",
+      "master_seed": 9001,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.198915
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=4|q=0.85/s9002",
+      "cell_id": "h0=1|a=4|q=0.85",
+      "master_seed": 9002,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.194446
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=4|q=0.85/s9003",
+      "cell_id": "h0=1|a=4|q=0.85",
+      "master_seed": 9003,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.200524
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=4|q=0.85/s9004",
+      "cell_id": "h0=1|a=4|q=0.85",
+      "master_seed": 9004,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.239714
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=4|q=0.85/s9005",
+      "cell_id": "h0=1|a=4|q=0.85",
+      "master_seed": 9005,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.207723
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=4|q=1/s9001",
+      "cell_id": "h0=1|a=4|q=1",
+      "master_seed": 9001,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.247882
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=4|q=1/s9002",
+      "cell_id": "h0=1|a=4|q=1",
+      "master_seed": 9002,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.299581
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=4|q=1/s9003",
+      "cell_id": "h0=1|a=4|q=1",
+      "master_seed": 9003,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.286469
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=4|q=1/s9004",
+      "cell_id": "h0=1|a=4|q=1",
+      "master_seed": 9004,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.207039
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=1|a=4|q=1/s9005",
+      "cell_id": "h0=1|a=4|q=1",
+      "master_seed": 9005,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.20652
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=1.5|q=0.7/s9001",
+      "cell_id": "h0=2|a=1.5|q=0.7",
+      "master_seed": 9001,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.176293
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=1.5|q=0.7/s9002",
+      "cell_id": "h0=2|a=1.5|q=0.7",
+      "master_seed": 9002,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.177815
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=1.5|q=0.7/s9003",
+      "cell_id": "h0=2|a=1.5|q=0.7",
+      "master_seed": 9003,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.177739
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=1.5|q=0.7/s9004",
+      "cell_id": "h0=2|a=1.5|q=0.7",
+      "master_seed": 9004,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.220688
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=1.5|q=0.7/s9005",
+      "cell_id": "h0=2|a=1.5|q=0.7",
+      "master_seed": 9005,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.184874
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=1.5|q=0.85/s9001",
+      "cell_id": "h0=2|a=1.5|q=0.85",
+      "master_seed": 9001,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.19202
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=1.5|q=0.85/s9002",
+      "cell_id": "h0=2|a=1.5|q=0.85",
+      "master_seed": 9002,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.189
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=1.5|q=0.85/s9003",
+      "cell_id": "h0=2|a=1.5|q=0.85",
+      "master_seed": 9003,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.190786
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=1.5|q=0.85/s9004",
+      "cell_id": "h0=2|a=1.5|q=0.85",
+      "master_seed": 9004,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.193097
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=1.5|q=0.85/s9005",
+      "cell_id": "h0=2|a=1.5|q=0.85",
+      "master_seed": 9005,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.19275
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=1.5|q=1/s9001",
+      "cell_id": "h0=2|a=1.5|q=1",
+      "master_seed": 9001,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.205066
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=1.5|q=1/s9002",
+      "cell_id": "h0=2|a=1.5|q=1",
+      "master_seed": 9002,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.226739
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=1.5|q=1/s9003",
+      "cell_id": "h0=2|a=1.5|q=1",
+      "master_seed": 9003,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.209377
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=1.5|q=1/s9004",
+      "cell_id": "h0=2|a=1.5|q=1",
+      "master_seed": 9004,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.204122
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=1.5|q=1/s9005",
+      "cell_id": "h0=2|a=1.5|q=1",
+      "master_seed": 9005,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.205555
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=2.5|q=0.7/s9001",
+      "cell_id": "h0=2|a=2.5|q=0.7",
+      "master_seed": 9001,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.172981
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=2.5|q=0.7/s9002",
+      "cell_id": "h0=2|a=2.5|q=0.7",
+      "master_seed": 9002,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.175931
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=2.5|q=0.7/s9003",
+      "cell_id": "h0=2|a=2.5|q=0.7",
+      "master_seed": 9003,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.174613
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=2.5|q=0.7/s9004",
+      "cell_id": "h0=2|a=2.5|q=0.7",
+      "master_seed": 9004,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.180718
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=2.5|q=0.7/s9005",
+      "cell_id": "h0=2|a=2.5|q=0.7",
+      "master_seed": 9005,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.179355
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=2.5|q=0.85/s9001",
+      "cell_id": "h0=2|a=2.5|q=0.85",
+      "master_seed": 9001,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.190398
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=2.5|q=0.85/s9002",
+      "cell_id": "h0=2|a=2.5|q=0.85",
+      "master_seed": 9002,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.196045
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=2.5|q=0.85/s9003",
+      "cell_id": "h0=2|a=2.5|q=0.85",
+      "master_seed": 9003,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.214206
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=2.5|q=0.85/s9004",
+      "cell_id": "h0=2|a=2.5|q=0.85",
+      "master_seed": 9004,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.193769
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=2.5|q=0.85/s9005",
+      "cell_id": "h0=2|a=2.5|q=0.85",
+      "master_seed": 9005,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.195909
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=2.5|q=1/s9001",
+      "cell_id": "h0=2|a=2.5|q=1",
+      "master_seed": 9001,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.206981
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=2.5|q=1/s9002",
+      "cell_id": "h0=2|a=2.5|q=1",
+      "master_seed": 9002,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.208772
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=2.5|q=1/s9003",
+      "cell_id": "h0=2|a=2.5|q=1",
+      "master_seed": 9003,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.208487
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=2.5|q=1/s9004",
+      "cell_id": "h0=2|a=2.5|q=1",
+      "master_seed": 9004,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.206853
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=2.5|q=1/s9005",
+      "cell_id": "h0=2|a=2.5|q=1",
+      "master_seed": 9005,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.217062
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=4|q=0.7/s9001",
+      "cell_id": "h0=2|a=4|q=0.7",
+      "master_seed": 9001,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.18212
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=4|q=0.7/s9002",
+      "cell_id": "h0=2|a=4|q=0.7",
+      "master_seed": 9002,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.189947
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=4|q=0.7/s9003",
+      "cell_id": "h0=2|a=4|q=0.7",
+      "master_seed": 9003,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.191642
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=4|q=0.7/s9004",
+      "cell_id": "h0=2|a=4|q=0.7",
+      "master_seed": 9004,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.218672
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=4|q=0.7/s9005",
+      "cell_id": "h0=2|a=4|q=0.7",
+      "master_seed": 9005,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.185437
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=4|q=0.85/s9001",
+      "cell_id": "h0=2|a=4|q=0.85",
+      "master_seed": 9001,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.238376
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=4|q=0.85/s9002",
+      "cell_id": "h0=2|a=4|q=0.85",
+      "master_seed": 9002,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.236485
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=4|q=0.85/s9003",
+      "cell_id": "h0=2|a=4|q=0.85",
+      "master_seed": 9003,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.196223
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=4|q=0.85/s9004",
+      "cell_id": "h0=2|a=4|q=0.85",
+      "master_seed": 9004,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.206551
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=4|q=0.85/s9005",
+      "cell_id": "h0=2|a=4|q=0.85",
+      "master_seed": 9005,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.202581
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=4|q=1/s9001",
+      "cell_id": "h0=2|a=4|q=1",
+      "master_seed": 9001,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.218584
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=4|q=1/s9002",
+      "cell_id": "h0=2|a=4|q=1",
+      "master_seed": 9002,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.215872
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=4|q=1/s9003",
+      "cell_id": "h0=2|a=4|q=1",
+      "master_seed": 9003,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.225047
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=4|q=1/s9004",
+      "cell_id": "h0=2|a=4|q=1",
+      "master_seed": 9004,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.215591
+    },
+    {
+      "run_id": "SMOKE-EXP-002/h0=2|a=4|q=1/s9005",
+      "cell_id": "h0=2|a=4|q=1",
+      "master_seed": 9005,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.222256
+    }
+  ],
+  "result_path": "results/raw/exploratory/SMOKE-EXP-002/results.json",
+  "result_sha256": "0de12dbed7db1feba5415765d3eb8d72ecedb89b4e169e21d4913809822a3c87",
+  "command": "python -m streak.cli run --config experiments/smoke-exp002.json --out results/raw/exploratory/SMOKE-EXP-002"
+}

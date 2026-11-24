@@ -1,0 +1,197 @@
+{
+  "schema_version": "streak.manifest/1.0",
+  "experiment_id": "SMOKE-EXP-003",
+  "label": "exploratory",
+  "config_hash": "ed37e8f04277dd8ae32d53a6761f52cbc7945d539122eb623baa03470b201d81",
+  "master_seeds": [
+    9001,
+    9002,
+    9003,
+    9004,
+    9005
+  ],
+  "git_revision": "dfa9dd43cd1237b36f3b32e719c494f3e46fb720",
+  "git_dirty": false,
+  "versions": {
+    "python": "3.12.1",
+    "numpy": "2.5.4",
+    "streak": "0.2.0",
+    "engine": "1.0.1"
+  },
+  "platform": {
+    "os": "Darwin",
+    "os_release": "24.3.0",
+    "machine": "arm64",
+    "cpu": "Apple M1 Pro",
+    "cpu_count": 10
+  },
+  "started_utc": "2026-11-24T16:09:42+00:00",
+  "finished_utc": "2026-11-24T16:09:50+00:00",
+  "runtime_s": 8.467,
+  "peak_memory_bytes": 52101120,
+  "runs": [
+    {
+      "run_id": "SMOKE-EXP-003/exp-diff/s9001",
+      "cell_id": "exp-diff",
+      "master_seed": 9001,
+      "n_learner_arms": 120,
+      "n_failed": 0,
+      "runtime_s": 0.358321
+    },
+    {
+      "run_id": "SMOKE-EXP-003/exp-diff/s9002",
+      "cell_id": "exp-diff",
+      "master_seed": 9002,
+      "n_learner_arms": 120,
+      "n_failed": 0,
+      "runtime_s": 0.367909
+    },
+    {
+      "run_id": "SMOKE-EXP-003/exp-diff/s9003",
+      "cell_id": "exp-diff",
+      "master_seed": 9003,
+      "n_learner_arms": 120,
+      "n_failed": 0,
+      "runtime_s": 0.401014
+    },
+    {
+      "run_id": "SMOKE-EXP-003/exp-diff/s9004",
+      "cell_id": "exp-diff",
+      "master_seed": 9004,
+      "n_learner_arms": 120,
+      "n_failed": 0,
+      "runtime_s": 0.331908
+    },
+    {
+      "run_id": "SMOKE-EXP-003/exp-diff/s9005",
+      "cell_id": "exp-diff",
+      "master_seed": 9005,
+      "n_learner_arms": 120,
+      "n_failed": 0,
+      "runtime_s": 0.368138
+    },
+    {
+      "run_id": "SMOKE-EXP-003/exp-flat/s9001",
+      "cell_id": "exp-flat",
+      "master_seed": 9001,
+      "n_learner_arms": 120,
+      "n_failed": 0,
+      "runtime_s": 0.390586
+    },
+    {
+      "run_id": "SMOKE-EXP-003/exp-flat/s9002",
+      "cell_id": "exp-flat",
+      "master_seed": 9002,
+      "n_learner_arms": 120,
+      "n_failed": 0,
+      "runtime_s": 0.3875
+    },
+    {
+      "run_id": "SMOKE-EXP-003/exp-flat/s9003",
+      "cell_id": "exp-flat",
+      "master_seed": 9003,
+      "n_learner_arms": 120,
+      "n_failed": 0,
+      "runtime_s": 0.470971
+    },
+    {
+      "run_id": "SMOKE-EXP-003/exp-flat/s9004",
+      "cell_id": "exp-flat",
+      "master_seed": 9004,
+      "n_learner_arms": 120,
+      "n_failed": 0,
+      "runtime_s": 0.521811
+    },
+    {
+      "run_id": "SMOKE-EXP-003/exp-flat/s9005",
+      "cell_id": "exp-flat",
+      "master_seed": 9005,
+      "n_learner_arms": 120,
+      "n_failed": 0,
+      "runtime_s": 0.562155
+    },
+    {
+      "run_id": "SMOKE-EXP-003/pow-diff/s9001",
+      "cell_id": "pow-diff",
+      "master_seed": 9001,
+      "n_learner_arms": 120,
+      "n_failed": 0,
+      "runtime_s": 0.587481
+    },
+    {
+      "run_id": "SMOKE-EXP-003/pow-diff/s9002",
+      "cell_id": "pow-diff",
+      "master_seed": 9002,
+      "n_learner_arms": 120,
+      "n_failed": 0,
+      "runtime_s": 0.526959
+    },
+    {
+      "run_id": "SMOKE-EXP-003/pow-diff/s9003",
+      "cell_id": "pow-diff",
+      "master_seed": 9003,
+      "n_learner_arms": 120,
+      "n_failed": 0,
+      "runtime_s": 0.40297
+    },
+    {
+      "run_id": "SMOKE-EXP-003/pow-diff/s9004",
+      "cell_id": "pow-diff",
+      "master_seed": 9004,
+      "n_learner_arms": 120,
+      "n_failed": 0,
+      "runtime_s": 0.448783
+    },
+    {
+      "run_id": "SMOKE-EXP-003/pow-diff/s9005",
+      "cell_id": "pow-diff",
+      "master_seed": 9005,
+      "n_learner_arms": 120,
+      "n_failed": 0,
+      "runtime_s": 0.395711
+    },
+    {
+      "run_id": "SMOKE-EXP-003/pow-flat/s9001",
+      "cell_id": "pow-flat",
+      "master_seed": 9001,
+      "n_learner_arms": 120,
+      "n_failed": 0,
+      "runtime_s": 0.378013
+    },
+    {
+      "run_id": "SMOKE-EXP-003/pow-flat/s9002",
+      "cell_id": "pow-flat",
+      "master_seed": 9002,
+      "n_learner_arms": 120,
+      "n_failed": 0,
+      "runtime_s": 0.386982
+    },
+    {
+      "run_id": "SMOKE-EXP-003/pow-flat/s9003",
+      "cell_id": "pow-flat",
+      "master_seed": 9003,
+      "n_learner_arms": 120,
+      "n_failed": 0,
+      "runtime_s": 0.36961
+    },
+    {
+      "run_id": "SMOKE-EXP-003/pow-flat/s9004",
+      "cell_id": "pow-flat",
+      "master_seed": 9004,
+      "n_learner_arms": 120,
+      "n_failed": 0,
+      "runtime_s": 0.371815
+    },
+    {
+      "run_id": "SMOKE-EXP-003/pow-flat/s9005",
+      "cell_id": "pow-flat",
+      "master_seed": 9005,
+      "n_learner_arms": 120,
+      "n_failed": 0,
+      "runtime_s": 0.380864
+    }
+  ],
+  "result_path": "results/raw/exploratory/SMOKE-EXP-003/results.json",
+  "result_sha256": "3d5de47940def6d012810f783a52055c2d2bae4f4d66c81d18bdb3a3dfbdbf1e",
+  "command": "python -m streak.cli run --config experiments/smoke-exp003.json --out results/raw/exploratory/SMOKE-EXP-003"
+}

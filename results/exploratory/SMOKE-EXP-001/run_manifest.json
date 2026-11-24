@@ -1,0 +1,77 @@
+{
+  "schema_version": "streak.manifest/1.0",
+  "experiment_id": "SMOKE-EXP-001",
+  "label": "exploratory",
+  "config_hash": "5098ce78e055e1cd70eb465f60603c7c2b32b7fb7b4028369da27644ebc6d709",
+  "master_seeds": [
+    9001,
+    9002,
+    9003,
+    9004,
+    9005
+  ],
+  "git_revision": "dfa9dd43cd1237b36f3b32e719c494f3e46fb720",
+  "git_dirty": false,
+  "versions": {
+    "python": "3.12.1",
+    "numpy": "2.5.4",
+    "streak": "0.2.0",
+    "engine": "1.0.1"
+  },
+  "platform": {
+    "os": "Darwin",
+    "os_release": "24.3.0",
+    "machine": "arm64",
+    "cpu": "Apple M1 Pro",
+    "cpu_count": 10
+  },
+  "started_utc": "2026-11-24T16:07:29+00:00",
+  "finished_utc": "2026-11-24T16:07:32+00:00",
+  "runtime_s": 3.748,
+  "peak_memory_bytes": 40861696,
+  "runs": [
+    {
+      "run_id": "SMOKE-EXP-001/default/s9001",
+      "cell_id": "default",
+      "master_seed": 9001,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.652171
+    },
+    {
+      "run_id": "SMOKE-EXP-001/default/s9002",
+      "cell_id": "default",
+      "master_seed": 9002,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.744606
+    },
+    {
+      "run_id": "SMOKE-EXP-001/default/s9003",
+      "cell_id": "default",
+      "master_seed": 9003,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.936821
+    },
+    {
+      "run_id": "SMOKE-EXP-001/default/s9004",
+      "cell_id": "default",
+      "master_seed": 9004,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.739977
+    },
+    {
+      "run_id": "SMOKE-EXP-001/default/s9005",
+      "cell_id": "default",
+      "master_seed": 9005,
+      "n_learner_arms": 80,
+      "n_failed": 0,
+      "runtime_s": 0.621727
+    }
+  ],
+  "result_path": "results/exploratory/SMOKE-EXP-001/results.json",
+  "result_sha256": "a1f8a510170b848d1873aebbc8526e43f24434feac1e7a74184b041b297c04ec",
+  "command": "python -m streak.cli smoke --pdf"
+}
