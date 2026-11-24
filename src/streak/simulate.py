@@ -103,7 +103,7 @@ def simulate_arm(h_init: np.ndarray, available: np.ndarray, outcome_u: np.ndarra
         raise ParameterError("outcome_u must have shape (T + 1, K)")
 
     s = np.zeros(k)  # initial study at t = 0
-    h_hat = np.full(k, p.h0)  # scheduler belief: population-median learner and item
+    h_hat = np.full(k, float(p.h0), dtype=float)  # scheduler belief: population-median learner and item
     plan = planned_slots(arm.timing, p)
     spent = np.zeros(t_end + 1, dtype=np.int64)
     pending = 0

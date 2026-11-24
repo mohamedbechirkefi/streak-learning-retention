@@ -127,3 +127,18 @@ def test_a2_reviews_highest_belief_items():
         h_hat[items] = updated_half_life(h_hat[items], p_hat[items], res.review_success[mask],
                                          gain_rule="difficulty", g_min=p.g_min, a=p.a, b=p.b, h_min=p.h_min)
         s[items] = d
+
+
+def test_integer_valued_params_equal_float_params():
+    """Regression (D-008): "h0": 1 from a JSON grid once made the belief array integer-typed,
+    truncating half-lives to 0 and failing every learner-arm of those cells."""
+    pi = ModelParams.from_dict({"h0": 1, "a": 4, "q": 1})
+    pf = ModelParams(h0=1.0, a=4.0, q=1.0)
+    assert pi == pf and isinstance(pi.h0, float)
+    for arm in ["A1", "A2", "A3"]:
+        ri, rf = _run(arm, pi), _run(arm, pf)
+        assert np.array_equal(ri.half_life, rf.half_life) and np.array_equal(ri.daily_spent, rf.daily_spent)
+    lr = generate_learners(9001, 1, pf)[0]
+    res = simulate_arm(lr.initial_half_lives(pf), lr.availability(pf), lr.outcome_u, get_arm("A2"),
+                       ModelParams(h0=2))
+    assert res.residual == 0

@@ -21,6 +21,10 @@ class ParameterError(ValueError):
     """Raised for an invalid parameter value (explicit error path)."""
 
 
+_FLOAT_FIELDS = ("slot_minutes", "h0", "sigma_item", "sigma_learner", "g_min", "a", "b", "h_min", "q",
+                 "residual_flag_fraction")
+
+
 @dataclass(frozen=True)
 class ModelParams:
     """Parameters of the synthetic learner model. Defaults are protocol v0.1-draft
@@ -47,6 +51,13 @@ class ModelParams:
     residual_flag_fraction: float = 0.05  # residual > fraction * M is flagged
 
     def __post_init__(self) -> None:
+        # JSON configs may carry real-valued parameters as integers (for example "h0": 1).
+        # Coerce them to float so no array derived from them is silently integer-typed
+        # (bug found by the exploratory EXP-002 smoke run, decision D-008).
+        for name in _FLOAT_FIELDS:
+            v = getattr(self, name)
+            if isinstance(v, int) and not isinstance(v, bool):
+                object.__setattr__(self, name, float(v))
         validate_params(self)
 
     @property

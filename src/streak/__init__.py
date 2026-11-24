@@ -9,4 +9,4 @@ claims only within the assumptions of the model in research/protocol.md.
 __version__ = "0.2.0"
 
 #: Version of the simulation engine. Bumped whenever simulated numbers can change.
-ENGINE_VERSION = "1.0.0"
+ENGINE_VERSION = "1.0.1"
