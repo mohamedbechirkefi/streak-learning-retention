@@ -9,8 +9,7 @@ type: software
 authors:
   - family-names: Kefi
     given-names: Mohamed Bechir
-version: 0.4.0-manuscript-1.0
-date-released: 2026-11-25
+version: "0.1.0-rc1"
 keywords:
   - spaced repetition
   - gamification

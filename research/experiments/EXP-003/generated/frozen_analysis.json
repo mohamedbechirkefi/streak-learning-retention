@@ -2,7 +2,7 @@
   "experiment_id": "EXP-003",
   "label": "confirmatory",
   "config_hash": "ab1c1799a45e0eab8091125a7d769e20ecdf642b5f8e1436e0d9a66c31450ff3",
-  "result_path": "/Users/bechir/research/labs/streak-learning-retention/results/confirmatory/EXP-003/results.json",
+  "result_path": "results/confirmatory/EXP-003/results.json",
   "n_records": 12000,
   "n_failed": 0,
   "failure_rate": 0.0,

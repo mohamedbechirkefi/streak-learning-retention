@@ -414,3 +414,52 @@ Offline after the initial load, responsive (no horizontal scroll at 360 px), usa
 ### Next action
 
 M6 (release candidate): clean clone, PDFs, owner review checklist; publication only on the owner's approval (OD-5). No push.
+
+## 2026-11-25: M6 release candidate
+
+**Milestone.** M6, brief `_shared/M6-brief.md`; authority owner, 2026-11-25, "Next" (second) (`_shared/owner-approvals-2026-11-25e.md`). Starting state: `ff06d8d`, working tree clean.
+
+### Commands and actual outputs
+
+```
+# clean clone of ff06d8d into a scratch directory (deleted at the end)
+$ uv sync --frozen --all-groups --all-extras                        Audited 9 packages
+$ .venv/bin/python -m pytest                                       225 passed in 7.10s
+$ .venv/bin/python -m streak.cli smoke --config experiments/smoke-m3-exp001.json --out <scratch>
+  400 learner-arms, 0 failed; results.json byte-identical to results/exploratory/SMOKE-M3-EXP-001 (edac1326...); validate_smoke ALL PASS
+$ .venv/bin/python -m streak.cli smoke                             differs from the committed M2 file in the A3 rows (F-M6-1, documented, not changed)
+$ .venv/bin/python scripts/analyse_confirmatory.py EXP-001         only result_path differed (absolute local path; F-M6-2, fixed)
+$ npm ci --prefer-offline; npm test; npm run build                 added 53 packages; Tests 43 passed (43); built
+$ node tools/a11y_check.mjs dist                                   A11Y-CHECK PASS (9 PASS lines)
+$ export_demo_data.py; export_sandbox_fixture.py; git status       0 changed files
+# working repository
+$ ../.tools/py/bin/python -I scripts/build_pdfs.py --png <scratch>  6 PDFs: manuscript 12 pages, supplementary 5, supplementary tables 24, EXP-001/002/003 reports 8 each
+$ .venv/bin/python scripts/check_links.py                          relative links checked: 74; broken: 0; LINK-CHECK PASS
+$ .venv/bin/python scripts/m4_build_artifact_manifest.py           results 17, figures 4, tables 4, claims 25, missing []; figure copies match: True
+$ .venv/bin/python scripts/m4_evidence_audit.py                    unmatched [] in every file (manuscript 171 numbers)
+$ .venv/bin/python -m pytest                                       231 passed (6 new: tests/test_links.py 2, tests/test_citation.py 3, 1 consistency extension)
+```
+
+Page inspection fixes (all in sources or the builder, D-027): duplicated figure labels; a spurious Typst numbered list in the EXP-001 report; clipped x-axis label in the EXP-003 effects figure (generator fixed, figure regenerated); overlapping hashes in supplementary S1; FIG-01b captions mentioning an absent zero line; double heading numbers in `manuscript.tex`.
+
+References: 9 bib entries, all cited. Free full texts read in M6 for Cepeda et al. 2006, Roediger and Karpicke 2006, Murre and Dros 2015 and Silverman and Barasch (accepted manuscript): read in full 7, abstract only 1 (Tabibian et al.), unverified 1 (Ye et al.); the M4 qualification on Cepeda et al. is resolved by the full text (p. 358). Claims audit section 6.
+
+Scan of 298 tracked files: 0 e-mail addresses, 0 keys or tokens, 0 private key headers, 0 `.env` files; absolute home paths 15 lines in 10 files, 3 removed (F-M6-2), the rest documented in `reproducibility_report.md` section 6. Note for this append-only file: line 21 of `progress.md` (the M0 `df -h` command) contains an absolute local path; it is kept because this file is append-only. Licences: `research/publication/dependency_licences.md` (one informational flag, pandoc GPL-2.0-or-later as an external tool).
+
+`CITATION.cff`: `date-released` removed, version `0.1.0-rc1` (D-026); structural CFF 1.2.0 test added.
+
+### Changes
+
+New: `scripts/build_pdfs.py`, `scripts/check_links.py`, `tests/test_links.py`, `tests/test_citation.py`, `research/publication/dependency_licences.md`, six PDFs. Changed: `scripts/analyse_confirmatory.py`, `src/streak/frozen_analysis.py`, EXP-003 effects figure (three copies), three `generated/frozen_analysis.json` (result_path only), `research/paper/manuscript.md` (Figure 2 caption, reference annotations), `manuscript.tex`, `supplementary.md` (S1 layout), EXP-001 and EXP-003 reports (caption, appended M6 notes), `artifact_manifest.json`, `evidence_audit.json`, `claims_audit.md`, `literature_review.md`, `reproducibility_report.md`, `release_checklist.md`, `author_review.md` (section appended; no box ticked), `CITATION.cff`, `CONTRIBUTING.md` (appended), `demo/.npmrc` (SPDX header), `demo/public/data/results.json` (provenance hashes), `tests/test_demo_consistency.py`, roadmap, decision log (D-026, D-027), journal J-0021. No frozen protocol, config, seed or result changed; no confirmatory run.
+
+### Gate
+
+Tasks 1 to 7 of the M6 brief hold. **M6 status: release candidate prepared, awaiting owner review and G-PUBLIC.** M6 is not done until the owner signs off `author_review.md`.
+
+### Outstanding owner items
+
+Listed in `research/publication/author_review.md` ("Prepared for the owner"): publication approval (OD-5), sign-off, the frozen EXP protocols' "not yet run" status line, repository and demo URLs (10 placeholder lines), confirmation of author line and statements, version choice, article review, evidence-audit review, SESOI label, R-5.
+
+### Next action
+
+Owner review of the release candidate. No push.

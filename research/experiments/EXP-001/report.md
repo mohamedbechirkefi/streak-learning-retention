@@ -132,7 +132,7 @@ Reading fixed in P§14.4: the exponential model does **not** describe the held-o
 
 ![FIG-01a. Mean R30 per arm with 95% stratified bootstrap interval; n = 1,000 learners per arm; unit: proportion of items expected to be recalled 30 days after practice ends.](figures/FIG-01a-arm-r30.svg)
 
-![FIG-01b. Distribution of the 1,000 per-learner paired differences in R30, A2 - A1; the dashed line marks zero.](figures/FIG-01b-primary-diff.svg)
+![FIG-01b. Distribution of the 1,000 per-learner paired differences in R30, A2 - A1; all 1,000 differences are negative, so zero lies outside the plotted range and no zero line is drawn.](figures/FIG-01b-primary-diff.svg)
 
 ## 9. Interpretation
 
@@ -171,3 +171,7 @@ No number, table, figure or verdict in this report changed. The M4 evidence audi
 
 - **Citations (section 3).** Settles and Meeder (2016) was read in full for the cited points. Roediger and Karpicke (2006), Cepeda et al. (2006), Murre and Dros (2015) and Silverman and Barasch (2022) were read as abstracts only (`research/literature_review.md`, section 4). The abstract of Cepeda et al. (2006) reports that spacing and lag effects were examined and that the optimal interstudy interval grows with the retention interval; it does not state the direction of the spacing effect in the sentences read. "Spacing improves long-term retention" is therefore a commonly reported reading, not one verified from the source.
 - **Interpretation (section 9).** Exploratory M4 checks on smoke seeds (`results/exploratory/M4-SENSITIVITY/`, journal J-0018) found the gap also at K = 50, 100 and 400 items, and shrinking to -0.0342 when h0 is 16 times the fitted value. They also found that A3's equivalence to A1 does not hold at K = 400. These checks are exploratory and leave the verdict of this report unchanged.
+
+## M6 audit note (2026-11-25)
+
+No number, table, figure or verdict changed. The FIG-01b caption was corrected: it said that a dashed line marks zero, but every difference is negative, so zero lies outside the plotted range and the generator draws no zero line. In M6 the full texts of four sources previously read as abstracts were opened from free, legal copies and the cited points checked (`research/publication/claims_audit.md`, section 6). Cepeda et al. (2006), author-hosted full text, p. 358: "Spaced presentations led to markedly better final-test performance, compared with massed presentations"; the statement that spacing benefits retention, qualified in the M4 note above, is therefore supported by the source for the verbal recall tasks it reviews. Roediger and Karpicke (2006, p. 249), Murre and Dros (2015, Abstract and Discussion) and Silverman and Barasch (accepted manuscript, Abstract and General Discussion) confirm the points cited from their abstracts.

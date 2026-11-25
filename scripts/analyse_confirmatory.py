@@ -22,6 +22,14 @@ from streak.runner import load_result
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def _shown(path: Path) -> str:
+    """Repository-relative path when inside the repository (no local home path in outputs, M6)."""
+    try:
+        return path.resolve().relative_to(ROOT).as_posix()
+    except ValueError:
+        return str(path)
+
+
 def main() -> int:
     exp = sys.argv[1]
     res = Path(sys.argv[2]) if len(sys.argv) > 2 else ROOT / "results" / "confirmatory" / exp / "results.json"
@@ -32,7 +40,7 @@ def main() -> int:
     sesoi = doc["config"]["analysis"]["sesoi"]
     label = doc["label"]
     extra: dict = {"experiment_id": doc["experiment_id"], "label": label, "config_hash": doc["config_hash"],
-                   "result_path": str(res), "n_records": doc["n_records"], "n_failed": doc["n_failed"],
+                   "result_path": _shown(res), "n_records": doc["n_records"], "n_failed": doc["n_failed"],
                    "failure_rate": analysis["failure_rate"],
                    "analysis_halted_over_1pct_failures": analysis["failure_rate"] > 0.01}
     if doc["experiment_id"].endswith("EXP-001") or exp == "EXP-001":

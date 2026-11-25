@@ -7,7 +7,7 @@
 ]{article}
 \usepackage{xcolor}
 \usepackage{amsmath,amssymb}
-\setcounter{secnumdepth}{5}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
@@ -505,7 +505,8 @@ items expected to be recalled 30 days after practice ends.}
 \centering
 \pandocbounded{\includesvg[keepaspectratio]{figures/EXP-001_FIG-01b-primary-diff.svg}}
 \caption{Figure 2. EXP-001: distribution of the 1,000 per-learner paired
-differences A2 - A1 in R30; dashed line at zero.}
+differences A2 - A1 in R30; all 1,000 differences are negative, so zero
+lies outside the plotted range.}
 \end{figure}
 
 \subsection{5.2 EXP-002: where the gap
@@ -873,11 +874,14 @@ control, not peer review.
   Cepeda, N. J., Pashler, H., Vul, E., Wixted, J. T., and Rohrer, D.
   (2006). Distributed practice in verbal recall tasks: A review and
   quantitative synthesis. \emph{Psychological Bulletin} 132(3), 354-380.
-  doi:10.1037/0033-2909.132.3.354. (Abstract read.)
+  doi:10.1037/0033-2909.132.3.354. (Abstract read; the cited points
+  checked against the author-hosted full text in M6, pp.~354 and 358.)
 \item
   Murre, J. M. J., and Dros, J. (2015). Replication and analysis of
   Ebbinghaus' forgetting curve. \emph{PLOS ONE} 10(7), e0120644.
-  doi:10.1371/journal.pone.0120644. (Abstract read.)
+  doi:10.1371/journal.pone.0120644. (Abstract read; the cited point
+  checked against the open-access full text in M6, Abstract and
+  Discussion.)
 \item
   open-spaced-repetition. The Algorithm (awesome-fsrs wiki).
   https://github.com/open-spaced-repetition/awesome-fsrs/wiki/The-Algorithm,
@@ -886,7 +890,8 @@ control, not peer review.
   Roediger, H. L., and Karpicke, J. D. (2006). Test-enhanced learning:
   Taking memory tests improves long-term retention. \emph{Psychological
   Science} 17(3), 249-255. doi:10.1111/j.1467-9280.2006.01693.x.
-  (Abstract read.)
+  (Abstract read; the cited point checked against the author-hosted full
+  text in M6, p.~249 and Experiments 1 and 2.)
 \item
   Settles, B., and Meeder, B. (2016). A trainable spaced repetition
   model for language learning. \emph{Proceedings of the 54th Annual
@@ -896,7 +901,9 @@ control, not peer review.
 \item
   Silverman, J., and Barasch, A. (2022). On or off track: How (broken)
   streaks affect consumer decisions. \emph{Journal of Consumer Research}
-  49(6), 1095-1117. doi:10.1093/jcr/ucac029. (Abstract read.)
+  49(6), 1095-1117. doi:10.1093/jcr/ucac029. (Abstract read; the cited
+  point checked against the accepted manuscript in the University of
+  Delaware repository in M6, Abstract and General Discussion.)
 \item
   Tabibian, B., Upadhyay, U., De, A., Zarezade, A., Schölkopf, B., and
   Gomez-Rodriguez, M. (2019). Enhancing human learning via spaced

@@ -259,7 +259,7 @@ def effects_svg(effects: dict, title: str) -> str:
         body.append(f'<circle cx="{x(s["mean_diff"]):.1f}" cy="{y:.1f}" r="3" fill="#1d4ed8"/>')
     for t in np.linspace(lo, hi, 5):
         body.append(f'<text x="{x(t):.1f}" y="{top + len(rows) * rh + 16}" text-anchor="middle" font-size="10" fill="#6b7280">{t:.3f}</text>')
-    body.append(f'<text x="{(left + W - right) / 2}" y="{top + len(rows) * rh + 36}" text-anchor="middle" font-size="11" fill="#1f2328">'
+    body.append(f'<text x="{W / 2}" y="{top + len(rows) * rh + 36}" text-anchor="middle" font-size="11" fill="#1f2328">'
                 'paired R30 difference (proportion); dot = mean, bar = 95% stratified bootstrap interval, n = 500</text>')
     desc = "; ".join(f'{var} {lab}: {s["mean_diff"]:+.4f} [{s["ci95"][0]:+.4f}, {s["ci95"][1]:+.4f}]' for var, lab, s in rows)
     return ('<!-- SPDX-License-Identifier: LicenseRef-STREAK-NC-Research-1.0 -->\n'

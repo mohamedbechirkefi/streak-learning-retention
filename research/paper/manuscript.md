@@ -149,7 +149,7 @@ A2 practised on about twice as many days as A1 and had a longest streak about ei
 
 ![Figure 1. EXP-001: mean R30 per policy with 95% stratified bootstrap interval; n = 1,000 learners per policy; unit: proportion of items expected to be recalled 30 days after practice ends.](figures/EXP-001_FIG-01a-arm-r30.svg)
 
-![Figure 2. EXP-001: distribution of the 1,000 per-learner paired differences A2 - A1 in R30; dashed line at zero.](figures/EXP-001_FIG-01b-primary-diff.svg)
+![Figure 2. EXP-001: distribution of the 1,000 per-learner paired differences A2 - A1 in R30; all 1,000 differences are negative, so zero lies outside the plotted range.](figures/EXP-001_FIG-01b-primary-diff.svg)
 
 ## 5.2 EXP-002: where the gap appears
 
@@ -257,12 +257,12 @@ No funding. No competing interests. An AI system (Claude, Anthropic) acted as a 
 
 # References
 
-- Cepeda, N. J., Pashler, H., Vul, E., Wixted, J. T., and Rohrer, D. (2006). Distributed practice in verbal recall tasks: A review and quantitative synthesis. *Psychological Bulletin* 132(3), 354-380. doi:10.1037/0033-2909.132.3.354. (Abstract read.)
-- Murre, J. M. J., and Dros, J. (2015). Replication and analysis of Ebbinghaus' forgetting curve. *PLOS ONE* 10(7), e0120644. doi:10.1371/journal.pone.0120644. (Abstract read.)
+- Cepeda, N. J., Pashler, H., Vul, E., Wixted, J. T., and Rohrer, D. (2006). Distributed practice in verbal recall tasks: A review and quantitative synthesis. *Psychological Bulletin* 132(3), 354-380. doi:10.1037/0033-2909.132.3.354. (Abstract read; the cited points checked against the author-hosted full text in M6, pp. 354 and 358.)
+- Murre, J. M. J., and Dros, J. (2015). Replication and analysis of Ebbinghaus' forgetting curve. *PLOS ONE* 10(7), e0120644. doi:10.1371/journal.pone.0120644. (Abstract read; the cited point checked against the open-access full text in M6, Abstract and Discussion.)
 - open-spaced-repetition. The Algorithm (awesome-fsrs wiki). https://github.com/open-spaced-repetition/awesome-fsrs/wiki/The-Algorithm, accessed 2026-11-24. (Page read.)
-- Roediger, H. L., and Karpicke, J. D. (2006). Test-enhanced learning: Taking memory tests improves long-term retention. *Psychological Science* 17(3), 249-255. doi:10.1111/j.1467-9280.2006.01693.x. (Abstract read.)
+- Roediger, H. L., and Karpicke, J. D. (2006). Test-enhanced learning: Taking memory tests improves long-term retention. *Psychological Science* 17(3), 249-255. doi:10.1111/j.1467-9280.2006.01693.x. (Abstract read; the cited point checked against the author-hosted full text in M6, p. 249 and Experiments 1 and 2.)
 - Settles, B., and Meeder, B. (2016). A trainable spaced repetition model for language learning. *Proceedings of the 54th Annual Meeting of the ACL (Volume 1: Long Papers)*, 1848-1858. doi:10.18653/v1/P16-1174. (Full text read for the cited points.) Data: Harvard Dataverse, doi:10.7910/DVN/N8XJME, version 1.0, CC BY-NC 4.0.
-- Silverman, J., and Barasch, A. (2022). On or off track: How (broken) streaks affect consumer decisions. *Journal of Consumer Research* 49(6), 1095-1117. doi:10.1093/jcr/ucac029. (Abstract read.)
+- Silverman, J., and Barasch, A. (2022). On or off track: How (broken) streaks affect consumer decisions. *Journal of Consumer Research* 49(6), 1095-1117. doi:10.1093/jcr/ucac029. (Abstract read; the cited point checked against the accepted manuscript in the University of Delaware repository in M6, Abstract and General Discussion.)
 - Tabibian, B., Upadhyay, U., De, A., Zarezade, A., Schölkopf, B., and Gomez-Rodriguez, M. (2019). Enhancing human learning via spaced repetition optimization. *PNAS* 116(10), 3988-3993. doi:10.1073/pnas.1815156116. (Abstract read.)
 - Ye, J., Su, J., and Cao, Y. (2022). A stochastic shortest path algorithm for optimizing spaced repetition scheduling. *Proceedings of KDD 2022*, 4381-4390. doi:10.1145/3534678.3539081. (Metadata only.)
 

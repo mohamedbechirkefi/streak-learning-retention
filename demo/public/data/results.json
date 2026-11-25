@@ -28,7 +28,7 @@
   },
   {
    "path": "research/experiments/EXP-001/generated/frozen_analysis.json",
-   "sha256": "77e992bd22c02c5e51b97448efd98bd509573801c93203c94d9f9b7cd0869422"
+   "sha256": "2c5cf119526e5b8ec6e478966112d9f7725c56aebdb0f6ad5c5f841298aa0a6f"
   },
   {
    "path": "research/experiments/EXP-001/generated/metrics.csv",
@@ -36,7 +36,7 @@
   },
   {
    "path": "research/experiments/EXP-001/report.md",
-   "sha256": "ada46bc1a53bdc7a9360eb004508328d32afdc9e18b24526bde0907d77d5f241"
+   "sha256": "20eac8ed17815ef02fe290db7165c786792506b595e166c5409e39c4d734b99c"
   },
   {
    "path": "research/experiments/EXP-002/config.json",
@@ -48,7 +48,7 @@
   },
   {
    "path": "research/experiments/EXP-002/generated/frozen_analysis.json",
-   "sha256": "af3f07619bf14108e7d75f54ea037c2a293b25046354935310b031e683f4b416"
+   "sha256": "d7187e33030382b6493fd7563c4d6a5df5b8765c7d7cf775df7950ac46739240"
   },
   {
    "path": "research/experiments/EXP-002/report.md",
@@ -60,19 +60,19 @@
   },
   {
    "path": "research/experiments/EXP-003/generated/frozen_analysis.json",
-   "sha256": "7cd1bd6a68b77089a954254a150d52e97a3a8d7b7fba937bb1e5a4c955f8a4d8"
+   "sha256": "ecbecd5879949f8272f3eef80522052189f961e16f3fdc0199495764d080989c"
   },
   {
    "path": "research/experiments/EXP-003/report.md",
-   "sha256": "03e52bf327be4046e325da737124586a15b7f5ba19d2bedde33099eb9903f81e"
+   "sha256": "5ada3822691daf1847e6984e419e4a2a4cb698061288826e36b827d8ad26b2b3"
   },
   {
    "path": "research/paper/manuscript.md",
-   "sha256": "c7a60cfc6e1a6ad724f5153411350e2b32a3d220139c6f1b8f807d045d67eda2"
+   "sha256": "0001083738c4b09d472519beb44a471e5e812dd084f53943b90207ea649db138"
   },
   {
    "path": "research/publication/artifact_manifest.json",
-   "sha256": "d7406ab96a0b7dbbfe20870cbaeaa63479a6207bd0728393064bab0364b89847"
+   "sha256": "b234fa9d19c08ad8cebee9fe6723ce962a76f5b37ec5460116f4861ca841f863"
   },
   {
    "path": "results/confirmatory/EXP-001/run_manifest.json",

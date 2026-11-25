@@ -150,3 +150,17 @@ def test_public_texts_keep_owner_placeholders_and_no_stale_status():
         t = _text(rel)
         assert "placeholder" in t, rel
         assert "has not reviewed" not in t and "No confirmatory experiment has been run" not in t, rel
+
+
+def test_public_texts_use_only_verified_counts_and_percentages():
+    """M6 extension: thousands-separated counts (for example 70,000) and percentages in the
+    README, CITATION, articles and demo README occur verbatim in the manuscript, a report or
+    the supplement."""
+    corpus = "\n".join(_text(p) for p in [MANUSCRIPT, "research/paper/supplementary.md", *sorted(EXCEPTION_SOURCES)])
+    pattern = re.compile(r"(?<![\d.,])\d{1,3}(?:,\d{3})+(?![\d,])|(?<![\d.])\d+(?:\.\d+)?%")
+    n = 0
+    for rel in ("README.md", "CITATION.cff", "articles/medium.md", "articles/linkedin.md", "demo/README.md"):
+        for tok in pattern.findall(_text(rel)):
+            n += 1
+            assert tok in corpus, (rel, tok)
+    assert n > 0

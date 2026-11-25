@@ -64,3 +64,8 @@ Interactive page (M5; Node from the shared toolchain, npm cache outside the repo
     .venv/bin/python scripts/export_sandbox_fixture.py    # writes demo/src/fixtures/engine_fixture.json (smoke seed 9001)
     cd demo && npm ci && npm test && npm run build && npm run preview
     node tools/a11y_check.mjs dist --screenshots <dir>    # offline and accessibility check; must print A11Y-CHECK PASS
+
+M6 (2026-11-25): build every publication PDF and regenerate `manuscript.tex` in one command (supersedes the manual pandoc lines above), then check links:
+
+    ../.tools/py/bin/python -I scripts/build_pdfs.py [--png <dir>]
+    .venv/bin/python scripts/check_links.py

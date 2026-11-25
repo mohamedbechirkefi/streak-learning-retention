@@ -744,7 +744,7 @@
       "file": "research/paper/figures/EXP-003_FIG-03-effects.svg",
       "copy_of": "research/experiments/EXP-003/generated/figures/FIG-03-effects.svg",
       "result": "RES-EXP-003-DECOMP",
-      "sha256": "3f2c552e1b2227a07702a390d67042779fcd16b28dee9332a4688cc752ef44ba",
+      "sha256": "2e60641166923e8843e800bbe0ebf1f3ac9299acb6a7f6e96eabe11f5726aef7",
       "copy_sha256_matches": true,
       "generator_script": "scripts/analyse_confirmatory.py (streak.report.build_report)"
     }

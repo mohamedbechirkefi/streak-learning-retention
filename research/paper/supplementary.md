@@ -5,16 +5,28 @@ Companion to `research/paper/manuscript.md` version 1.0 (2026-11-25). Independen
 
 ## S1. Complete experimental matrix
 
-| ID | Label | Matrix | Seeds | Learners per condition | Learner-arms | Failed | Config SHA-256 (canonical) | Code revision | Runtime (s) |
-|---|---|---|---|---|---|---|---|---|---|
-| EXP-001 | confirmatory | A0, A1, A2, A3 at default parameters | 1 to 5 | 1,000 | 4,000 | 0 | c34b1a07816d3f57ff26e1e1c99d66bebbd97a1866455ff2656ce521fffafdd7 | c942be0 | 30.534 |
-| EXP-002 | confirmatory | 27 cells (h0 × a × q) × 4 policies | 1 to 5 | 500 | 54,000 | 0 | 2ecfe90453c1663db0a03d1118e5d7b0e6cd97b4afc43f7fc4d2bf8d5f02dc46 | c942be0 (`git_dirty = true`, records only; D-016) | 354.388 |
-| EXP-003 | confirmatory | 6 policy cells × 4 model variants | 1 to 5 | 500 | 12,000 | 0 | ab1c1799a45e0eab8091125a7d769e20ecdf642b5f8e1436e0d9a66c31450ff3 | 219c054 | 82.876 |
-| HELDOUT-14.4 | confirmatory (descriptive) | held-out Duolingo split, 3 models | n/a | 161,243 rows, 243,337 trials | n/a | n/a | protocol section 14.4 | c942be0 | 46.838 |
-| SMOKE-M4-SENS-K050 to K400 | exploratory | K ∈ {50, 100, 200, 400} × 4 policies | 9001 to 9005 | 500 | 8,000 | 0 | in each `run_manifest.json` | 6580319 | 4.84 to 5.58 each |
-| SMOKE-M4-SENS-SLOWH0 | exploratory | h0 ∈ {270.36, 540.72, 1081.44} × 4 policies | 9001 to 9005 | 500 | 6,000 | 0 | in `run_manifest.json` | 6580319 | 16.18 |
+| ID | Label | Matrix | Seeds | Learners per condition | Learner-arms | Failed | Code revision | Runtime (s) |
+|---|---|---|---|---|---|---|---|---|
+| EXP-001 | confirmatory | A0, A1, A2, A3 at default parameters | 1 to 5 | 1,000 | 4,000 | 0 | c942be0 | 30.534 |
+| EXP-002 | confirmatory | 27 cells (h0 × a × q) × 4 policies | 1 to 5 | 500 | 54,000 | 0 | c942be0 (`git_dirty = true`, records only; D-016) | 354.388 |
+| EXP-003 | confirmatory | 6 policy cells × 4 model variants | 1 to 5 | 500 | 12,000 | 0 | 219c054 | 82.876 |
+| HELDOUT-14.4 | confirmatory (descriptive) | held-out Duolingo split, 3 models | n/a | 161,243 rows, 243,337 trials | n/a | n/a | c942be0 | 46.838 |
+| SMOKE-M4-SENS-K050 to K400 | exploratory | K ∈ {50, 100, 200, 400} × 4 policies | 9001 to 9005 | 500 | 8,000 | 0 | 6580319 | 4.84 to 5.58 each |
+| SMOKE-M4-SENS-SLOWH0 | exploratory | h0 ∈ {270.36, 540.72, 1081.44} × 4 policies | 9001 to 9005 | 500 | 6,000 | 0 | 6580319 | 16.18 |
 
-Protocol hashes (SHA-256): `research/protocol.md` 57a60597a93cfc07a1d25e9a2f6bac9f23009b554d3d9820828e7707210711ee; EXP-001 d618b9f8dbc09079702ad4bb9dd19c0595753b8f2985638e3cbe1fbec4585f32; EXP-002 16f54294c4d6db58acf6a7957ebedfed47e7226c5fe997ba42f1841675131c7e; EXP-003 20fc86cd0d595776589525cfd76153abae7c1c88b5faefbbdcc7b9f0c798cfba (`research/freeze.json`).
+Config hashes (SHA-256 of the canonical config):
+
+- EXP-001: `c34b1a07816d3f57ff26e1e1c99d66bebbd97a1866455ff2656ce521fffafdd7`
+- EXP-002: `2ecfe90453c1663db0a03d1118e5d7b0e6cd97b4afc43f7fc4d2bf8d5f02dc46`
+- EXP-003: `ab1c1799a45e0eab8091125a7d769e20ecdf642b5f8e1436e0d9a66c31450ff3`
+- HELDOUT-14.4: see protocol section 14.4; SMOKE-M4 runs: in each `run_manifest.json`.
+
+Protocol hashes (SHA-256, recorded in `research/freeze.json`):
+
+- `research/protocol.md`: `57a60597a93cfc07a1d25e9a2f6bac9f23009b554d3d9820828e7707210711ee`
+- EXP-001 protocol: `d618b9f8dbc09079702ad4bb9dd19c0595753b8f2985638e3cbe1fbec4585f32`
+- EXP-002 protocol: `16f54294c4d6db58acf6a7957ebedfed47e7226c5fe997ba42f1841675131c7e`
+- EXP-003 protocol: `20fc86cd0d595776589525cfd76153abae7c1c88b5faefbbdcc7b9f0c798cfba`
 
 ## S2. Extended result tables
 

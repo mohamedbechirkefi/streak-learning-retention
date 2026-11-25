@@ -66,3 +66,21 @@ No number, verdict or frozen file changed.
 - [x] Second review pass that challenges the preferred hypothesis completed and recorded (`review_pass_2.md`).
 - [x] Unsupported claims removed or qualified.
 - [ ] Owner review of this audit (owner).
+
+## 6. M6 reference check (2026-11-25)
+
+Every entry of `research/paper/references.bib` (9 entries) is cited in the manuscript reference list (DOI or URL match, 9 of 9), and every manuscript reference has a bib entry. The manuscript uses author-year text citations, not pandoc citation keys, so key resolution was checked by DOI and URL. For each source not yet read in full, a free and legal full text was sought (no paid access, no login, no shadow library). Access date for all: 2026-11-25.
+
+| Key | Reading level after M6 | Copy read | Cited point checked (location) |
+|---|---|---|---|
+| settles2016 | read in full (relevant sections, M4) | ACL Anthology PDF | equation (1), section 4.1, Table 2 (M4) |
+| cepeda2006 | **read in full (M6)** | author-hosted PDF, https://www.yorku.ca/ncepeda/publications/CPVWR2006.pdf | p. 354 abstract: "the ISI producing maximal retention increased as retention interval increased"; p. 358: "Spaced presentations led to markedly better final-test performance, compared with massed presentations". The M4 qualification of "spacing improves long-term retention" (EXP-001 and EXP-003 reports) is resolved: the source supports it for the verbal recall tasks it reviews. |
+| roediger2006 | **read in full (M6)** | author-hosted PDF, http://learninglab.psych.purdue.edu/downloads/2006/2006_Roediger_Karpicke_PsychSci.pdf | p. 249 abstract and the Experiment 1 and 2 designs: prose passages; at 5 min restudy beat testing, on the delayed tests (2 days, 1 week) prior testing gave greater retention. Matches the manuscript sentence. |
+| murre2015 | **read in full (M6)** | open-access article page, https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0120644 | Abstract and Discussion: "a successful replication of Ebbinghaus' classic forgetting curve from 1880 based on the method of savings". In the Discussion the summed-exponential (MCM) function fits best on average, by margins the authors treat as modest; the manuscript makes no functional-form claim from this source, so nothing changes. |
+| silverman2022 | **read in full (M6, accepted manuscript)** | University of Delaware repository, pre-copyedited accepted manuscript, https://udspace.udel.edu/bitstreams/7e3e3b64-8bf2-4527-ac93-94a160358165/download | Abstract (manuscript p. 3) and General Discussion: "In seven studies, we find that intact streaks highlighted via behavioral logs increase consumers' subsequent engagement in that behavior, relative to when broken streaks are highlighted." Matches. Year: published online 2022, issue 49(6) dated 2023; the bib entry carries 2023 and the text 2022, both stated in `research/literature_review.md`. |
+| tabibian2019 | abstract only | arXiv preprint abstract, https://arxiv.org/abs/1712.01856 (titled "Optimizing Human Learning", same authors; v2 2018-03-10) | "the optimal reviewing schedule is given by the recall probability of the content to be learned". The published PNAS version was not opened (HTTP 403 in M0); the claim stays worded as what the abstract reports. |
+| ye2022 | unverified (metadata only) | ACM Digital Library PDF returned HTTP 403 | Cited only as an example of scheduler-optimisation work, with no statement about its content (manuscript section 2.2 already says so). No change. |
+| fsrswiki | read in full (web page, M0) | GitHub wiki page | power-law forgetting curves in FSRS (M0) |
+| duolingodata | read (dataset record and licence, M0) | Harvard Dataverse record | CC BY-NC 4.0; file hash in `data/manifest.json` |
+
+Counts: read in full 7 (5 articles plus 1 web page and 1 dataset record), abstract only 1, unverified 1. Claims qualified: none newly; the M4 qualification on Cepeda et al. is resolved by the full text and recorded in M6 audit notes appended to the EXP-001 and EXP-003 reports. The manuscript reference list now states, for the four sources upgraded, where the cited point was checked.
