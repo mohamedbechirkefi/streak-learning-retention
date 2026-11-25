@@ -288,3 +288,54 @@ The EXP-001 to EXP-003 `report.md` texts were composed from committed results on
 ## 2026-11-25: M3 done (coordinator)
 
 The owner approved the experiment reports (owner, 2026-11-25, "approve all recommendations, RIGGED A", item 4). Subagents may not write report files, so the reports were composed by the M3 session from committed results only and written by the coordinator: 3 report(s). The coordinator checked that every decimal number in them appears in a committed file. With the complete matrices (or documented failures) recorded above, the M3 gate holds. M3 is **done**. Next: M4 (interpretation), not started.
+
+## 2026-11-25: M4 interpretation, evidence audit and manuscript
+
+**Milestone.** M4, brief `_shared/M4-brief.md`; authority owner, 2026-11-25, "Approve all recommendations, push then next" (`_shared/owner-approvals-2026-11-25b.md`, section 5). The 2026-11-25 approvals hold no STREAK-specific follow-up item (the HOUSE, RIGGED and FLOW items concern other repositories). Starting state: clean at 6580319; 211 tests passed.
+
+### Commands and actual outputs
+
+```
+$ .venv/bin/python -m pytest                                          211 passed (start)
+$ streak.cli run --config experiments/m4-sens-k050.json ...           2000 learner-arms, 0 failed, 4.84 s
+$ ... k100 / k200 / k400                                              2000 each, 0 failed, 4.89 / 5.20 / 5.58 s
+$ ... slow-h0                                                         6000 learner-arms, 0 failed, 16.18 s
+$ streak.cli report (each SMOKE-M4-SENS-* ID)                         reports in results/exploratory/SMOKE-M4-SENS-*/report
+$ scripts/m4_exploratory.py                                           results/exploratory/M4-SENSITIVITY/summary.{json,csv}
+$ scripts/m4_evidence_audit.py                                        3 raw SHA-256 match; 32 primary means, max diff 5.6e-17; 3,234 numbers, 0 unmatched (after fixes)
+$ scripts/m4_supplement_tables.py                                     research/paper/supplementary_tables.md (256 lines)
+$ scripts/m4_build_artifact_manifest.py                               results 17, figures 4, tables 4, claims 25, missing []
+$ pandoc manuscript.md -s --number-sections -o manuscript.tex         regenerated (918 lines, SPDX header prepended)
+$ .venv/bin/python -m pytest                                          216 passed (end; 5 new tests in tests/test_publication_evidence.py)
+```
+
+Ad hoc semantic checks in this session (inline Python, read-only): EXP-001, EXP-002 and EXP-003 tables 8.1 matched the generated CSVs (EXP-002: 27 of 27 rows); residual-flag counts recomputed from raw records (EXP-001 6, EXP-002 360 with max 18, EXP-003 12) matched the reports.
+
+### Results (exploratory, J-0018; no frozen verdict changes)
+
+- K sweep: A2 - A1 -0.2358 (K = 50, coverage 0.6726), -0.3164, -0.3078, -0.2323 (K = 400); A3 - A1 relevant negative at K = 400 (-0.0621).
+- Slow forgetting: -0.1226, -0.0661, -0.0342 at h0 = 270.36, 540.72, 1081.44 days; A2's share of A1's gain over A0 stays at 0.186 to 0.188 (0.191 in EXP-001).
+- Committed EXP-001 data: Spearman(gap, A0 R30) 0.919; Spearman(gap, A2 coverage) 0.206.
+
+### Changes
+
+- Manuscript 1.0 (`research/paper/manuscript.md`, `.tex`), `supplementary.md` (S1 to S9 including expected versus observed and the confounder review), generated `supplementary_tables.md`, figures copied to `research/paper/figures/` with experiment-qualified names.
+- `research/publication/`: `review_pass_2.md`, `claims_audit.md`, `evidence_audit.json`, `artifact_manifest.json`.
+- Claims register: 25 rows with result id, config hash, figure or table and section; CLM-003 qualified.
+- M4 audit notes appended to the three reports (EXP-003: one sentence corrected).
+- Limitations, literature review (section 4, sources read on 2026-11-25), references (2 entries), registry statuses, results/exploratory README, journal J-0018 and J-0019, decisions D-019 and D-020.
+- New scripts: `scripts/m4_exploratory.py`, `m4_evidence_audit.py`, `m4_supplement_tables.py`, `m4_build_artifact_manifest.py`; new exploratory configs `experiments/m4-sens-*.json`.
+- No frozen protocol, config, seed or verdict changed. No confirmatory rerun.
+
+### Gate
+
+Every numerical claim maps to a result id, config or protocol hash and a figure or table (claims register, artifact manifest, test). Every external claim maps to a source read, with abstract-only and metadata-only sources marked. **M4 done.**
+
+### Outstanding risks
+
+- R-6: the title and framing changed after the second review pass (D-020); owner approval is pending (OD-7).
+- R-5 continues: the time scale is not validated by the real data. The magnitude of the gap depends on K and h0.
+
+### Next action
+
+Owner: review D-020 (title), the claims audit and the review pass. Then M5 (interactive page using the same verified numbers). No push.

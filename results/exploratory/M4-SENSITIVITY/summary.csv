@@ -1,0 +1,8 @@
+exploratory_id,cell_id,K,h0,R30_A0,R30_A1,R30_A2,R30_A3,A2_item_coverage,A2_share_of_A1_gain,A2_minus_A1,A2_minus_A1_ci95_low,A2_minus_A1_ci95_high,A2_minus_A1_class,A3_minus_A1,A3_minus_A1_ci95_low,A3_minus_A1_ci95_high,A3_minus_A1_class,A2_minus_A0,A2_minus_A0_class
+SMOKE-M4-SENS-K050,default,50,67.59,0.4140,0.9348,0.6990,0.9397,0.6726,0.547,-0.2358,-0.2414,-0.2302,relevant negative,0.0049,0.0045,0.0054,practically equivalent under the model,0.2850,relevant positive
+SMOKE-M4-SENS-K100,default,100,67.59,0.4146,0.8743,0.5579,0.8862,0.3382,0.312,-0.3164,-0.3215,-0.3113,relevant negative,0.0120,0.0110,0.0129,practically equivalent under the model,0.1433,relevant positive
+SMOKE-M4-SENS-K200,default,200,67.59,0.4144,0.7936,0.4859,0.8043,0.1689,0.189,-0.3078,-0.3115,-0.3040,relevant negative,0.0106,0.0096,0.0117,practically equivalent under the model,0.0715,relevant positive
+SMOKE-M4-SENS-K400,default,400,67.59,0.4145,0.6826,0.4504,0.6205,0.0846,0.134,-0.2323,-0.2343,-0.2303,relevant negative,-0.0621,-0.0631,-0.0611,relevant negative,0.0359,relevant positive
+SMOKE-M4-SENS-SLOWH0,h0=1081.44,200,1081.44,0.9379,0.9801,0.9459,0.9807,0.1670,0.188,-0.0342,-0.0352,-0.0333,relevant negative,0.0006,0.0005,0.0006,practically equivalent under the model,0.0079,practically equivalent under the model
+SMOKE-M4-SENS-SLOWH0,h0=270.36,200,270.36,0.7810,0.9315,0.8090,0.9345,0.1674,0.186,-0.1226,-0.1255,-0.1197,relevant negative,0.0030,0.0027,0.0033,practically equivalent under the model,0.0279,relevant positive
+SMOKE-M4-SENS-SLOWH0,h0=540.72,200,540.72,0.8811,0.9625,0.8963,0.9637,0.1671,0.187,-0.0661,-0.0679,-0.0644,relevant negative,0.0013,0.0012,0.0014,practically equivalent under the model,0.0152,practically equivalent under the model

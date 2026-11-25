@@ -1,0 +1,499 @@
+{
+  "label": "exploratory",
+  "notice": "M4 exploratory analysis (D-019, J-0018). Smoke seeds only for new simulations. Never replaces or changes a frozen confirmatory verdict.",
+  "generator": "scripts/m4_exploratory.py",
+  "git_revision_at_generation": "6580319b2c5f20cf66fb3bfb2ae33448de969463",
+  "part_a_committed_exp001": {
+    "source": "results/confirmatory/EXP-001/results.json",
+    "source_sha256": "0cd65c26fb370ee6718f8072ace2d980105248ef47d987ae77dfbd37ecc24c0f",
+    "n_learners": 1000,
+    "A2_coverage_mean": 0.1722,
+    "A2_coverage_min": 0.12,
+    "A2_coverage_max": 0.36,
+    "A2_share_of_A1_gain": 0.19054314636806705,
+    "spearman_A2coverage_delta": 0.20618508937635127,
+    "spearman_A2coverage_R30A2": 0.10032093178501268,
+    "spearman_R30A0_delta": 0.9186860706860708,
+    "coverage_terciles": [
+      {
+        "tercile": 1,
+        "n": 334,
+        "A2_coverage_mean": 0.12145209580838323,
+        "A2_coverage_min": 0.12,
+        "A2_coverage_max": 0.13,
+        "delta_A2_A1_mean": -0.32053605088650444,
+        "R30_A0_mean": 0.4055191118792271,
+        "R30_A1_mean": 0.7879367697318862,
+        "R30_A2_mean": 0.46740071884538165,
+        "R30_A3_mean": 0.7992155429121319
+      },
+      {
+        "tercile": 2,
+        "n": 350,
+        "A2_coverage_mean": 0.17887142857142854,
+        "A2_coverage_min": 0.135,
+        "A2_coverage_max": 0.18,
+        "delta_A2_A1_mean": -0.29971211638903134,
+        "R30_A0_mean": 0.42932739066320597,
+        "R30_A1_mean": 0.8005723252800003,
+        "R30_A2_mean": 0.500860208890969,
+        "R30_A3_mean": 0.8121757676461102
+      },
+      {
+        "tercile": 3,
+        "n": 316,
+        "A2_coverage_mean": 0.2184493670886076,
+        "A2_coverage_min": 0.185,
+        "A2_coverage_max": 0.36,
+        "delta_A2_A1_mean": -0.3000870975489621,
+        "R30_A0_mean": 0.4062330329974944,
+        "R30_A1_mean": 0.7902166477176575,
+        "R30_A2_mean": 0.49012955016869536,
+        "R30_A3_mean": 0.8016706611224679
+      }
+    ]
+  },
+  "part_b_sensitivity_runs": [
+    {
+      "exploratory_id": "SMOKE-M4-SENS-K050",
+      "cell_id": "default",
+      "K": 50,
+      "h0": 67.59,
+      "config": "experiments/m4-sens-k050.json",
+      "config_hash": "31fb933b2da68d8cf234aeec629b6f6bdf8091536fd27cdbe545ed33abba2c3b",
+      "result_sha256": "29dc6fd6d762fb49fc60de9da27b0ff4b02efbdf17938325d8e9997a7d47cac1",
+      "git_revision": "6580319b2c5f20cf66fb3bfb2ae33448de969463",
+      "git_dirty": false,
+      "seeds": [
+        9001,
+        9002,
+        9003,
+        9004,
+        9005
+      ],
+      "R30_A0": 0.41403788117806006,
+      "R30_A1": 0.9347954479526487,
+      "R30_A2": 0.69903577771584,
+      "R30_A3": 0.9397270609466857,
+      "A2_item_coverage": 0.67264,
+      "A2_share_of_A1_gain": 0.5472755745115118,
+      "A2_minus_A1": {
+        "mean": -0.23575967023680866,
+        "ci95": [
+          -0.24139298960035613,
+          -0.2301902436932241
+        ],
+        "ci90": [
+          -0.2404590442185536,
+          -0.23117387380195953
+        ],
+        "class": "relevant negative",
+        "n": 500
+      },
+      "A3_minus_A1": {
+        "mean": 0.0049316129940369935,
+        "ci95": [
+          0.004472955853093494,
+          0.005407754127086239
+        ],
+        "ci90": [
+          0.004549111882290976,
+          0.005336188209875899
+        ],
+        "class": "practically equivalent under the model",
+        "n": 500
+      },
+      "A2_minus_A0": {
+        "mean": 0.28499789653777996,
+        "ci95": [
+          0.27944778418051536,
+          0.2906718954987619
+        ],
+        "ci90": [
+          0.28038833394783935,
+          0.2897266518188354
+        ],
+        "class": "relevant positive",
+        "n": 500
+      }
+    },
+    {
+      "exploratory_id": "SMOKE-M4-SENS-K100",
+      "cell_id": "default",
+      "K": 100,
+      "h0": 67.59,
+      "config": "experiments/m4-sens-k100.json",
+      "config_hash": "7debfd8e3276b33c2ccac4b9d4884fb162a2d356d7ca1e691bdd8b0cdd4b62c9",
+      "result_sha256": "879e84704c590fbe72b06dcf21a07309f4de8a27f9828294cf98274cf428c083",
+      "git_revision": "6580319b2c5f20cf66fb3bfb2ae33448de969463",
+      "git_dirty": false,
+      "seeds": [
+        9001,
+        9002,
+        9003,
+        9004,
+        9005
+      ],
+      "R30_A0": 0.4146180341639681,
+      "R30_A1": 0.8742935216523025,
+      "R30_A2": 0.5578843731177581,
+      "R30_A3": 0.886246996920841,
+      "A2_item_coverage": 0.33824,
+      "A2_share_of_A1_gain": 0.31166843317357834,
+      "A2_minus_A1": {
+        "mean": -0.3164091485345445,
+        "ci95": [
+          -0.32151497188885536,
+          -0.31133546680185503
+        ],
+        "ci90": [
+          -0.32068979722018015,
+          -0.312160139465949
+        ],
+        "class": "relevant negative",
+        "n": 500
+      },
+      "A3_minus_A1": {
+        "mean": 0.011953475268538488,
+        "ci95": [
+          0.01103394151290728,
+          0.012919192088041057
+        ],
+        "ci90": [
+          0.01118120631750609,
+          0.012756970247388085
+        ],
+        "class": "practically equivalent under the model",
+        "n": 500
+      },
+      "A2_minus_A0": {
+        "mean": 0.14326633895378996,
+        "ci95": [
+          0.14040744326523044,
+          0.14620315055635
+        ],
+        "ci90": [
+          0.14089225101806022,
+          0.14569075816417526
+        ],
+        "class": "relevant positive",
+        "n": 500
+      }
+    },
+    {
+      "exploratory_id": "SMOKE-M4-SENS-K200",
+      "cell_id": "default",
+      "K": 200,
+      "h0": 67.59,
+      "config": "experiments/m4-sens-k200.json",
+      "config_hash": "4e26e42b5000ed9e90d9199b4d64594a2a7f94760b863276febe03abbacf50db",
+      "result_sha256": "07b3a0e1e62ebf7f551f5e9fa39e80268547a10fcaacee99f28246f13ab4136b",
+      "git_revision": "6580319b2c5f20cf66fb3bfb2ae33448de969463",
+      "git_dirty": false,
+      "seeds": [
+        9001,
+        9002,
+        9003,
+        9004,
+        9005
+      ],
+      "R30_A0": 0.4143575224638006,
+      "R30_A1": 0.7936414384208353,
+      "R30_A2": 0.4858811891974101,
+      "R30_A3": 0.8042750442520119,
+      "A2_item_coverage": 0.16892000000000001,
+      "A2_share_of_A1_gain": 0.18857553332609994,
+      "A2_minus_A1": {
+        "mean": -0.3077602492234253,
+        "ci95": [
+          -0.31152034593578104,
+          -0.304033385733309
+        ],
+        "ci90": [
+          -0.31091014974806475,
+          -0.30459691937180017
+        ],
+        "class": "relevant negative",
+        "n": 500
+      },
+      "A3_minus_A1": {
+        "mean": 0.01063360583117647,
+        "ci95": [
+          0.009567095472806752,
+          0.011726391059424626
+        ],
+        "ci90": [
+          0.009735387549757746,
+          0.011547372122674785
+        ],
+        "class": "practically equivalent under the model",
+        "n": 500
+      },
+      "A2_minus_A0": {
+        "mean": 0.0715236667336095,
+        "ci95": [
+          0.07010789692486875,
+          0.07296924955436034
+        ],
+        "ci90": [
+          0.0703539510963011,
+          0.07273647502853953
+        ],
+        "class": "relevant positive",
+        "n": 500
+      }
+    },
+    {
+      "exploratory_id": "SMOKE-M4-SENS-K400",
+      "cell_id": "default",
+      "K": 400,
+      "h0": 67.59,
+      "config": "experiments/m4-sens-k400.json",
+      "config_hash": "b9c9d96e0e5f5a77857da87788904a032160423fc6be55031f6d56fde0e72f94",
+      "result_sha256": "ad244da5d63c16f562172a5d1ddfc383cb44333449fbc314c2c5901420a132b3",
+      "git_revision": "6580319b2c5f20cf66fb3bfb2ae33448de969463",
+      "git_dirty": false,
+      "seeds": [
+        9001,
+        9002,
+        9003,
+        9004,
+        9005
+      ],
+      "R30_A0": 0.4144876184357814,
+      "R30_A1": 0.682627846993153,
+      "R30_A2": 0.4503679766300004,
+      "R30_A3": 0.6205185140589019,
+      "A2_item_coverage": 0.08459,
+      "A2_share_of_A1_gain": 0.13381191769418505,
+      "A2_minus_A1": {
+        "mean": -0.2322598703631529,
+        "ci95": [
+          -0.2342601521002243,
+          -0.23025568667689333
+        ],
+        "ci90": [
+          -0.23392757831138764,
+          -0.23057495005520529
+        ],
+        "class": "relevant negative",
+        "n": 500
+      },
+      "A3_minus_A1": {
+        "mean": -0.062109332934251214,
+        "ci95": [
+          -0.06308225421964365,
+          -0.061132369627572854
+        ],
+        "ci90": [
+          -0.06293372914167902,
+          -0.061287191246288376
+        ],
+        "class": "relevant negative",
+        "n": 500
+      },
+      "A2_minus_A0": {
+        "mean": 0.03588035819421888,
+        "ci95": [
+          0.035180550208674465,
+          0.03660248195920825
+        ],
+        "ci90": [
+          0.03529476072400227,
+          0.03648277478075556
+        ],
+        "class": "relevant positive",
+        "n": 500
+      }
+    },
+    {
+      "exploratory_id": "SMOKE-M4-SENS-SLOWH0",
+      "cell_id": "h0=1081.44",
+      "K": 200,
+      "h0": 1081.44,
+      "config": "experiments/m4-sens-slow-h0.json",
+      "config_hash": "2587c2ca47b4de45ada8103e4decedc51d4ab108a6828c50966a7f3f3da8b35a",
+      "result_sha256": "102e7ba885af27b4e4b77bffde133d67a4d980760997b78912f3eb38dde2f3f5",
+      "git_revision": "6580319b2c5f20cf66fb3bfb2ae33448de969463",
+      "git_dirty": false,
+      "seeds": [
+        9001,
+        9002,
+        9003,
+        9004,
+        9005
+      ],
+      "R30_A0": 0.9379256062596346,
+      "R30_A1": 0.9801208390332914,
+      "R30_A2": 0.9458748956497732,
+      "R30_A3": 0.9806727332259556,
+      "A2_item_coverage": 0.16697,
+      "A2_share_of_A1_gain": 0.18839306878054468,
+      "A2_minus_A1": {
+        "mean": -0.03424594338351824,
+        "ci95": [
+          -0.03520011327440564,
+          -0.03331239162265028
+        ],
+        "ci90": [
+          -0.035044798276672194,
+          -0.03347026591031146
+        ],
+        "class": "relevant negative",
+        "n": 500
+      },
+      "A3_minus_A1": {
+        "mean": 0.0005518941926642435,
+        "ci95": [
+          0.0005107692923037327,
+          0.0005945688821874659
+        ],
+        "ci90": [
+          0.000517191255279578,
+          0.0005877071174329115
+        ],
+        "class": "practically equivalent under the model",
+        "n": 500
+      },
+      "A2_minus_A0": {
+        "mean": 0.007949289390138661,
+        "ci95": [
+          0.007685878035827071,
+          0.008230513310269963
+        ],
+        "ci90": [
+          0.007726999767316515,
+          0.00818105366457163
+        ],
+        "class": "practically equivalent under the model",
+        "n": 500
+      }
+    },
+    {
+      "exploratory_id": "SMOKE-M4-SENS-SLOWH0",
+      "cell_id": "h0=270.36",
+      "K": 200,
+      "h0": 270.36,
+      "config": "experiments/m4-sens-slow-h0.json",
+      "config_hash": "2587c2ca47b4de45ada8103e4decedc51d4ab108a6828c50966a7f3f3da8b35a",
+      "result_sha256": "102e7ba885af27b4e4b77bffde133d67a4d980760997b78912f3eb38dde2f3f5",
+      "git_revision": "6580319b2c5f20cf66fb3bfb2ae33448de969463",
+      "git_dirty": false,
+      "seeds": [
+        9001,
+        9002,
+        9003,
+        9004,
+        9005
+      ],
+      "R30_A0": 0.7810403113139522,
+      "R30_A1": 0.9315285393320243,
+      "R30_A2": 0.8089658296879838,
+      "R30_A3": 0.9345267638123311,
+      "A2_item_coverage": 0.16738,
+      "A2_share_of_A1_gain": 0.18556613192812668,
+      "A2_minus_A1": {
+        "mean": -0.12256270964404044,
+        "ci95": [
+          -0.1255431893629338,
+          -0.11965948968306848
+        ],
+        "ci90": [
+          -0.12501898564386166,
+          -0.1201610253609679
+        ],
+        "class": "relevant negative",
+        "n": 500
+      },
+      "A3_minus_A1": {
+        "mean": 0.0029982244803069048,
+        "ci95": [
+          0.002728515286814638,
+          0.003272400176788251
+        ],
+        "ci90": [
+          0.002773695683122964,
+          0.003226941993534429
+        ],
+        "class": "practically equivalent under the model",
+        "n": 500
+      },
+      "A2_minus_A0": {
+        "mean": 0.02792551837403173,
+        "ci95": [
+          0.027103022884483755,
+          0.0288040066562349
+        ],
+        "ci90": [
+          0.027230110307687523,
+          0.028649062748889856
+        ],
+        "class": "relevant positive",
+        "n": 500
+      }
+    },
+    {
+      "exploratory_id": "SMOKE-M4-SENS-SLOWH0",
+      "cell_id": "h0=540.72",
+      "K": 200,
+      "h0": 540.72,
+      "config": "experiments/m4-sens-slow-h0.json",
+      "config_hash": "2587c2ca47b4de45ada8103e4decedc51d4ab108a6828c50966a7f3f3da8b35a",
+      "result_sha256": "102e7ba885af27b4e4b77bffde133d67a4d980760997b78912f3eb38dde2f3f5",
+      "git_revision": "6580319b2c5f20cf66fb3bfb2ae33448de969463",
+      "git_dirty": false,
+      "seeds": [
+        9001,
+        9002,
+        9003,
+        9004,
+        9005
+      ],
+      "R30_A0": 0.8811299781833335,
+      "R30_A1": 0.9624501798975066,
+      "R30_A2": 0.8963451852912301,
+      "R30_A3": 0.9637421754597181,
+      "A2_item_coverage": 0.1671,
+      "A2_share_of_A1_gain": 0.18710242703744756,
+      "A2_minus_A1": {
+        "mean": -0.06610499460627658,
+        "ci95": [
+          -0.06786803807672925,
+          -0.06438159719364027
+        ],
+        "ci90": [
+          -0.06756594192482422,
+          -0.06467598810539155
+        ],
+        "class": "relevant negative",
+        "n": 500
+      },
+      "A3_minus_A1": {
+        "mean": 0.0012919955622113116,
+        "ci95": [
+          0.0011910179173737284,
+          0.001400574939079006
+        ],
+        "ci90": [
+          0.0012075101945215098,
+          0.00138223882541815
+        ],
+        "class": "practically equivalent under the model",
+        "n": 500
+      },
+      "A2_minus_A0": {
+        "mean": 0.015215207107896611,
+        "ci95": [
+          0.014730202471655029,
+          0.015731552085445195
+        ],
+        "ci90": [
+          0.014806447073039183,
+          0.01564052967214694
+        ],
+        "class": "practically equivalent under the model",
+        "n": 500
+      }
+    }
+  ]
+}

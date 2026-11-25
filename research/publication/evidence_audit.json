@@ -1,0 +1,124 @@
+{
+  "generator": "scripts/m4_evidence_audit.py",
+  "recomputation": {
+    "EXP-001": {
+      "result_path": "results/confirmatory/EXP-001/results.json",
+      "sha256_expected": "0cd65c26fb370ee6718f8072ace2d980105248ef47d987ae77dfbd37ecc24c0f",
+      "sha256_actual": "0cd65c26fb370ee6718f8072ace2d980105248ef47d987ae77dfbd37ecc24c0f",
+      "n_records": 4000,
+      "n_failed": 0,
+      "cells": 1,
+      "primary_rows_compared": 1,
+      "max_abs_diff_mean": 5.551115123125783e-17,
+      "n_count_mismatches": 0,
+      "learners_per_cell": [
+        1000
+      ],
+      "status": "ok"
+    },
+    "EXP-002": {
+      "result_path": "results/confirmatory/EXP-002/results.json",
+      "sha256_expected": "4d4984ce1e45c3d91e924276d5d1a7a31a2e837b77a9e657ca5834dfd58c6fd1",
+      "sha256_actual": "4d4984ce1e45c3d91e924276d5d1a7a31a2e837b77a9e657ca5834dfd58c6fd1",
+      "n_records": 54000,
+      "n_failed": 0,
+      "cells": 27,
+      "primary_rows_compared": 27,
+      "max_abs_diff_mean": 5.551115123125783e-17,
+      "n_count_mismatches": 0,
+      "learners_per_cell": [
+        500
+      ],
+      "status": "ok"
+    },
+    "EXP-003": {
+      "result_path": "results/confirmatory/EXP-003/results.json",
+      "sha256_expected": "6eecffdbf1cf4d87c29705864eee4611758ca35df145c97f0fd7a7f24b404d9f",
+      "sha256_actual": "6eecffdbf1cf4d87c29705864eee4611758ca35df145c97f0fd7a7f24b404d9f",
+      "n_records": 12000,
+      "n_failed": 0,
+      "cells": 4,
+      "primary_rows_compared": 4,
+      "max_abs_diff_mean": 5.551115123125783e-17,
+      "n_count_mismatches": 0,
+      "learners_per_cell": [
+        500
+      ],
+      "status": "ok"
+    }
+  },
+  "number_trace": {
+    "research/paper/manuscript.md": {
+      "numbers_checked": 171,
+      "by_precision": {
+        "4+ decimals": 116,
+        "2 decimals": 35,
+        "3 decimals": 20
+      },
+      "unmatched": []
+    },
+    "research/paper/supplementary.md": {
+      "numbers_checked": 53,
+      "by_precision": {
+        "3 decimals": 7,
+        "2 decimals": 12,
+        "4+ decimals": 34
+      },
+      "unmatched": []
+    },
+    "research/paper/supplementary_tables.md": {
+      "numbers_checked": 2276,
+      "by_precision": {
+        "4+ decimals": 1851,
+        "2 decimals": 425
+      },
+      "unmatched": []
+    },
+    "research/publication/review_pass_2.md": {
+      "numbers_checked": 38,
+      "by_precision": {
+        "4+ decimals": 22,
+        "3 decimals": 10,
+        "2 decimals": 6
+      },
+      "unmatched": []
+    },
+    "research/experiments/EXP-001/report.md": {
+      "numbers_checked": 167,
+      "by_precision": {
+        "4+ decimals": 100,
+        "2 decimals": 30,
+        "3 decimals": 37
+      },
+      "unmatched": []
+    },
+    "research/experiments/EXP-002/report.md": {
+      "numbers_checked": 206,
+      "by_precision": {
+        "2 decimals": 97,
+        "4+ decimals": 107,
+        "3 decimals": 2
+      },
+      "unmatched": []
+    },
+    "research/experiments/EXP-003/report.md": {
+      "numbers_checked": 250,
+      "by_precision": {
+        "4+ decimals": 228,
+        "2 decimals": 15,
+        "3 decimals": 7
+      },
+      "unmatched": []
+    },
+    "research/claims_register.csv": {
+      "numbers_checked": 73,
+      "by_precision": {
+        "4+ decimals": 43,
+        "2 decimals": 19,
+        "3 decimals": 11
+      },
+      "unmatched": []
+    }
+  },
+  "n_source_values": 63350
+}

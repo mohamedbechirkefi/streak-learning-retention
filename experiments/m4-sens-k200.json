@@ -1,0 +1,82 @@
+{
+  "schema_version": "streak.config/1.0",
+  "experiment_id": "SMOKE-M4-SENS-K200",
+  "label": "exploratory",
+  "protocol_version": "1.0",
+  "description": "M4 exploratory sensitivity (decision D-019, journal J-0018): K = 200 items, all other parameters at the frozen defaults of protocol 1.0, 4 arms x smoke seeds 9001-9005 x 100 learners. Asks how the A2 - A1 gap depends on the number of items relative to the fixed budget. Exploratory; never replaces or changes a frozen verdict.",
+  "master_seeds": [
+    9001,
+    9002,
+    9003,
+    9004,
+    9005
+  ],
+  "learners_per_seed": 100,
+  "arms": [
+    "A0",
+    "A1",
+    "A2",
+    "A3"
+  ],
+  "base_params": {
+    "n_items": 200,
+    "horizon_days": 56,
+    "budget_slots": 672,
+    "slot_minutes": 0.5,
+    "daily_cap_slots": 60,
+    "fixed_weekdays": [
+      1,
+      3,
+      5
+    ],
+    "h0": 67.59,
+    "sigma_item": 0.5,
+    "sigma_learner": 0.3,
+    "g_min": 0.1,
+    "a": 2.5,
+    "b": 0.6,
+    "h_min": 0.25,
+    "q": 0.85,
+    "form": "exponential",
+    "gain_rule": "difficulty",
+    "retention_delays": [
+      1,
+      7,
+      30,
+      90
+    ],
+    "auc_max_delay": 90,
+    "residual_flag_fraction": 0.05
+  },
+  "analysis": {
+    "primary_contrast": [
+      "A2",
+      "A1"
+    ],
+    "secondary_contrasts": [
+      [
+        "A3",
+        "A1"
+      ],
+      [
+        "A2",
+        "A3"
+      ],
+      [
+        "A1",
+        "A0"
+      ],
+      [
+        "A2",
+        "A0"
+      ],
+      [
+        "A3",
+        "A0"
+      ]
+    ],
+    "bootstrap_resamples": 10000,
+    "bootstrap_seed": 20261124,
+    "sesoi": 0.02
+  }
+}

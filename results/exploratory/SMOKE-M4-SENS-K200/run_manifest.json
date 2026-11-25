@@ -1,0 +1,77 @@
+{
+  "schema_version": "streak.manifest/1.0",
+  "experiment_id": "SMOKE-M4-SENS-K200",
+  "label": "exploratory",
+  "config_hash": "4e26e42b5000ed9e90d9199b4d64594a2a7f94760b863276febe03abbacf50db",
+  "master_seeds": [
+    9001,
+    9002,
+    9003,
+    9004,
+    9005
+  ],
+  "git_revision": "6580319b2c5f20cf66fb3bfb2ae33448de969463",
+  "git_dirty": false,
+  "versions": {
+    "python": "3.12.1",
+    "numpy": "2.5.4",
+    "streak": "0.2.0",
+    "engine": "1.1.0"
+  },
+  "platform": {
+    "os": "Darwin",
+    "os_release": "24.3.0",
+    "machine": "arm64",
+    "cpu": "Apple M1 Pro",
+    "cpu_count": 10
+  },
+  "started_utc": "2026-11-25T01:19:36+00:00",
+  "finished_utc": "2026-11-25T01:19:42+00:00",
+  "runtime_s": 5.202,
+  "peak_memory_bytes": 84983808,
+  "runs": [
+    {
+      "run_id": "SMOKE-M4-SENS-K200/default/s9001",
+      "cell_id": "default",
+      "master_seed": 9001,
+      "n_learner_arms": 400,
+      "n_failed": 0,
+      "runtime_s": 1.044045
+    },
+    {
+      "run_id": "SMOKE-M4-SENS-K200/default/s9002",
+      "cell_id": "default",
+      "master_seed": 9002,
+      "n_learner_arms": 400,
+      "n_failed": 0,
+      "runtime_s": 1.034612
+    },
+    {
+      "run_id": "SMOKE-M4-SENS-K200/default/s9003",
+      "cell_id": "default",
+      "master_seed": 9003,
+      "n_learner_arms": 400,
+      "n_failed": 0,
+      "runtime_s": 1.03099
+    },
+    {
+      "run_id": "SMOKE-M4-SENS-K200/default/s9004",
+      "cell_id": "default",
+      "master_seed": 9004,
+      "n_learner_arms": 400,
+      "n_failed": 0,
+      "runtime_s": 1.025347
+    },
+    {
+      "run_id": "SMOKE-M4-SENS-K200/default/s9005",
+      "cell_id": "default",
+      "master_seed": 9005,
+      "n_learner_arms": 400,
+      "n_failed": 0,
+      "runtime_s": 1.022127
+    }
+  ],
+  "result_path": "results/raw/exploratory/SMOKE-M4-SENS-K200/results.json",
+  "result_sha256": "07b3a0e1e62ebf7f551f5e9fa39e80268547a10fcaacee99f28246f13ab4136b",
+  "command": "python -m streak.cli run --config experiments/m4-sens-k200.json --out results/raw/exploratory/SMOKE-M4-SENS-K200"
+}
