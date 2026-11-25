@@ -141,3 +141,11 @@ These are the AI's readings, implemented in engine 1.0.x and listed for owner co
 - **Status kept.** Independent research manuscript, preprint draft, not peer reviewed. Authorship as decided (C3).
 - **Owner action.** The owner approves or changes the title and framing (master prompt section 10 allows revising the working title after results). No publication.
 - **Decided by.** The AI (draft and revision), for the owner's approval.
+
+## D-021 (2026-11-25): Owner decisions after M4 (title and statements)
+
+- **Authority.** Owner, 2026-11-25, "Approve all" (post-M4) (`_shared/owner-approvals-2026-11-25c.md`, items 1 and 2, outside this repository).
+- **Item 1, title.** "The titles proposed in M4 are approved for SWARM, PULSE, CHAOS, STREAK, MATCH, FARE, HERD and VIRAL." The M4 proposal is the title named in D-020: "When activity and retention diverge: item selection, not daily practice, drives the retention cost of a streak-driven policy in a preregistered learner simulation". It is the only candidate marked as the proposal (the working title and the draft title "Streaks without retention" were replaced in D-020). Manuscript 1.0 already carries it, so no text changed. OD-7 and risk R-6 (title approval pending) are closed.
+- **Item 2, statements.** "The wording drafted in each manuscript is approved." The funding ("No funding"), competing-interest ("No competing interests") and AI-assistance wording in the manuscript (front matter `ai-assistance` field and the section "Funding, competing interests and AI assistance") is owner-approved as drafted. No wording changed. "Where a draft still has a placeholder that needs a fact only the owner knows, it stays a placeholder." The remaining placeholders are listed in `progress.md` under "Owner placeholders for M5".
+- **Not changed.** `research/publication/author_review.md` is left unticked, because its header reserves the boxes for the owner; this entry is the record of the approval.
+- **Decided by.** The owner; recorded by the AI.

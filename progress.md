@@ -339,3 +339,19 @@ Every numerical claim maps to a result id, config or protocol hash and a figure 
 ### Next action
 
 Owner: review D-020 (title), the claims audit and the review pass. Then M5 (interactive page using the same verified numbers). No push.
+
+## 2026-11-25: post-M4 owner decisions (title, statements)
+
+**Starting state:** `bb65a65`, working tree clean. Authority: owner, 2026-11-25, "Approve all" (post-M4) (`_shared/owner-approvals-2026-11-25c.md`, items 1 and 2; brief `_shared/POST-M4-brief.md`).
+
+- Item 1: the D-020 title in manuscript 1.0 is owner-approved; no text change. OD-7 and R-6 closed (D-021).
+- Item 2: funding, competing-interest and AI-assistance wording recorded as owner-approved; no wording changed (D-021).
+- No frozen protocol, config, seed or result changed. No computation. `manuscript.tex` not regenerated (the manuscript did not change).
+
+### Owner placeholders for M5
+
+1. Manuscript, section "Data and code availability": "public URL: placeholder, not yet published; publication requires the owner's approval". The URL exists only once the owner approves publication.
+
+### Next action
+
+M5 (interactive page using the same verified numbers). No push.
