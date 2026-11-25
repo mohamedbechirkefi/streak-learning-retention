@@ -261,3 +261,22 @@ D-016: pre-run analysis code; EXP-002 manifest `git_dirty = true` (records edite
 ### Next action
 
 Owner or coordinator: decide how the 11.6 reports are written; then M4 (evidence audit, synthesis, second review pass challenging the preferred hypothesis, including the negative held-out result).
+
+## 2026-11-25: M3 close attempt (owner approvals of 2026-11-25)
+
+**Milestone.** M3 close, brief `_shared/M3-close-brief.md`; authority `_shared/owner-approvals-2026-11-25.md`, section 4 (owner, "approve all recommendations, RIGGED A"). Starting state: clean at cfedba5.
+
+### Actions and actual outcomes
+
+- D-017 records the owner's decision.
+- EXP-001 report from 219c054 checked number by number against the committed outputs: all match (three percentages replaced by the committed proportions).
+- Write tool on `research/experiments/EXP-001/report.md`: refused ("Subagents should return findings as text, not write report files"). Per the brief, stopped; no workaround; EXP-002 and EXP-003 reports not attempted.
+- `.venv/bin/python -m pytest`: 211 passed.
+
+### Status
+
+**M3 not done.** The run gate holds (complete matrices, 70,000 learner-arms, 0 failed), but the 11.6 reports for EXP-001 to EXP-003 are still missing.
+
+### Next action
+
+Coordinator or owner: have the reports written by a session whose file tool accepts `report.md` (the checked EXP-001 text is in commit 219c054; all EXP-002 and EXP-003 numbers are in the committed `generated/` files).
