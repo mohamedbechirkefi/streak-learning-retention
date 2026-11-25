@@ -284,3 +284,7 @@ Coordinator or owner: have the reports written by a session whose file tool acce
 ## 2026-11-25: reports returned to the coordinator (D-018)
 
 The EXP-001 to EXP-003 `report.md` texts were composed from committed results only and returned as text to the coordinator, who writes and commits them (`_shared/report-return-note.md`). No report file was written by the AI. The M3 status is left to the coordinator. Tests: 211 passed.
+
+## 2026-11-25: M3 done (coordinator)
+
+The owner approved the experiment reports (owner, 2026-11-25, "approve all recommendations, RIGGED A", item 4). Subagents may not write report files, so the reports were composed by the M3 session from committed results only and written by the coordinator: 3 report(s). The coordinator checked that every decimal number in them appears in a committed file. With the complete matrices (or documented failures) recorded above, the M3 gate holds. M3 is **done**. Next: M4 (interpretation), not started.
