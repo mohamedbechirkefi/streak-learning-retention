@@ -280,3 +280,7 @@ Owner or coordinator: decide how the 11.6 reports are written; then M4 (evidence
 ### Next action
 
 Coordinator or owner: have the reports written by a session whose file tool accepts `report.md` (the checked EXP-001 text is in commit 219c054; all EXP-002 and EXP-003 numbers are in the committed `generated/` files).
+
+## 2026-11-25: reports returned to the coordinator (D-018)
+
+The EXP-001 to EXP-003 `report.md` texts were composed from committed results only and returned as text to the coordinator, who writes and commits them (`_shared/report-return-note.md`). No report file was written by the AI. The M3 status is left to the coordinator. Tests: 211 passed.

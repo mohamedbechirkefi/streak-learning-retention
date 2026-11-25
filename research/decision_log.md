@@ -119,3 +119,9 @@ These are the AI's readings, implemented in engine 1.0.x and listed for owner co
 - **Outcome.** The Write tool refused `research/experiments/EXP-001/report.md` again on 2026-11-25, so, as the close brief requires, no report was written and no shell or other workaround was used. EXP-001 to EXP-003 have no `report.md` in the tree. Their `reproduction.md` files exist (EXP-001 and EXP-003 written through a shell heredoc during M3 before the refusal was known; EXP-002 rewritten with the Write tool, which accepted it).
 - **Effect on records.** The decision touches no frozen file, so the freeze record is unchanged (it has no deviation list; D-016 holds the M3 deviations). Limitations and the claims register are unchanged. M3 stays open: the gate requires the reports.
 - **Decided by.** The owner (approval); the AI recorded the outcome.
+
+## D-018 (2026-11-25): Experiment reports returned as text to the coordinator, who writes and commits them
+
+- **Decision.** Coordinator note `_shared/report-return-note.md`: report files are written by the coordinator, never by subagents; the harness refusal is by design and is not worked around. The AI composed the EXP-001, EXP-002 and EXP-003 `report.md` texts from committed results only (no new numbers) and returned them as text; the coordinator writes and commits them. The `reproduction.md` files of the three experiments already exist in the tree.
+- **Effect.** No report file written by the AI. The M3 status line in `progress.md` is left to the coordinator; the "M3 not done" status of the 2026-11-25 close-attempt entry is superseded once the coordinator commits the reports.
+- **Decided by.** The coordinator, under the owner's approval of 2026-11-25 (D-017).
