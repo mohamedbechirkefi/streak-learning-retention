@@ -102,3 +102,18 @@ Inspection findings, all fixed in the source or the builder: duplicated figure l
 $ .venv/bin/python -m pytest              231 passed
 $ npm test (demo)                         43 passed
 ```
+
+## 8. Fresh-clone recheck after the fixes (commit 10d5412)
+
+```
+$ git clone -q <repository> <scratch>/clone2; uv sync --frozen --all-groups --all-extras
+$ .venv/bin/python -m pytest                                       231 passed in 9.37s
+$ .venv/bin/python scripts/analyse_confirmatory.py EXP-001; ... EXP-003
+$ .venv/bin/python scripts/export_demo_data.py --check             results.json up to date
+$ .venv/bin/python scripts/check_links.py                          LINK-CHECK PASS
+$ git status --short                                               0 lines (F-M6-2 fixed: regenerated analyses are byte-identical in a fresh checkout)
+$ npm ci --prefer-offline; npm test; npm run build; node tools/a11y_check.mjs dist
+  added 53 packages; Tests 43 passed (43); A11Y-CHECK PASS; git status 0 lines
+```
+
+Both scratch clones were deleted after the checks.

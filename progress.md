@@ -463,3 +463,7 @@ Listed in `research/publication/author_review.md` ("Prepared for the owner"): pu
 ### Next action
 
 Owner review of the release candidate. No push.
+
+## 2026-11-25: M6 fresh-clone recheck
+
+Fresh clone of `10d5412`: 231 passed; EXP-001 and EXP-003 analyses regenerated with `git status` clean (F-M6-2 fix confirmed); demo export up to date; LINK-CHECK PASS; demo `npm ci`, 43 tests passed, build, A11Y-CHECK PASS. Scratch clones deleted. Recorded in `research/publication/reproducibility_report.md` section 8.
