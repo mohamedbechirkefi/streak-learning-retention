@@ -1,0 +1,1809 @@
+{
+ "schema": "lab-demo-results",
+ "schema_version": "1.0.0",
+ "project": "STREAK",
+ "question": "When can activity streaks diverge from knowledge retention in a learning model?",
+ "status_label": "Simulation of synthetic learners. Independent research manuscript 1.0, preprint draft, not peer reviewed. Protocol 1.0 frozen on 2026-11-24; all three registered experiments complete. The title and the funding, competing-interest and AI-assistance statements were approved by the owner on 2026-11-25; the owner's full-text review of the manuscript is pending (M6). Not published.",
+ "code_revision": "c942be0 (EXP-001, EXP-002, held-out test); 219c054 (EXP-003)",
+ "sources": [
+  {
+   "path": "experiments/m4-sens-k050.json",
+   "sha256": "a7e04b44f47615d35a6e38cbd5e4f4719761204e708124eeb67cfae6a9b2e43c"
+  },
+  {
+   "path": "research/claims_register.csv",
+   "sha256": "4ee3b51e97087f2ae49a1d94b07e0adc867e6aba2ff9d224361694ac51477361"
+  },
+  {
+   "path": "research/experiment_registry.csv",
+   "sha256": "d01328ad0c57684e5de6715bc1bd6f2c8b989ba91e3aedde284e4732bffebf97"
+  },
+  {
+   "path": "research/experiments/EXP-001/config.json",
+   "sha256": "f58c9114ee1d75aa829913a685e2dbb28b660220e85367ca4b6e423a74856798"
+  },
+  {
+   "path": "research/experiments/EXP-001/generated/contrasts.csv",
+   "sha256": "cc5ae7425fc2567ebb99e3cf3259aa21fb9405396c5917ab4ed3494940a01220"
+  },
+  {
+   "path": "research/experiments/EXP-001/generated/frozen_analysis.json",
+   "sha256": "77e992bd22c02c5e51b97448efd98bd509573801c93203c94d9f9b7cd0869422"
+  },
+  {
+   "path": "research/experiments/EXP-001/generated/metrics.csv",
+   "sha256": "8553f42334ac1e28766cb91ff6621839e1c6fd5cd6950c79f5451e151478b24f"
+  },
+  {
+   "path": "research/experiments/EXP-001/report.md",
+   "sha256": "ada46bc1a53bdc7a9360eb004508328d32afdc9e18b24526bde0907d77d5f241"
+  },
+  {
+   "path": "research/experiments/EXP-002/config.json",
+   "sha256": "8cfdabadfc5302420d718a7deb29aba7160543b89449cf23de32f1e61e037bf4"
+  },
+  {
+   "path": "research/experiments/EXP-002/generated/contrasts.csv",
+   "sha256": "6b89264bbd858ae9a72fbd1d2efc37e293c2d11efe59b60a53424aaf04d69dee"
+  },
+  {
+   "path": "research/experiments/EXP-002/generated/frozen_analysis.json",
+   "sha256": "af3f07619bf14108e7d75f54ea037c2a293b25046354935310b031e683f4b416"
+  },
+  {
+   "path": "research/experiments/EXP-002/report.md",
+   "sha256": "d7697fdd5e030a590458a02a3c07e850a77b6e02605334ddb923f4b2628ab7ee"
+  },
+  {
+   "path": "research/experiments/EXP-003/config.json",
+   "sha256": "6d7ac466084124cf55a566dfa789e91088033ed2f98eae49404a667ea6e9d589"
+  },
+  {
+   "path": "research/experiments/EXP-003/generated/frozen_analysis.json",
+   "sha256": "7cd1bd6a68b77089a954254a150d52e97a3a8d7b7fba937bb1e5a4c955f8a4d8"
+  },
+  {
+   "path": "research/experiments/EXP-003/report.md",
+   "sha256": "03e52bf327be4046e325da737124586a15b7f5ba19d2bedde33099eb9903f81e"
+  },
+  {
+   "path": "research/paper/manuscript.md",
+   "sha256": "c7a60cfc6e1a6ad724f5153411350e2b32a3d220139c6f1b8f807d045d67eda2"
+  },
+  {
+   "path": "research/publication/artifact_manifest.json",
+   "sha256": "d7406ab96a0b7dbbfe20870cbaeaa63479a6207bd0728393064bab0364b89847"
+  },
+  {
+   "path": "results/confirmatory/EXP-001/run_manifest.json",
+   "sha256": "ba2ee4fdf181b4332b8904f6b3c20006d28bcd413b7d505d01baa1af46dc846a"
+  },
+  {
+   "path": "results/confirmatory/EXP-002/run_manifest.json",
+   "sha256": "dbad3ab851d8a04f4d320a646bfe384c92958063eb655f1da4f030ff95dfa972"
+  },
+  {
+   "path": "results/confirmatory/EXP-003/run_manifest.json",
+   "sha256": "6a4c42f92ef3246842487ec105392bee89bf8655da7b9395a267bbd8903440f6"
+  },
+  {
+   "path": "results/confirmatory/HELDOUT-14.4/heldout.json",
+   "sha256": "bbb43f6567b7f74743d32c8a5662f142181f169e170941b232f3ef054e89159a"
+  },
+  {
+   "path": "results/exploratory/CAL-H0/fit.json",
+   "sha256": "699684d75e1ed17571f06b44df9bf7bc4596091c658073b8be865f446f63f6cd"
+  },
+  {
+   "path": "results/exploratory/M4-SENSITIVITY/summary.json",
+   "sha256": "7dc0de4ee177069dcc6205072a62fe36baf766044a916c865263e09b5dd5759d"
+  },
+  {
+   "path": "results/exploratory/SMOKE-EXP-001-N200/report/contrasts.csv",
+   "sha256": "f7139c4ef083b3ab920b3df3b1addaceb82f01de7e961d0f88ee880afdaadb9f"
+  }
+ ],
+ "experiments": [
+  {
+   "id": "EXP-001",
+   "title": "Streak-driven versus fixed practice at matched minutes",
+   "status": "complete (confirmatory, run 2026-11-25, 4000 of 4000 learner-arms, 0 failed)",
+   "verdict": "supports the expected direction with practical relevance (95% interval entirely below -SESOI)",
+   "estimates": [
+    {
+     "label": "A2 Streak - A1 Fixed, R30 (primary)",
+     "estimate": -0.3067858045577255,
+     "ci_low": -0.3093061678427187,
+     "ci_high": -0.3042017051243542,
+     "ci_level": 0.95,
+     "unit": "R30 proportion",
+     "display": "-0.3068",
+     "interval_display": "95% CI -0.3093 to -0.3042",
+     "display_source": "research/paper/manuscript.md",
+     "interval_source": "research/paper/manuscript.md"
+    },
+    {
+     "label": "A3 Spaced - A1 Fixed, R30",
+     "estimate": 0.011447783306260615,
+     "ci_low": 0.010657155408518481,
+     "ci_high": 0.012250634176233274,
+     "ci_level": 0.95,
+     "unit": "R30 proportion",
+     "display": "+0.0114",
+     "interval_display": "95% CI 0.0107 to 0.0123",
+     "display_source": "research/paper/manuscript.md",
+     "interval_source": "research/paper/manuscript.md"
+    },
+    {
+     "label": "A2 Streak - A0 NoPractice, R30",
+     "estimate": 0.07221624253251217,
+     "ci_low": 0.07121721613146954,
+     "ci_high": 0.07320249510221354,
+     "ci_level": 0.95,
+     "unit": "R30 proportion",
+     "display": "0.0722",
+     "interval_display": "95% CI 0.0712 to 0.0732",
+     "display_source": "research/paper/manuscript.md",
+     "interval_source": "research/paper/manuscript.md"
+    },
+    {
+     "label": "A2 Streak - A3 Spaced, R30 (identical activity)",
+     "estimate": -0.3182335878639861,
+     "ci_low": -0.3208512287270493,
+     "ci_high": -0.31553503119873905,
+     "ci_level": 0.95,
+     "unit": "R30 proportion",
+     "display": "-0.3182",
+     "interval_display": "[-0.3209, -0.3155]",
+     "display_source": "research/paper/manuscript.md",
+     "interval_source": "research/experiments/EXP-001/report.md",
+     "note": "Interval printed in the EXP-001 report (section 8.3); the manuscript prints the estimate only."
+    },
+    {
+     "label": "R30, A0 NoPractice",
+     "estimate": 0.4140776085269922,
+     "ci_low": 0.40818551502578754,
+     "ci_high": 0.4201279740882106,
+     "ci_level": 0.95,
+     "unit": "R30 proportion",
+     "display": "0.4141",
+     "interval_display": "[0.4082, 0.4201]",
+     "display_source": "research/paper/manuscript.md",
+     "interval_source": "research/paper/manuscript.md"
+    },
+    {
+     "label": "R30, A1 Fixed",
+     "estimate": 0.7930796556172298,
+     "ci_low": 0.789957076502523,
+     "ci_high": 0.7962708338889807,
+     "ci_level": 0.95,
+     "unit": "R30 proportion",
+     "display": "0.7931",
+     "interval_display": "[0.7900, 0.7963]",
+     "display_source": "research/paper/manuscript.md",
+     "interval_source": "research/paper/manuscript.md"
+    },
+    {
+     "label": "R30, A2 Streak",
+     "estimate": 0.4862938510595044,
+     "ci_low": 0.4809288948316112,
+     "ci_high": 0.4918816396844162,
+     "ci_level": 0.95,
+     "unit": "R30 proportion",
+     "display": "0.4863",
+     "interval_display": "[0.4809, 0.4919]",
+     "display_source": "research/paper/manuscript.md",
+     "interval_source": "research/paper/manuscript.md"
+    },
+    {
+     "label": "R30, A3 Spaced",
+     "estimate": 0.8045274389234905,
+     "ci_low": 0.8015377548629553,
+     "ci_high": 0.8075737417930782,
+     "ci_level": 0.95,
+     "unit": "R30 proportion",
+     "display": "0.8045",
+     "interval_display": "[0.8015, 0.8076]",
+     "display_source": "research/paper/manuscript.md",
+     "interval_source": "research/paper/manuscript.md"
+    }
+   ],
+   "claim_ids": [
+    "CLM-001",
+    "CLM-002",
+    "CLM-003",
+    "CLM-010"
+   ],
+   "report_path": "research/experiments/EXP-001/report.md",
+   "notes": [
+    "Primary experiment, preregistered and frozen (protocol 1.0). n = 1,000 synthetic learners per policy, master seeds 1 to 5.",
+    "Intervals are 95% stratified percentile bootstrap intervals over learners within master seed (10,000 resamples). SESOI 0.02."
+   ],
+   "label": "measured (confirmatory simulation)",
+   "code_revision": "c942be096240103297fcab6f3cc9886961ce8137"
+  },
+  {
+   "id": "EXP-002",
+   "title": "When does the gap appear: robustness across forgetting parameters and availability",
+   "status": "complete (confirmatory, run 2026-11-25, 54000 of 54000 learner-arms, 0 failed)",
+   "verdict": "Grid hypothesis holds: A2 - A1 negative in 27 of 27 cells, relevant negative after Holm adjustment across cells in 27 of 27; robustness not disconfirmed (0 cells with a 95% interval above 0, 0 practically equivalent).",
+   "estimates": [
+    {
+     "label": "A2 - A1, largest gap (h0 = 33.8 days, a = 4, q = 1)",
+     "estimate": -0.4708787282505963,
+     "ci_low": -0.4734003534519529,
+     "ci_high": -0.4682144606988792,
+     "ci_level": 0.95,
+     "unit": "R30 proportion",
+     "display": "-0.4709",
+     "interval_display": "[-0.4734, -0.4682]",
+     "display_source": "research/paper/manuscript.md",
+     "interval_source": "research/experiments/EXP-002/report.md",
+     "note": "Interval printed in the EXP-002 report (table 8.1); the manuscript prints the estimate only."
+    },
+    {
+     "label": "A2 - A1, smallest gap (h0 = 135.18 days, a = 1.5, q = 0.7)",
+     "estimate": -0.17625046272207492,
+     "ci_low": -0.17931430029635348,
+     "ci_high": -0.1731959252950382,
+     "ci_level": 0.95,
+     "unit": "R30 proportion",
+     "display": "-0.1763",
+     "interval_display": "[-0.1793, -0.1732]",
+     "display_source": "research/paper/manuscript.md",
+     "interval_source": "research/experiments/EXP-002/report.md",
+     "note": "Interval printed in the EXP-002 report (table 8.1); the manuscript prints the estimate only."
+    }
+   ],
+   "claim_ids": [
+    "CLM-005",
+    "CLM-008"
+   ],
+   "report_path": "research/experiments/EXP-002/report.md",
+   "notes": [
+    "27 cells: h0 in {33.8, 67.59, 135.18} days, gain coefficient a in {1.5, 2.5, 4}, availability q in {0.7, 0.85, 1.0}; 500 learners per cell. All 27 cells are drawn in the cell chart.",
+    "Unexpected secondary result: at h0 = 33.8 days the threshold comparator A3 retained less than A1 in all 9 cells (-0.0684 to -0.0218), relevant in 8.",
+    "The cells share learners (common random numbers), so they are not independent confirmations."
+   ],
+   "label": "measured (confirmatory simulation)",
+   "code_revision": "c942be096240103297fcab6f3cc9886961ce8137"
+  },
+  {
+   "id": "EXP-003",
+   "title": "Timing versus item selection, and model-form sensitivity",
+   "status": "complete (confirmatory, run 2026-11-25, 12000 of 12000 learner-arms, 0 failed)",
+   "verdict": "H-inv not triggered: under the flat gain rule A2 - A1 stayed relevant negative for both forgetting forms.",
+   "estimates": [
+    {
+     "label": "A2 - A1, exponential, difficulty gain",
+     "estimate": -0.30887132802406675,
+     "ci_low": -0.31238602445980357,
+     "ci_high": -0.30538477542099574,
+     "ci_level": 0.95,
+     "unit": "R30 proportion",
+     "display": "-0.3089",
+     "interval_display": "[-0.3124, -0.3054]",
+     "display_source": "research/paper/manuscript.md",
+     "interval_source": "research/paper/manuscript.md"
+    },
+    {
+     "label": "A2 - A1, exponential, flat gain",
+     "estimate": -0.3886531673805324,
+     "ci_low": -0.39229579194152175,
+     "ci_high": -0.3849457680096025,
+     "ci_level": 0.95,
+     "unit": "R30 proportion",
+     "display": "-0.3887",
+     "interval_display": "[-0.3923, -0.3849]",
+     "display_source": "research/paper/manuscript.md",
+     "interval_source": "research/paper/manuscript.md"
+    },
+    {
+     "label": "A2 - A1, power law, difficulty gain",
+     "estimate": -0.21880325133462822,
+     "ci_low": -0.21999132602431273,
+     "ci_high": -0.21761024419934172,
+     "ci_level": 0.95,
+     "unit": "R30 proportion",
+     "display": "-0.2188",
+     "interval_display": "[-0.2200, -0.2176]",
+     "display_source": "research/paper/manuscript.md",
+     "interval_source": "research/paper/manuscript.md"
+    },
+    {
+     "label": "A2 - A1, power law, flat gain",
+     "estimate": -0.2772281717562473,
+     "ci_low": -0.2787261161486833,
+     "ci_high": -0.27568402697211764,
+     "ci_level": 0.95,
+     "unit": "R30 proportion",
+     "display": "-0.2772",
+     "interval_display": "[-0.2787, -0.2757]",
+     "display_source": "research/paper/manuscript.md",
+     "interval_source": "research/paper/manuscript.md"
+    }
+   ],
+   "claim_ids": [
+    "CLM-006",
+    "CLM-007",
+    "CLM-009"
+   ],
+   "report_path": "research/experiments/EXP-003/report.md",
+   "notes": [
+    "2 x 3 design (timing: daily or 3 per week; selection: round-robin, easiest first or threshold) under 4 model variants; 500 learners per variant.",
+    "Main effects use the conventional equal-weight marginal definition, which the protocol names without a formula (an AI reading). Effect intervals are printed in the EXP-003 report (table 8.4); the manuscript prints the estimates only."
+   ],
+   "label": "measured (confirmatory simulation)",
+   "code_revision": "219c05473a3dc573621e54f15db153280cc08ee9"
+  },
+  {
+   "id": "HELDOUT-14.4",
+   "title": "Held-out test of the forgetting model on real Duolingo traces (not a registered experiment)",
+   "status": "complete (preregistered descriptive test, protocol section 14.4, run once after the freeze)",
+   "verdict": "Negative result for the model's forgetting assumption: the exponential form does not describe the held-out first-repeat data better than a constant-recall baseline; the power-law form is better supported than the exponential form.",
+   "estimates": [
+    {
+     "label": "Constant-recall baseline, log-likelihood per held-out trial",
+     "estimate": -0.3351990475715293,
+     "ci_low": null,
+     "ci_high": null,
+     "ci_level": null,
+     "unit": "nats per trial",
+     "display": "-0.3352",
+     "interval_display": null,
+     "display_source": "research/paper/manuscript.md",
+     "interval_source": null
+    },
+    {
+     "label": "Power-law form, log-likelihood per held-out trial",
+     "estimate": -0.37098841402135785,
+     "ci_low": null,
+     "ci_high": null,
+     "ci_level": null,
+     "unit": "nats per trial",
+     "display": "-0.3710",
+     "interval_display": null,
+     "display_source": "research/paper/manuscript.md",
+     "interval_source": null
+    },
+    {
+     "label": "Exponential form (the model's default), log-likelihood per held-out trial",
+     "estimate": -0.3864654010781219,
+     "ci_low": null,
+     "ci_high": null,
+     "ci_level": null,
+     "unit": "nats per trial",
+     "display": "-0.3865",
+     "interval_display": null,
+     "display_source": "research/paper/manuscript.md",
+     "interval_source": null
+    }
+   ],
+   "claim_ids": [
+    "CLM-004"
+   ],
+   "report_path": "research/experiments/EXP-001/report.md (section 8.4)",
+   "notes": [
+    "Held-out user split: 161,243 first-repeat rows, 243,337 trials. Higher (less negative) log-likelihood is better.",
+    "No interval was computed for these log-likelihoods; the naive likelihood treats trials as independent."
+   ],
+   "label": "measured (real public data, descriptive test)",
+   "code_revision": "c942be096240103297fcab6f3cc9886961ce8137"
+  },
+  {
+   "id": "SMOKE-EXP-001-N200",
+   "title": "Contradictory evidence: the floor regime at the draft parameters (exploratory, not a registered experiment)",
+   "status": "exploratory, seen before the freeze (draft parameters h0 = 1 day, K = 100, an earlier A3 rule; smoke seeds)",
+   "verdict": "No frozen rule applies (exploratory). The sign is the opposite of the confirmatory result: in a regime where nearly every item is forgotten by the test, daily easy practice beat sparse round-robin.",
+   "estimates": [
+    {
+     "label": "A2 - A1, R30, draft parameters",
+     "estimate": 0.08008064098035664,
+     "ci_low": 0.07878172782308096,
+     "ci_high": 0.08132664475664252,
+     "ci_level": 0.95,
+     "unit": "R30 proportion",
+     "display": "+0.0801",
+     "interval_display": "95% CI 0.0788 to 0.0813",
+     "display_source": "research/paper/manuscript.md",
+     "interval_source": "research/paper/manuscript.md"
+    }
+   ],
+   "claim_ids": [
+    "CLM-013"
+   ],
+   "report_path": "results/exploratory/SMOKE-EXP-001-N200/report/report.md",
+   "notes": [
+    "These values were seen before the freeze; the decision to leave the floor regime was taken with them visible. The rules that set the frozen parameters used the control arms only (manuscript section 5.5)."
+   ],
+   "label": "exploratory (pre-freeze smoke run)",
+   "code_revision": "dfa9dd4"
+  },
+  {
+   "id": "M4-SENSITIVITY",
+   "title": "Sensitivity to the number of items and to slower forgetting (exploratory, not a registered experiment)",
+   "status": "exploratory, after the confirmatory analysis (smoke seeds 9001 to 9005, 500 learners per row)",
+   "verdict": "No frozen rule applies (exploratory); no confirmatory verdict changes.",
+   "estimates": [
+    {
+     "label": "A2 - A1, K = 50 items",
+     "estimate": -0.23575967023680866,
+     "ci_low": -0.24139298960035613,
+     "ci_high": -0.2301902436932241,
+     "ci_level": 0.95,
+     "unit": "R30 proportion",
+     "display": "-0.2358",
+     "interval_display": "[-0.2414, -0.2302]",
+     "display_source": "research/paper/manuscript.md",
+     "interval_source": "research/paper/manuscript.md"
+    },
+    {
+     "label": "A2 - A1, K = 100 items",
+     "estimate": -0.3164091485345445,
+     "ci_low": -0.32151497188885536,
+     "ci_high": -0.31133546680185503,
+     "ci_level": 0.95,
+     "unit": "R30 proportion",
+     "display": "-0.3164",
+     "interval_display": "[-0.3215, -0.3113]",
+     "display_source": "research/paper/manuscript.md",
+     "interval_source": "research/paper/manuscript.md"
+    },
+    {
+     "label": "A2 - A1, K = 200 items",
+     "estimate": -0.3077602492234253,
+     "ci_low": -0.31152034593578104,
+     "ci_high": -0.304033385733309,
+     "ci_level": 0.95,
+     "unit": "R30 proportion",
+     "display": "-0.3078",
+     "interval_display": "[-0.3115, -0.3040]",
+     "display_source": "research/paper/manuscript.md",
+     "interval_source": "research/paper/manuscript.md"
+    },
+    {
+     "label": "A2 - A1, K = 400 items",
+     "estimate": -0.2322598703631529,
+     "ci_low": -0.2342601521002243,
+     "ci_high": -0.23025568667689333,
+     "ci_level": 0.95,
+     "unit": "R30 proportion",
+     "display": "-0.2323",
+     "interval_display": "[-0.2343, -0.2303]",
+     "display_source": "research/paper/manuscript.md",
+     "interval_source": "research/paper/manuscript.md"
+    },
+    {
+     "label": "A2 - A1, h0 = 270.36 days",
+     "estimate": -0.12256270964404044,
+     "ci_low": -0.1255431893629338,
+     "ci_high": -0.11965948968306848,
+     "ci_level": 0.95,
+     "unit": "R30 proportion",
+     "display": "-0.1226",
+     "interval_display": "[-0.1255, -0.1197]",
+     "display_source": "research/paper/manuscript.md",
+     "interval_source": "research/paper/manuscript.md"
+    },
+    {
+     "label": "A2 - A1, h0 = 540.72 days",
+     "estimate": -0.06610499460627658,
+     "ci_low": -0.06786803807672925,
+     "ci_high": -0.06438159719364027,
+     "ci_level": 0.95,
+     "unit": "R30 proportion",
+     "display": "-0.0661",
+     "interval_display": "[-0.0679, -0.0644]",
+     "display_source": "research/paper/manuscript.md",
+     "interval_source": "research/paper/manuscript.md"
+    },
+    {
+     "label": "A2 - A1, h0 = 1081.44 days",
+     "estimate": -0.03424594338351824,
+     "ci_low": -0.03520011327440564,
+     "ci_high": -0.03331239162265028,
+     "ci_level": 0.95,
+     "unit": "R30 proportion",
+     "display": "-0.0342",
+     "interval_display": "[-0.0352, -0.0333]",
+     "display_source": "research/paper/manuscript.md",
+     "interval_source": "research/paper/manuscript.md"
+    }
+   ],
+   "claim_ids": [
+    "CLM-011",
+    "CLM-012",
+    "CLM-014"
+   ],
+   "report_path": "research/paper/manuscript.md (section 5.6)",
+   "notes": [
+    "The gap varies with K in a non-monotone way and shrinks in absolute size under much slower forgetting, while A2 recovers about the same share of A1's gain over no practice (0.186 to 0.188)."
+   ],
+   "label": "exploratory (smoke seeds)",
+   "code_revision": "6580319b2c5f20cf66fb3bfb2ae33448de969463"
+  }
+ ],
+ "assumptions": [
+  {
+   "name": "Items per learner, K",
+   "value": "200 (set by a control-only ceiling rule before the freeze)",
+   "source": "research/experiments/EXP-001/config.json; manuscript section 4.3"
+  },
+  {
+   "name": "Practice horizon, T",
+   "value": "days 1 to 56",
+   "source": "research/experiments/EXP-001/config.json"
+  },
+  {
+   "name": "Practice budget, M",
+   "value": "672 slots of 0.5 minutes (336 minutes) per learner, at most 60 slots per day",
+   "source": "research/experiments/EXP-001/config.json"
+  },
+  {
+   "name": "Median initial half-life, h0",
+   "value": "67.59 days, fitted on the Duolingo fit split (naive 95% likelihood-ratio interval 66.70 to 68.49 days)",
+   "source": "results/exploratory/CAL-H0/fit.json; manuscript section 4.2"
+  },
+  {
+   "name": "Forgetting curve",
+   "value": "p = 2^(-delay/h) (exponential, default); power-law form in EXP-003",
+   "source": "manuscript section 3.1"
+  },
+  {
+   "name": "Gain on a successful review",
+   "value": "h <- h(1 + 0.1 + 2.5(1 - p)) (difficulty-dependent, default); flat gain h <- 1.85h in EXP-003",
+   "source": "manuscript section 3.1"
+  },
+  {
+   "name": "Failed review",
+   "value": "h <- max(0.25, 0.6h)",
+   "source": "manuscript section 3.1"
+  },
+  {
+   "name": "Heterogeneity",
+   "value": "item log-SD 0.5, learner log-SD 0.3",
+   "source": "research/experiments/EXP-001/config.json"
+  },
+  {
+   "name": "Daily availability, q",
+   "value": "0.85, drawn once per learner and shared by all policies",
+   "source": "research/experiments/EXP-001/config.json"
+  },
+  {
+   "name": "Scheduler belief",
+   "value": "population-median parameters and the default model, updated with observed outcomes; never the true state",
+   "source": "manuscript section 3.3"
+  },
+  {
+   "name": "Threshold of A3",
+   "value": "items with estimated recall at or below 0.9 first",
+   "source": "manuscript section 3.3"
+  },
+  {
+   "name": "Smallest effect size of interest",
+   "value": "0.02 in R30",
+   "source": "research/experiments/EXP-001/config.json; protocol 1.0"
+  }
+ ],
+ "limitations": [
+  "Model dependence. Every result is conditional on the memory model, the policy rules and the scheduler's belief. EXP-003 varied the gain rule and the forgetting form; item independence, the absence of interference and the absence of within-day decay were never varied.",
+  "Forgetting form. The held-out test did not support the exponential form against a constant baseline. The calibrated h0 anchors only an order of magnitude.",
+  "Construct. A2 is one stylised operationalisation of streak-driven practice. R30 is an expected recall probability, not a test score.",
+  "Statistical. Intervals describe simulation noise given the model; with d_z = -7.40 they are narrow, but the uncertainty that matters is about the model. The 27 EXP-002 cells share learners and are not independent confirmations. The EXP-003 default variant reproduces the EXP-002 default cell exactly (-0.3089) because both use the same seeds and learner counts.",
+  "Magnitude. The size of the gap depends on K, which was set by a ceiling rule, and on the forgetting speed, which the real data do not validate (section 6.3).",
+  "No motivation. Practice time is fixed, so the study cannot say whether streaks help or hurt learning overall when they change how much people practise.",
+  "Pre-freeze information. A2 > A1 had been seen at the draft parameters before the freeze (section 5.5). The rules that set the frozen parameters used only the control arms and were committed before the fit, but the decision to leave the floor regime was taken with the contrary values visible.",
+  "Deviations and owner decisions. All are listed in supplementary section S6. None changed a frozen protocol, config, seed or verdict."
+ ],
+ "streak_vs_recall": {
+  "experiment_id": "EXP-001",
+  "note": "Mean per policy over 1,000 synthetic learners at the frozen default parameters. R30 intervals are 95% stratified bootstrap intervals. Active days and longest streak are descriptive means; no interval was computed for them. Retention at delays 1, 7 and 90 days has no interval in the committed outputs.",
+  "arms": [
+   {
+    "arm": "A0",
+    "name": "A0 NoPractice",
+    "n": 1000,
+    "r30": {
+     "mean": 0.4140776085269922,
+     "ci_low": 0.40818551502578754,
+     "ci_high": 0.4201279740882106,
+     "display": "0.4141",
+     "interval_display": "[0.4082, 0.4201]",
+     "display_source": "research/paper/manuscript.md"
+    },
+    "active_days": {
+     "mean": 0.0,
+     "display": "0.00",
+     "display_source": "research/paper/manuscript.md"
+    },
+    "longest_streak": {
+     "mean": 0.0,
+     "display": "0.00",
+     "display_source": "research/paper/manuscript.md"
+    },
+    "item_coverage": {
+     "mean": 0.0,
+     "display": "0.000",
+     "display_source": "research/paper/manuscript.md"
+    },
+    "minutes": {
+     "mean": 0.0,
+     "display": "0.0",
+     "display_source": "research/experiments/EXP-001/report.md"
+    },
+    "retention_curve": [
+     {
+      "delay_days": 1,
+      "mean": 0.5422272124595329,
+      "ci_low": null,
+      "ci_high": null,
+      "display": "0.5422",
+      "display_source": "research/experiments/EXP-001/report.md"
+     },
+     {
+      "delay_days": 7,
+      "mean": 0.5118583252440136,
+      "ci_low": null,
+      "ci_high": null,
+      "display": "0.5119",
+      "display_source": "research/experiments/EXP-001/report.md"
+     },
+     {
+      "delay_days": 30,
+      "mean": 0.4140776085269922,
+      "ci_low": 0.40818551502578754,
+      "ci_high": 0.4201279740882106,
+      "display": "0.4141",
+      "display_source": "research/experiments/EXP-001/report.md"
+     },
+     {
+      "delay_days": 90,
+      "mean": 0.2513149274978493,
+      "ci_low": null,
+      "ci_high": null,
+      "display": "0.2513",
+      "display_source": "research/experiments/EXP-001/report.md"
+     }
+    ]
+   },
+   {
+    "arm": "A1",
+    "name": "A1 Fixed",
+    "n": 1000,
+    "r30": {
+     "mean": 0.7930796556172298,
+     "ci_low": 0.789957076502523,
+     "ci_high": 0.7962708338889807,
+     "display": "0.7931",
+     "interval_display": "[0.7900, 0.7963]",
+     "display_source": "research/paper/manuscript.md"
+    },
+    "active_days": {
+     "mean": 23.601,
+     "display": "23.60",
+     "display_source": "research/paper/manuscript.md"
+    },
+    "longest_streak": {
+     "mean": 1.875,
+     "display": "1.88",
+     "display_source": "research/paper/manuscript.md"
+    },
+    "item_coverage": {
+     "mean": 1.0,
+     "display": "1.000",
+     "display_source": "research/paper/manuscript.md"
+    },
+    "minutes": {
+     "mean": 335.958,
+     "display": "336.0",
+     "display_source": "research/experiments/EXP-001/report.md"
+    },
+    "retention_curve": [
+     {
+      "delay_days": 1,
+      "mean": 0.9329496527287817,
+      "ci_low": null,
+      "ci_high": null,
+      "display": "0.9329",
+      "display_source": "research/experiments/EXP-001/report.md"
+     },
+     {
+      "delay_days": 7,
+      "mean": 0.8989194219449341,
+      "ci_low": null,
+      "ci_high": null,
+      "display": "0.8989",
+      "display_source": "research/experiments/EXP-001/report.md"
+     },
+     {
+      "delay_days": 30,
+      "mean": 0.7930796556172298,
+      "ci_low": 0.789957076502523,
+      "ci_high": 0.7962708338889807,
+      "display": "0.7931",
+      "display_source": "research/experiments/EXP-001/report.md"
+     },
+     {
+      "delay_days": 90,
+      "mean": 0.596925189539808,
+      "ci_low": null,
+      "ci_high": null,
+      "display": "0.5969",
+      "display_source": "research/experiments/EXP-001/report.md"
+     }
+    ]
+   },
+   {
+    "arm": "A2",
+    "name": "A2 Streak",
+    "n": 1000,
+    "r30": {
+     "mean": 0.4862938510595044,
+     "ci_low": 0.4809288948316112,
+     "ci_high": 0.4918816396844162,
+     "display": "0.4863",
+     "interval_display": "[0.4809, 0.4919]",
+     "display_source": "research/paper/manuscript.md"
+    },
+    "active_days": {
+     "mean": 47.553,
+     "display": "47.55",
+     "display_source": "research/paper/manuscript.md"
+    },
+    "longest_streak": {
+     "mean": 16.239,
+     "display": "16.24",
+     "display_source": "research/paper/manuscript.md"
+    },
+    "item_coverage": {
+     "mean": 0.1722,
+     "display": "0.172",
+     "display_source": "research/paper/manuscript.md"
+    },
+    "minutes": {
+     "mean": 334.926,
+     "display": "334.9",
+     "display_source": "research/experiments/EXP-001/report.md"
+    },
+    "retention_curve": [
+     {
+      "delay_days": 1,
+      "mean": 0.6070780999851203,
+      "ci_low": null,
+      "ci_high": null,
+      "display": "0.6071",
+      "display_source": "research/experiments/EXP-001/report.md"
+     },
+     {
+      "delay_days": 7,
+      "mean": 0.5784423524629398,
+      "ci_low": null,
+      "ci_high": null,
+      "display": "0.5784",
+      "display_source": "research/experiments/EXP-001/report.md"
+     },
+     {
+      "delay_days": 30,
+      "mean": 0.4862938510595044,
+      "ci_low": 0.4809288948316112,
+      "ci_high": 0.4918816396844162,
+      "display": "0.4863",
+      "display_source": "research/experiments/EXP-001/report.md"
+     },
+     {
+      "delay_days": 90,
+      "mean": 0.3313818554989207,
+      "ci_low": null,
+      "ci_high": null,
+      "display": "0.3314",
+      "display_source": "research/experiments/EXP-001/report.md"
+     }
+    ]
+   },
+   {
+    "arm": "A3",
+    "name": "A3 Spaced",
+    "n": 1000,
+    "r30": {
+     "mean": 0.8045274389234905,
+     "ci_low": 0.8015377548629553,
+     "ci_high": 0.8075737417930782,
+     "display": "0.8045",
+     "interval_display": "[0.8015, 0.8076]",
+     "display_source": "research/paper/manuscript.md"
+    },
+    "active_days": {
+     "mean": 47.553,
+     "display": "47.55",
+     "display_source": "research/paper/manuscript.md"
+    },
+    "longest_streak": {
+     "mean": 16.239,
+     "display": "16.24",
+     "display_source": "research/paper/manuscript.md"
+    },
+    "item_coverage": {
+     "mean": 0.9989300000000001,
+     "display": "0.999",
+     "display_source": "research/paper/manuscript.md"
+    },
+    "minutes": {
+     "mean": 334.926,
+     "display": "334.9",
+     "display_source": "research/experiments/EXP-001/report.md"
+    },
+    "retention_curve": [
+     {
+      "delay_days": 1,
+      "mean": 0.9473872594339536,
+      "ci_low": null,
+      "ci_high": null,
+      "display": "0.9474",
+      "display_source": "research/experiments/EXP-001/report.md"
+     },
+     {
+      "delay_days": 7,
+      "mean": 0.9137794183077902,
+      "ci_low": null,
+      "ci_high": null,
+      "display": "0.9138",
+      "display_source": "research/experiments/EXP-001/report.md"
+     },
+     {
+      "delay_days": 30,
+      "mean": 0.8045274389234905,
+      "ci_low": 0.8015377548629553,
+      "ci_high": 0.8075737417930782,
+      "display": "0.8045",
+      "display_source": "research/experiments/EXP-001/report.md"
+     },
+     {
+      "delay_days": 90,
+      "mean": 0.5981514071088095,
+      "ci_low": null,
+      "ci_high": null,
+      "display": "0.5982",
+      "display_source": "research/experiments/EXP-001/report.md"
+     }
+    ]
+   }
+  ]
+ },
+ "exp002_grid": {
+  "experiment_id": "EXP-002",
+  "contrast": "A2 - A1 in R30",
+  "sesoi": 0.02,
+  "cells": [
+   {
+    "cell_id": "h0=33.8|a=1.5|q=0.7",
+    "h0_days": 33.8,
+    "a": 1.5,
+    "q": 0.7,
+    "estimate": -0.2619038894308008,
+    "ci_low": -0.2643958915724985,
+    "ci_high": -0.2593653301154682,
+    "display": "-0.2619",
+    "interval_display": "[-0.2644, -0.2594]",
+    "display_source": "research/experiments/EXP-002/report.md",
+    "classification": "relevant negative",
+    "relevant_holm_across_cells": true
+   },
+   {
+    "cell_id": "h0=33.8|a=1.5|q=0.85",
+    "h0_days": 33.8,
+    "a": 1.5,
+    "q": 0.85,
+    "estimate": -0.2885244739965602,
+    "ci_low": -0.29092584587435655,
+    "ci_high": -0.28601830956833296,
+    "display": "-0.2885",
+    "interval_display": "[-0.2909, -0.2860]",
+    "display_source": "research/experiments/EXP-002/report.md",
+    "classification": "relevant negative",
+    "relevant_holm_across_cells": true
+   },
+   {
+    "cell_id": "h0=33.8|a=1.5|q=1",
+    "h0_days": 33.8,
+    "a": 1.5,
+    "q": 1.0,
+    "estimate": -0.325974636528957,
+    "ci_low": -0.3282983929694868,
+    "ci_high": -0.3235261705796835,
+    "display": "-0.3260",
+    "interval_display": "[-0.3283, -0.3235]",
+    "display_source": "research/experiments/EXP-002/report.md",
+    "classification": "relevant negative",
+    "relevant_holm_across_cells": true
+   },
+   {
+    "cell_id": "h0=33.8|a=2.5|q=0.7",
+    "h0_days": 33.8,
+    "a": 2.5,
+    "q": 0.7,
+    "estimate": -0.32731909700123446,
+    "ci_low": -0.3297367126413494,
+    "ci_high": -0.3248283699653486,
+    "display": "-0.3273",
+    "interval_display": "[-0.3297, -0.3248]",
+    "display_source": "research/experiments/EXP-002/report.md",
+    "classification": "relevant negative",
+    "relevant_holm_across_cells": true
+   },
+   {
+    "cell_id": "h0=33.8|a=2.5|q=0.85",
+    "h0_days": 33.8,
+    "a": 2.5,
+    "q": 0.85,
+    "estimate": -0.35715012501952553,
+    "ci_low": -0.35950532271019214,
+    "ci_high": -0.3547118972791561,
+    "display": "-0.3572",
+    "interval_display": "[-0.3595, -0.3547]",
+    "display_source": "research/experiments/EXP-002/report.md",
+    "classification": "relevant negative",
+    "relevant_holm_across_cells": true
+   },
+   {
+    "cell_id": "h0=33.8|a=2.5|q=1",
+    "h0_days": 33.8,
+    "a": 2.5,
+    "q": 1.0,
+    "estimate": -0.4001851721253438,
+    "ci_low": -0.40242087835850215,
+    "ci_high": -0.39781983531825044,
+    "display": "-0.4002",
+    "interval_display": "[-0.4024, -0.3978]",
+    "display_source": "research/experiments/EXP-002/report.md",
+    "classification": "relevant negative",
+    "relevant_holm_across_cells": true
+   },
+   {
+    "cell_id": "h0=33.8|a=4|q=0.7",
+    "h0_days": 33.8,
+    "a": 4.0,
+    "q": 0.7,
+    "estimate": -0.3892080361211179,
+    "ci_low": -0.3919215575597088,
+    "ci_high": -0.3864871607789278,
+    "display": "-0.3892",
+    "interval_display": "[-0.3919, -0.3865]",
+    "display_source": "research/experiments/EXP-002/report.md",
+    "classification": "relevant negative",
+    "relevant_holm_across_cells": true
+   },
+   {
+    "cell_id": "h0=33.8|a=4|q=0.85",
+    "h0_days": 33.8,
+    "a": 4.0,
+    "q": 0.85,
+    "estimate": -0.4222724964086147,
+    "ci_low": -0.4248868786201743,
+    "ci_high": -0.4196009859974741,
+    "display": "-0.4223",
+    "interval_display": "[-0.4249, -0.4196]",
+    "display_source": "research/experiments/EXP-002/report.md",
+    "classification": "relevant negative",
+    "relevant_holm_across_cells": true
+   },
+   {
+    "cell_id": "h0=33.8|a=4|q=1",
+    "h0_days": 33.8,
+    "a": 4.0,
+    "q": 1.0,
+    "estimate": -0.4708787282505963,
+    "ci_low": -0.4734003534519529,
+    "ci_high": -0.4682144606988792,
+    "display": "-0.4709",
+    "interval_display": "[-0.4734, -0.4682]",
+    "display_source": "research/experiments/EXP-002/report.md",
+    "classification": "relevant negative",
+    "relevant_holm_across_cells": true
+   },
+   {
+    "cell_id": "h0=67.59|a=1.5|q=0.7",
+    "h0_days": 67.59,
+    "a": 1.5,
+    "q": 0.7,
+    "estimate": -0.24614442634527636,
+    "ci_low": -0.2486574730704715,
+    "ci_high": -0.24359610945878285,
+    "display": "-0.2461",
+    "interval_display": "[-0.2487, -0.2436]",
+    "display_source": "research/experiments/EXP-002/report.md",
+    "classification": "relevant negative",
+    "relevant_holm_across_cells": true
+   },
+   {
+    "cell_id": "h0=67.59|a=1.5|q=0.85",
+    "h0_days": 67.59,
+    "a": 1.5,
+    "q": 0.85,
+    "estimate": -0.26870538917953235,
+    "ci_low": -0.27127586207914817,
+    "ci_high": -0.2660945720704168,
+    "display": "-0.2687",
+    "interval_display": "[-0.2713, -0.2661]",
+    "display_source": "research/experiments/EXP-002/report.md",
+    "classification": "relevant negative",
+    "relevant_holm_across_cells": true
+   },
+   {
+    "cell_id": "h0=67.59|a=1.5|q=1",
+    "h0_days": 67.59,
+    "a": 1.5,
+    "q": 1.0,
+    "estimate": -0.3016702315119882,
+    "ci_low": -0.30443439266415967,
+    "ci_high": -0.2988364996825701,
+    "display": "-0.3017",
+    "interval_display": "[-0.3044, -0.2988]",
+    "display_source": "research/experiments/EXP-002/report.md",
+    "classification": "relevant negative",
+    "relevant_holm_across_cells": true
+   },
+   {
+    "cell_id": "h0=67.59|a=2.5|q=0.7",
+    "h0_days": 67.59,
+    "a": 2.5,
+    "q": 0.7,
+    "estimate": -0.2846041519822226,
+    "ci_low": -0.2879264890626233,
+    "ci_high": -0.28122413669673324,
+    "display": "-0.2846",
+    "interval_display": "[-0.2879, -0.2812]",
+    "display_source": "research/experiments/EXP-002/report.md",
+    "classification": "relevant negative",
+    "relevant_holm_across_cells": true
+   },
+   {
+    "cell_id": "h0=67.59|a=2.5|q=0.85",
+    "h0_days": 67.59,
+    "a": 2.5,
+    "q": 0.85,
+    "estimate": -0.30887132802406675,
+    "ci_low": -0.31238602445980357,
+    "ci_high": -0.30538477542099574,
+    "display": "-0.3089",
+    "interval_display": "[-0.3124, -0.3054]",
+    "display_source": "research/experiments/EXP-002/report.md",
+    "classification": "relevant negative",
+    "relevant_holm_across_cells": true
+   },
+   {
+    "cell_id": "h0=67.59|a=2.5|q=1",
+    "h0_days": 67.59,
+    "a": 2.5,
+    "q": 1.0,
+    "estimate": -0.3452070070435515,
+    "ci_low": -0.34896528736060706,
+    "ci_high": -0.3414047258634285,
+    "display": "-0.3452",
+    "interval_display": "[-0.3490, -0.3414]",
+    "display_source": "research/experiments/EXP-002/report.md",
+    "classification": "relevant negative",
+    "relevant_holm_across_cells": true
+   },
+   {
+    "cell_id": "h0=67.59|a=4|q=0.7",
+    "h0_days": 67.59,
+    "a": 4.0,
+    "q": 0.7,
+    "estimate": -0.3215894548962602,
+    "ci_low": -0.3257648132291721,
+    "ci_high": -0.31739843916083554,
+    "display": "-0.3216",
+    "interval_display": "[-0.3258, -0.3174]",
+    "display_source": "research/experiments/EXP-002/report.md",
+    "classification": "relevant negative",
+    "relevant_holm_across_cells": true
+   },
+   {
+    "cell_id": "h0=67.59|a=4|q=0.85",
+    "h0_days": 67.59,
+    "a": 4.0,
+    "q": 0.85,
+    "estimate": -0.34787742075256645,
+    "ci_low": -0.3522081104971614,
+    "ci_high": -0.34349750713445815,
+    "display": "-0.3479",
+    "interval_display": "[-0.3522, -0.3435]",
+    "display_source": "research/experiments/EXP-002/report.md",
+    "classification": "relevant negative",
+    "relevant_holm_across_cells": true
+   },
+   {
+    "cell_id": "h0=67.59|a=4|q=1",
+    "h0_days": 67.59,
+    "a": 4.0,
+    "q": 1.0,
+    "estimate": -0.3876204174029981,
+    "ci_low": -0.3923152038052023,
+    "ci_high": -0.38290791687149656,
+    "display": "-0.3876",
+    "interval_display": "[-0.3923, -0.3829]",
+    "display_source": "research/experiments/EXP-002/report.md",
+    "classification": "relevant negative",
+    "relevant_holm_across_cells": true
+   },
+   {
+    "cell_id": "h0=135.18|a=1.5|q=0.7",
+    "h0_days": 135.18,
+    "a": 1.5,
+    "q": 0.7,
+    "estimate": -0.17625046272207492,
+    "ci_low": -0.17931430029635348,
+    "ci_high": -0.1731959252950382,
+    "display": "-0.1763",
+    "interval_display": "[-0.1793, -0.1732]",
+    "display_source": "research/experiments/EXP-002/report.md",
+    "classification": "relevant negative",
+    "relevant_holm_across_cells": true
+   },
+   {
+    "cell_id": "h0=135.18|a=1.5|q=0.85",
+    "h0_days": 135.18,
+    "a": 1.5,
+    "q": 0.85,
+    "estimate": -0.19184740636757966,
+    "ci_low": -0.1950931641063155,
+    "ci_high": -0.18862544173073478,
+    "display": "-0.1918",
+    "interval_display": "[-0.1951, -0.1886]",
+    "display_source": "research/experiments/EXP-002/report.md",
+    "classification": "relevant negative",
+    "relevant_holm_across_cells": true
+   },
+   {
+    "cell_id": "h0=135.18|a=1.5|q=1",
+    "h0_days": 135.18,
+    "a": 1.5,
+    "q": 1.0,
+    "estimate": -0.21513678948976578,
+    "ci_low": -0.21866758616680473,
+    "ci_high": -0.21161807188100273,
+    "display": "-0.2151",
+    "interval_display": "[-0.2187, -0.2116]",
+    "display_source": "research/experiments/EXP-002/report.md",
+    "classification": "relevant negative",
+    "relevant_holm_across_cells": true
+   },
+   {
+    "cell_id": "h0=135.18|a=2.5|q=0.7",
+    "h0_days": 135.18,
+    "a": 2.5,
+    "q": 0.7,
+    "estimate": -0.19347541836986892,
+    "ci_low": -0.1971277939490844,
+    "ci_high": -0.1898552605559949,
+    "display": "-0.1935",
+    "interval_display": "[-0.1971, -0.1899]",
+    "display_source": "research/experiments/EXP-002/report.md",
+    "classification": "relevant negative",
+    "relevant_holm_across_cells": true
+   },
+   {
+    "cell_id": "h0=135.18|a=2.5|q=0.85",
+    "h0_days": 135.18,
+    "a": 2.5,
+    "q": 0.85,
+    "estimate": -0.2099159944168977,
+    "ci_low": -0.21381056239938478,
+    "ci_high": -0.20607191875170766,
+    "display": "-0.2099",
+    "interval_display": "[-0.2138, -0.2061]",
+    "display_source": "research/experiments/EXP-002/report.md",
+    "classification": "relevant negative",
+    "relevant_holm_across_cells": true
+   },
+   {
+    "cell_id": "h0=135.18|a=2.5|q=1",
+    "h0_days": 135.18,
+    "a": 2.5,
+    "q": 1.0,
+    "estimate": -0.23481440146361393,
+    "ci_low": -0.23902071512294754,
+    "ci_high": -0.23064730425578464,
+    "display": "-0.2348",
+    "interval_display": "[-0.2390, -0.2306]",
+    "display_source": "research/experiments/EXP-002/report.md",
+    "classification": "relevant negative",
+    "relevant_holm_across_cells": true
+   },
+   {
+    "cell_id": "h0=135.18|a=4|q=0.7",
+    "h0_days": 135.18,
+    "a": 4.0,
+    "q": 0.7,
+    "estimate": -0.21153768336168788,
+    "ci_low": -0.21578976566184593,
+    "ci_high": -0.20737659841246348,
+    "display": "-0.2115",
+    "interval_display": "[-0.2158, -0.2074]",
+    "display_source": "research/experiments/EXP-002/report.md",
+    "classification": "relevant negative",
+    "relevant_holm_across_cells": true
+   },
+   {
+    "cell_id": "h0=135.18|a=4|q=0.85",
+    "h0_days": 135.18,
+    "a": 4.0,
+    "q": 0.85,
+    "estimate": -0.2290392142174677,
+    "ci_low": -0.23354530655437217,
+    "ci_high": -0.22458549946696543,
+    "display": "-0.2290",
+    "interval_display": "[-0.2335, -0.2246]",
+    "display_source": "research/experiments/EXP-002/report.md",
+    "classification": "relevant negative",
+    "relevant_holm_across_cells": true
+   },
+   {
+    "cell_id": "h0=135.18|a=4|q=1",
+    "h0_days": 135.18,
+    "a": 4.0,
+    "q": 1.0,
+    "estimate": -0.25564976411074786,
+    "ci_low": -0.2605219438987578,
+    "ci_high": -0.25083477103330826,
+    "display": "-0.2556",
+    "interval_display": "[-0.2605, -0.2508]",
+    "display_source": "research/experiments/EXP-002/report.md",
+    "classification": "relevant negative",
+    "relevant_holm_across_cells": true
+   }
+  ]
+ },
+ "exp003_effects": {
+  "experiment_id": "EXP-003",
+  "sesoi": 0.02,
+  "variants": [
+   {
+    "variant": "exp-diff",
+    "name": "exponential, difficulty gain",
+    "effects": [
+     {
+      "effect": "A2 - A1",
+      "estimate": -0.30887132802406675,
+      "ci_low": -0.31238602445980357,
+      "ci_high": -0.30538477542099574,
+      "display": "-0.3089",
+      "interval_display": "[-0.3124, -0.3054]",
+      "display_source": "research/paper/manuscript.md",
+      "interval_source": "research/paper/manuscript.md",
+      "classification": "relevant negative"
+     },
+     {
+      "effect": "Easiest first - round-robin (main effect)",
+      "estimate": -0.303009842272931,
+      "ci_low": -0.306362140300645,
+      "ci_high": -0.29960401829226896,
+      "display": "-0.3030",
+      "interval_display": "[-0.3064, -0.2996]",
+      "display_source": "research/paper/manuscript.md",
+      "interval_source": "research/experiments/EXP-003/report.md",
+      "classification": "relevant negative"
+     },
+     {
+      "effect": "Threshold - round-robin (main effect)",
+      "estimate": 0.008006520231650474,
+      "ci_low": 0.007223078023866007,
+      "ci_high": 0.008777528545164736,
+      "display": "+0.0080",
+      "interval_display": "[+0.0072, +0.0088]",
+      "display_source": "research/experiments/EXP-003/report.md",
+      "interval_source": "research/experiments/EXP-003/report.md",
+      "classification": "practically equivalent under the model"
+     },
+     {
+      "effect": "Daily - 3 per week (timing main effect)",
+      "estimate": -0.0030151088700291167,
+      "ci_low": -0.0036506941613249507,
+      "ci_high": -0.0023801627383402755,
+      "display": "-0.0030",
+      "interval_display": "[-0.0037, -0.0024]",
+      "display_source": "research/paper/manuscript.md",
+      "interval_source": "research/experiments/EXP-003/report.md",
+      "classification": "practically equivalent under the model"
+     },
+     {
+      "effect": "Timing x selection interaction",
+      "estimate": -0.0182528029435057,
+      "ci_low": -0.019833915254196498,
+      "ci_high": -0.016672994266984993,
+      "display": "-0.0183",
+      "interval_display": "[-0.0198, -0.0167]",
+      "display_source": "research/paper/manuscript.md",
+      "interval_source": "research/experiments/EXP-003/report.md",
+      "classification": "practically equivalent under the model"
+     }
+    ]
+   },
+   {
+    "variant": "exp-flat",
+    "name": "exponential, flat gain",
+    "effects": [
+     {
+      "effect": "A2 - A1",
+      "estimate": -0.3886531673805324,
+      "ci_low": -0.39229579194152175,
+      "ci_high": -0.3849457680096025,
+      "display": "-0.3887",
+      "interval_display": "[-0.3923, -0.3849]",
+      "display_source": "research/paper/manuscript.md",
+      "interval_source": "research/paper/manuscript.md",
+      "classification": "relevant negative"
+     },
+     {
+      "effect": "Easiest first - round-robin (main effect)",
+      "estimate": -0.38202406633841013,
+      "ci_low": -0.3855479899242868,
+      "ci_high": -0.37844838468807124,
+      "display": "-0.3820",
+      "interval_display": "[-0.3855, -0.3784]",
+      "display_source": "research/paper/manuscript.md",
+      "interval_source": "research/experiments/EXP-003/report.md",
+      "classification": "relevant negative"
+     },
+     {
+      "effect": "Threshold - round-robin (main effect)",
+      "estimate": 0.018054738825561394,
+      "ci_low": 0.01720561437758245,
+      "ci_high": 0.01892364858010217,
+      "display": "+0.0181",
+      "interval_display": "[+0.0172, +0.0189]",
+      "display_source": "research/experiments/EXP-003/report.md",
+      "interval_source": "research/experiments/EXP-003/report.md",
+      "classification": "practically equivalent under the model"
+     },
+     {
+      "effect": "Daily - 3 per week (timing main effect)",
+      "estimate": -0.004702295264178247,
+      "ci_low": -0.0053716051174449685,
+      "ci_high": -0.004053404964712523,
+      "display": "-0.0047",
+      "interval_display": "[-0.0054, -0.0041]",
+      "display_source": "research/paper/manuscript.md",
+      "interval_source": "research/experiments/EXP-003/report.md",
+      "classification": "practically equivalent under the model"
+     },
+     {
+      "effect": "Timing x selection interaction",
+      "estimate": -0.008700956560927139,
+      "ci_low": -0.010326799679844331,
+      "ci_high": -0.00706565024474049,
+      "display": "-0.0087",
+      "interval_display": "[-0.0103, -0.0071]",
+      "display_source": "research/paper/manuscript.md",
+      "interval_source": "research/experiments/EXP-003/report.md",
+      "classification": "practically equivalent under the model"
+     }
+    ]
+   },
+   {
+    "variant": "pow-diff",
+    "name": "power law, difficulty gain",
+    "effects": [
+     {
+      "effect": "A2 - A1",
+      "estimate": -0.21880325133462822,
+      "ci_low": -0.21999132602431273,
+      "ci_high": -0.21761024419934172,
+      "display": "-0.2188",
+      "interval_display": "[-0.2200, -0.2176]",
+      "display_source": "research/paper/manuscript.md",
+      "interval_source": "research/paper/manuscript.md",
+      "classification": "relevant negative"
+     },
+     {
+      "effect": "Easiest first - round-robin (main effect)",
+      "estimate": -0.2130293316645777,
+      "ci_low": -0.2140754729442556,
+      "ci_high": -0.2119515086679114,
+      "display": "-0.2130",
+      "interval_display": "[-0.2141, -0.2120]",
+      "display_source": "research/paper/manuscript.md",
+      "interval_source": "research/experiments/EXP-003/report.md",
+      "classification": "relevant negative"
+     },
+     {
+      "effect": "Threshold - round-robin (main effect)",
+      "estimate": 0.00025894614320708266,
+      "ci_low": -0.00047947620663608005,
+      "ci_high": 0.00099841526274928,
+      "display": "+0.0003",
+      "interval_display": "[-0.0005, +0.0010]",
+      "display_source": "research/experiments/EXP-003/report.md",
+      "interval_source": "research/experiments/EXP-003/report.md",
+      "classification": "practically equivalent under the model"
+     },
+     {
+      "effect": "Daily - 3 per week (timing main effect)",
+      "estimate": -0.003593332806984857,
+      "ci_low": -0.004177979390624409,
+      "ci_high": -0.003026525675126978,
+      "display": "-0.0036",
+      "interval_display": "[-0.0042, -0.0030]",
+      "display_source": "research/paper/manuscript.md",
+      "interval_source": "research/experiments/EXP-003/report.md",
+      "classification": "practically equivalent under the model"
+     },
+     {
+      "effect": "Timing x selection interaction",
+      "estimate": -0.01793684501443823,
+      "ci_low": -0.019130344620154064,
+      "ci_high": -0.016748002370448052,
+      "display": "-0.0179",
+      "interval_display": "[-0.0191, -0.0167]",
+      "display_source": "research/paper/manuscript.md",
+      "interval_source": "research/experiments/EXP-003/report.md",
+      "classification": "practically equivalent under the model"
+     }
+    ]
+   },
+   {
+    "variant": "pow-flat",
+    "name": "power law, flat gain",
+    "effects": [
+     {
+      "effect": "A2 - A1",
+      "estimate": -0.2772281717562473,
+      "ci_low": -0.2787261161486833,
+      "ci_high": -0.27568402697211764,
+      "display": "-0.2772",
+      "interval_display": "[-0.2787, -0.2757]",
+      "display_source": "research/paper/manuscript.md",
+      "interval_source": "research/paper/manuscript.md",
+      "classification": "relevant negative"
+     },
+     {
+      "effect": "Easiest first - round-robin (main effect)",
+      "estimate": -0.2703640173192366,
+      "ci_low": -0.2718046586063548,
+      "ci_high": -0.26885308154970505,
+      "display": "-0.2704",
+      "interval_display": "[-0.2718, -0.2689]",
+      "display_source": "research/paper/manuscript.md",
+      "interval_source": "research/experiments/EXP-003/report.md",
+      "classification": "relevant negative"
+     },
+     {
+      "effect": "Threshold - round-robin (main effect)",
+      "estimate": 0.009342127891573725,
+      "ci_low": 0.008605899364801476,
+      "ci_high": 0.010061040752042063,
+      "display": "+0.0093",
+      "interval_display": "[+0.0086, +0.0101]",
+      "display_source": "research/experiments/EXP-003/report.md",
+      "interval_source": "research/experiments/EXP-003/report.md",
+      "classification": "practically equivalent under the model"
+     },
+     {
+      "effect": "Daily - 3 per week (timing main effect)",
+      "estimate": -0.005140532842563045,
+      "ci_low": -0.005752772483571764,
+      "ci_high": -0.004528084726538867,
+      "display": "-0.0051",
+      "interval_display": "[-0.0058, -0.0045]",
+      "display_source": "research/paper/manuscript.md",
+      "interval_source": "research/experiments/EXP-003/report.md",
+      "classification": "practically equivalent under the model"
+     },
+     {
+      "effect": "Timing x selection interaction",
+      "estimate": -0.009975954375730246,
+      "ci_low": -0.01129855356344639,
+      "ci_high": -0.008668325492544952,
+      "display": "-0.0100",
+      "interval_display": "[-0.0113, -0.0087]",
+      "display_source": "research/paper/manuscript.md",
+      "interval_source": "research/experiments/EXP-003/report.md",
+      "classification": "practically equivalent under the model"
+     }
+    ]
+   }
+  ]
+ },
+ "heldout_calibration": {
+  "experiment_id": "HELDOUT-14.4",
+  "note": "Observed recall on held-out Duolingo first repeats by delay bin, against the recall predicted by each fitted forgetting form. In-session accuracy of users of one product, not free recall.",
+  "bins": [
+   {
+    "bin": "[1, 2)",
+    "bin_low_days": 1.0,
+    "bin_high_days": 2.0,
+    "trials": 52150,
+    "observed": 0.9038159156279961,
+    "predicted_exponential": 0.9827703180229556,
+    "predicted_power": 0.9750057558657103,
+    "display_observed": "0.904",
+    "display_exponential": "0.983",
+    "display_power": "0.975",
+    "display_source": "research/experiments/EXP-001/report.md"
+   },
+   {
+    "bin": "[2, 4)",
+    "bin_low_days": 2.0,
+    "bin_high_days": 4.0,
+    "trials": 56949,
+    "observed": 0.901280092714534,
+    "predicted_exponential": 0.9654995411186439,
+    "predicted_power": 0.9517775083085929,
+    "display_observed": "0.901",
+    "display_exponential": "0.965",
+    "display_power": "0.952",
+    "display_source": "research/experiments/EXP-001/report.md"
+   },
+   {
+    "bin": "[4, 8)",
+    "bin_low_days": 4.0,
+    "bin_high_days": 8.0,
+    "trials": 57652,
+    "observed": 0.8959099424130993,
+    "predicted_exponential": 0.9331689027333878,
+    "predicted_power": 0.9121881932182401,
+    "display_observed": "0.896",
+    "display_exponential": "0.933",
+    "display_power": "0.912",
+    "display_source": "research/experiments/EXP-001/report.md"
+   },
+   {
+    "bin": "[8, 16)",
+    "bin_low_days": 8.0,
+    "bin_high_days": 16.0,
+    "trials": 38180,
+    "observed": 0.891566265060241,
+    "predicted_exponential": 0.8749821179737032,
+    "predicted_power": 0.8502714739150622,
+    "display_observed": "0.892",
+    "display_exponential": "0.875",
+    "display_power": "0.850",
+    "display_source": "research/experiments/EXP-001/report.md"
+   },
+   {
+    "bin": "[16, 32)",
+    "bin_low_days": 16.0,
+    "bin_high_days": 32.0,
+    "trials": 22023,
+    "observed": 0.8820778277255596,
+    "predicted_exponential": 0.7740683869784666,
+    "predicted_power": 0.7611913416504604,
+    "display_observed": "0.882",
+    "display_exponential": "0.774",
+    "display_power": "0.761",
+    "display_source": "research/experiments/EXP-001/report.md"
+   },
+   {
+    "bin": "[32, 90]",
+    "bin_low_days": 32.0,
+    "bin_high_days": 90.0,
+    "trials": 16383,
+    "observed": 0.8723676982237686,
+    "predicted_exponential": 0.5785029813303426,
+    "predicted_power": 0.6251717016678022,
+    "display_observed": "0.872",
+    "display_exponential": "0.579",
+    "display_power": "0.625",
+    "display_source": "research/experiments/EXP-001/report.md"
+   }
+  ]
+ },
+ "sandbox_scenarios": [
+  {
+   "id": "default",
+   "name": "Frozen default parameters (as EXP-001)",
+   "params": {
+    "n_items": 200,
+    "horizon_days": 56,
+    "budget_slots": 672,
+    "slot_minutes": 0.5,
+    "daily_cap_slots": 60,
+    "fixed_weekdays": [
+     1,
+     3,
+     5
+    ],
+    "h0": 67.59,
+    "sigma_item": 0.5,
+    "sigma_learner": 0.3,
+    "g_min": 0.1,
+    "a": 2.5,
+    "b": 0.6,
+    "h_min": 0.25,
+    "q": 0.85,
+    "form": "exponential",
+    "gain_rule": "difficulty"
+   },
+   "source": "research/experiments/EXP-001/config.json"
+  },
+  {
+   "id": "fast",
+   "name": "Faster forgetting, h0 = 33.8 days (EXP-002 axis)",
+   "params": {
+    "n_items": 200,
+    "horizon_days": 56,
+    "budget_slots": 672,
+    "slot_minutes": 0.5,
+    "daily_cap_slots": 60,
+    "fixed_weekdays": [
+     1,
+     3,
+     5
+    ],
+    "h0": 33.8,
+    "sigma_item": 0.5,
+    "sigma_learner": 0.3,
+    "g_min": 0.1,
+    "a": 2.5,
+    "b": 0.6,
+    "h_min": 0.25,
+    "q": 0.85,
+    "form": "exponential",
+    "gain_rule": "difficulty"
+   },
+   "source": "research/experiments/EXP-002/config.json"
+  },
+  {
+   "id": "slow",
+   "name": "Slower forgetting, h0 = 135.18 days (EXP-002 axis)",
+   "params": {
+    "n_items": 200,
+    "horizon_days": 56,
+    "budget_slots": 672,
+    "slot_minutes": 0.5,
+    "daily_cap_slots": 60,
+    "fixed_weekdays": [
+     1,
+     3,
+     5
+    ],
+    "h0": 135.18,
+    "sigma_item": 0.5,
+    "sigma_learner": 0.3,
+    "g_min": 0.1,
+    "a": 2.5,
+    "b": 0.6,
+    "h_min": 0.25,
+    "q": 0.85,
+    "form": "exponential",
+    "gain_rule": "difficulty"
+   },
+   "source": "research/experiments/EXP-002/config.json"
+  },
+  {
+   "id": "always",
+   "name": "Always available, q = 1 (EXP-002 axis)",
+   "params": {
+    "n_items": 200,
+    "horizon_days": 56,
+    "budget_slots": 672,
+    "slot_minutes": 0.5,
+    "daily_cap_slots": 60,
+    "fixed_weekdays": [
+     1,
+     3,
+     5
+    ],
+    "h0": 67.59,
+    "sigma_item": 0.5,
+    "sigma_learner": 0.3,
+    "g_min": 0.1,
+    "a": 2.5,
+    "b": 0.6,
+    "h_min": 0.25,
+    "q": 1.0,
+    "form": "exponential",
+    "gain_rule": "difficulty"
+   },
+   "source": "research/experiments/EXP-002/config.json"
+  },
+  {
+   "id": "flat",
+   "name": "Flat gain rule (EXP-003 variant)",
+   "params": {
+    "n_items": 200,
+    "horizon_days": 56,
+    "budget_slots": 672,
+    "slot_minutes": 0.5,
+    "daily_cap_slots": 60,
+    "fixed_weekdays": [
+     1,
+     3,
+     5
+    ],
+    "h0": 67.59,
+    "sigma_item": 0.5,
+    "sigma_learner": 0.3,
+    "g_min": 0.1,
+    "a": 2.5,
+    "b": 0.6,
+    "h_min": 0.25,
+    "q": 0.85,
+    "form": "exponential",
+    "gain_rule": "flat"
+   },
+   "source": "research/experiments/EXP-003/config.json"
+  },
+  {
+   "id": "power",
+   "name": "Power-law forgetting (EXP-003 variant)",
+   "params": {
+    "n_items": 200,
+    "horizon_days": 56,
+    "budget_slots": 672,
+    "slot_minutes": 0.5,
+    "daily_cap_slots": 60,
+    "fixed_weekdays": [
+     1,
+     3,
+     5
+    ],
+    "h0": 67.59,
+    "sigma_item": 0.5,
+    "sigma_learner": 0.3,
+    "g_min": 0.1,
+    "a": 2.5,
+    "b": 0.6,
+    "h_min": 0.25,
+    "q": 0.85,
+    "form": "power",
+    "gain_rule": "difficulty"
+   },
+   "source": "research/experiments/EXP-003/config.json"
+  },
+  {
+   "id": "k50",
+   "name": "Fewer items, K = 50 (M4 exploratory setting)",
+   "params": {
+    "n_items": 50,
+    "horizon_days": 56,
+    "budget_slots": 672,
+    "slot_minutes": 0.5,
+    "daily_cap_slots": 60,
+    "fixed_weekdays": [
+     1,
+     3,
+     5
+    ],
+    "h0": 67.59,
+    "sigma_item": 0.5,
+    "sigma_learner": 0.3,
+    "g_min": 0.1,
+    "a": 2.5,
+    "b": 0.6,
+    "h_min": 0.25,
+    "q": 0.85,
+    "form": "exponential",
+    "gain_rule": "difficulty"
+   },
+   "source": "experiments/m4-sens-k050.json"
+  },
+  {
+   "id": "floor",
+   "name": "Near-total forgetting, h0 = 1 day and K = 100 (pre-freeze draft regime)",
+   "params": {
+    "n_items": 100,
+    "horizon_days": 56,
+    "budget_slots": 672,
+    "slot_minutes": 0.5,
+    "daily_cap_slots": 60,
+    "fixed_weekdays": [
+     1,
+     3,
+     5
+    ],
+    "h0": 1.0,
+    "sigma_item": 0.5,
+    "sigma_learner": 0.3,
+    "g_min": 0.1,
+    "a": 2.5,
+    "b": 0.6,
+    "h_min": 0.25,
+    "q": 0.85,
+    "form": "exponential",
+    "gain_rule": "difficulty"
+   },
+   "source": "src/streak/params.py draft defaults; manuscript section 5.5 (the published floor values used an earlier A3 rule)"
+  }
+ ]
+}

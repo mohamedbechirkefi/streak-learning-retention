@@ -355,3 +355,62 @@ Owner: review D-020 (title), the claims audit and the review pass. Then M5 (inte
 ### Next action
 
 M5 (interactive page using the same verified numbers). No push.
+
+## 2026-11-25: M5 interactive experience
+
+**Milestone.** M5, brief `_shared/M5-brief.md`; authority owner, 2026-11-25, "Next" (`_shared/owner-approvals-2026-11-25d.md`), stack: TypeScript, React and Vite from the shared template (D-022). Starting state: `c672c2f`, working tree clean; 216 Python tests passed.
+
+### Commands and actual outputs
+
+```
+$ ../.tools/py/bin/uv sync --frozen --all-groups --all-extras      Audited 9 packages
+$ .venv/bin/python -m pytest                                       216 passed (start)
+$ rsync template to demo/ (without node_modules); npm ci --prefer-offline    added 53 packages
+$ .venv/bin/python scripts/export_demo_data.py                     wrote demo/public/data/results.json (59605 bytes)
+$ .venv/bin/python scripts/export_sandbox_fixture.py               wrote demo/src/fixtures/engine_fixture.json (516358 bytes), 2.1 s
+$ npm test                                                         Test Files 2 passed (2); Tests 43 passed (43)
+$ npm run build                                                    tsc --noEmit and vite build: dist/index.html, worker 7.41 kB, css 6.56 kB, js 259.52 kB
+$ node tools/a11y_check.mjs dist --screenshots <scratchpad>/streak/shots
+PASS results render (no fail-closed panel): 6 experiment panels
+PASS text contrast, light scheme (WCAG AA)
+PASS text contrast, dark scheme (WCAG AA)
+PASS keyboard reaches every focusable element: 24 reached of 24
+PASS visible focus indicator
+PASS no horizontal page scroll at 360 px: overflow 0px
+PASS reduced motion: no running animations: 0 running
+PASS no request leaves the local origin
+PASS offline after first load: results stay, sandbox runs: Sandbox output, seed 1, 100 synthetic learners: A2 Streak minus A1 Fixed in R30
+A11Y-CHECK PASS
+$ .venv/bin/python -m pytest                                       225 passed (end; 9 new tests in tests/test_demo_consistency.py)
+$ .venv/bin/python scripts/export_demo_data.py --check             results.json up to date
+$ .venv/bin/python scripts/export_sandbox_fixture.py --check       engine_fixture.json up to date
+```
+
+Failures on the way, all fixed before the final run: the first export rejected an EXP-002 row check (the report prints q = 1.0, not 1); the first checker run gave "keyboard reaches every focusable element: 18 reached of 26" (focusables without ids shared the checker's identity key) and then 24 of 26 (tables inside closed `details` counted as focusable but not tabbable; their content is now mounted only when open). The checker was not changed. The dark-mode palette was re-stepped after the dataviz palette validator flagged two colours outside the lightness band. Screenshots (desktop light, desktop dark, mobile, and a sandbox run) were inspected; fixed: duplicated forest-chart tick labels and a clipped SESOI label at 360 px, a duplicated caption sentence. The full-page mobile capture repeats content beyond about 16,000 px; that is a capture artefact of the very tall page, and the 360 px overflow check passes.
+
+### Changes
+
+- `demo/`: template copy with STREAK SPDX headers; `src/engine.ts` (engine port), `src/engine.test.ts`, `src/sandboxStats.ts`, `src/sandbox.worker.ts`, `src/Sandbox.tsx`, `src/charts.tsx`, `src/App.tsx`, `src/style.css`, extended `src/results.ts` and `src/results.test.ts`, `public/data/results.json`, `src/fixtures/engine_fixture.json`, `README.md`.
+- `scripts/export_demo_data.py`, `scripts/export_sandbox_fixture.py`, `tests/test_demo_consistency.py`.
+- README rewritten (stale M1 status replaced), `CITATION.cff` (approved title), new `articles/medium.md` and `articles/linkedin.md`, `articles/README.md`, `docs/demo.png` (98,588 bytes), `CONTRIBUTING.md` (demo commands appended).
+- Decisions D-022 to D-025; journal J-0020; roadmap.
+- No frozen protocol, config, seed or result changed. No confirmatory run. No dependency added or version changed.
+
+### Gate
+
+Offline after the initial load, responsive (no horizontal scroll at 360 px), usable with the keyboard, no fabricated data (every number exported from committed files and checked against the manuscript or a report), no runtime service. **M5 done.**
+
+### Owner placeholders that remain
+
+1. Repository URL (manuscript "Data and code availability", README, CITATION message, articles).
+2. Demo URL (README, demo README, articles).
+
+### Outstanding risks
+
+- The three frozen EXP protocol files still carry "not yet run" in their status line; they are frozen, so they were not edited (D-025).
+- The articles are new drafts; the owner has not yet read them.
+- R-5 continues (time scale not validated by real data).
+
+### Next action
+
+M6 (release candidate): clean clone, PDFs, owner review checklist; publication only on the owner's approval (OD-5). No push.

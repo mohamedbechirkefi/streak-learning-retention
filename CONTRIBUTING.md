@@ -57,3 +57,10 @@ Experiment commands (M2):
     uv run python -m streak.cli smoke [--pdf]              # exploratory smoke run (seeds 9001-9005) and report
     uv run python -m streak.cli run --config PATH [--out DIR]   # refuses confirmatory configs until the owner freezes the protocol
     uv run python -m streak.cli report --results PATH [--out DIR] [--pdf]
+
+Interactive page (M5; Node from the shared toolchain, npm cache outside the repository):
+
+    .venv/bin/python scripts/export_demo_data.py          # writes demo/public/data/results.json from committed results
+    .venv/bin/python scripts/export_sandbox_fixture.py    # writes demo/src/fixtures/engine_fixture.json (smoke seed 9001)
+    cd demo && npm ci && npm test && npm run build && npm run preview
+    node tools/a11y_check.mjs dist --screenshots <dir>    # offline and accessibility check; must print A11Y-CHECK PASS
