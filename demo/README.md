@@ -20,6 +20,21 @@ Labels distinguish measured results (confirmatory simulation), real-data results
 
 `src/engine.ts` is a port of the Python engine (engine 1.1.0). Fed the Python engine's own random draws (`src/fixtures/engine_fixture.json`, written by `scripts/export_sandbox_fixture.py` on smoke seed 9001), it reproduces the review trace exactly and every real-valued output within 1e-9 (`src/engine.test.ts`). In the browser it draws its own random numbers, so sandbox seeds are not research seeds and sandbox numbers are not research results; a second test checks its population means against the Python engine within about 4 standard errors. Runs are bounded (at most 200 learners and 400 items) and cancellable.
 
+## Brand and design
+
+The page has its own identity (owner request of 2026-11-26): a habit calendar meets a teacher's grade book, in daylight. The plan, palette, type, layout, motion and the review against generic looks are in `DESIGN.md`. Brand files (logo mark, wordmark, lockups in colour, one colour and reversed, favicon in SVG and 32 px PNG, Open Graph image 1200 by 630) are in `public/brand/`. The hero animation is labelled "Illustration, not study data" and shows no result. Every animation uses transform, opacity or clip-path and is replaced by the final state under reduced motion.
+
+## Third-party notes
+
+Fonts are self-hosted from npm (Fontsource), Latin subset only, bundled at build time; nothing is loaded from another host.
+
+| Family | Package and version | Licence |
+|---|---|---|
+| Bricolage Grotesque (variable, weight and optical size) | `@fontsource-variable/bricolage-grotesque` 5.3.0 | SIL Open Font License 1.1, copyright The Bricolage Grotesque Project Authors |
+| Nunito Sans (variable weight, roman and italic) | `@fontsource-variable/nunito-sans` 5.3.0 | SIL Open Font License 1.1, copyright The Nunito Sans Project Authors |
+
+The wordmark in the logo is drawn as outlines from Bricolage Grotesque, which the Open Font License permits.
+
 ## Commands
 
     npm ci && npm test && npm run build && npm run preview

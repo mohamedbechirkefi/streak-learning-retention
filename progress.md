@@ -496,3 +496,39 @@ $ grep of dist/ for external hosts                                 only XML name
 ### Open
 
 B15 (articles), B16 (full-text review and sign-off), B18 (release). No push, no deploy.
+
+## 2026-11-26: demo brand identity, motion and UI redesign (owner request)
+
+**Authority.** Owner request of 2026-11-26, brief `_shared/DEMO-BRAND-brief.md`. Starting state: `7158571`, working tree clean. Scope: `demo/` only; no result, exported data, fixture, test expectation, test id or scientific sentence changed.
+
+### Changes
+
+- `demo/DESIGN.md`: design plan (subject, audience, palette of six named colours, type, layout wireframe, motion plan, memorable thing) and its review against the generated-page tells and the other demos' directions. Direction: a habit calendar meets a teacher's grade book, in daylight (window white, marigold, grade-book green, pencil lead, ruling sage, red pen); light only.
+- Brand files in `demo/public/brand/`: logo mark (a streak bar over day squares that shrink as memory fades), one-colour and reversed variants, wordmark and lockups drawn as outlines from Bricolage Grotesque, `favicon.svg`, `favicon-32.png`, `og.png` (1200 by 630, rendered from HTML with Chrome headless). `index.html` gains favicon, theme colour and Open Graph tags.
+- Fonts: `@fontsource-variable/bricolage-grotesque` 5.3.0 and `@fontsource-variable/nunito-sans` 5.3.0 (OFL 1.1), installed with `npm_config_before=2026-11-12`, Latin subset only, self-hosted. Atkinson Hyperlegible Next was tried first and dropped (its slashed zero made tables read as monospace); Lexend and Libre Franklin were rejected because their figures are not tabular.
+- `demo/src/brand.tsx` (new): the hero grade-book illustration (labelled "Illustration, not study data", no numbers) and the report card, which draws the published EXP-001 arm profiles (days practised as day squares, longest streak, R30 with its interval).
+- `demo/src/App.tsx`: sticky bar with lockup and a sliding section indicator, hero with the question and a one-sentence answer, report card section (the overview, with the three measured key figures as margin notes), segmented control for the streak versus recall axis (both figures kept in the markup), experiment panels as grade-book sheets, Reproduce section, new footer (GitHub, manuscript, labs index, licence, AI-use line, font credits). Separators " · " in labels replaced by commas.
+- `demo/src/charts.tsx`: `useReveal` (charts reveal once with a clip-path wipe when scrolled into view; never under reduced motion), timeline bars grow with a per-day stagger, data labels use ": ".
+- `demo/src/style.css`: rewritten for the brand. Motion uses transform, opacity and clip-path only, strong ease-out curves, hover gated to fine pointers, a reduced-motion block that removes all animation.
+- `demo/README.md`: brand section and third-party font notes.
+
+No test markup needed adapting.
+
+### Commands and actual outputs
+
+```
+$ npm install --save-exact @fontsource-variable/bricolage-grotesque @fontsource-variable/nunito-sans   (npm_config_before=2026-11-12)
+  package.json: "@fontsource-variable/bricolage-grotesque": "5.3.0", "@fontsource-variable/nunito-sans": "5.3.0"
+$ python3 -I svg_audit.py public/brand/*.svg      marks 100/100; wordmark and lockups 91/100 (near-miss-angle warnings from the typeface's own outlines), no failure
+$ npm test                                        Test Files 2 passed (2); Tests 43 passed (43)
+$ npm run build                                   built dist/ (JS 268.53 kB, 82.9 kB gzip; CSS 17 kB; fonts 31 + 33 + 77 kB)
+$ du of dist/                                     586,362 bytes in total, including results.json and brand files
+$ node tools/a11y_check.mjs dist                  A11Y-CHECK PASS (contrast light and dark, 32 of 32 focusable reached with visible focus, no overflow at 360 px, no running animation under reduced motion, no foreign request, offline sandbox run)
+$ .venv/bin/python -m pytest                      231 passed in 6.66s
+```
+
+Screenshots (Chrome headless, `python3 -m http.server 5221`, server stopped afterwards): desktop 1440 full page and phone 390 in an iframe, two critique passes. Fixes from the passes: body face replaced (slashed zero), report-card caption moved out of the table (it broke the stacked phone layout), day squares set as two rows of 28, grade-book rows given a sage fill so the fade reads, hero byline spacing, command block wraps on phones, sandbox charts shown at once after Run instead of waiting for a scroll reveal.
+
+### Open
+
+The hero illustration and reveal motion were judged from headless screenshots and code, not on a real phone. No push, no deploy.

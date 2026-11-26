@@ -125,7 +125,7 @@ function SandboxResult({ r }: { r: SandboxSummary }) {
   const f3 = (x: number) => x.toFixed(3);
   return (
     <div className="sandbox-result">
-      <p className="label label-sandbox">Sandbox output · {r.scenario} · seed {r.seed} · {r.learners} learners</p>
+      <p className="label label-sandbox">Sandbox output: {r.scenario}, seed {r.seed}, {r.learners} learners</p>
       <h3>Streak versus recall in this run</h3>
       <div id="tbl-sandbox" className="table-scroll" role="region" aria-label="Sandbox streak versus recall table" tabIndex={0}>
         <table>

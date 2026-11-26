@@ -69,9 +69,36 @@ function ticks(lo: number, hi: number, n: number): number[] {
   return Array.from({ length: n + 1 }, (_, i) => lo + i * step);
 }
 
+/**
+ * Reveal once when scrolled into view. Only elements that start below the fold are hidden
+ * first, and never under reduced motion or without IntersectionObserver, so content is
+ * always visible when the effect cannot run.
+ */
+export function useReveal<T extends HTMLElement>(): [React.RefObject<T | null>, string] {
+  const ref = useRef<T | null>(null);
+  const [cls, setCls] = useState("");
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || typeof IntersectionObserver === "undefined") return;
+    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
+    if (el.getBoundingClientRect().top < window.innerHeight) return;
+    setCls(" reveal");
+    const io = new IntersectionObserver((entries) => {
+      if (entries.some((e) => e.isIntersecting)) {
+        setCls(" reveal in");
+        io.disconnect();
+      }
+    }, { rootMargin: "0px 0px -8% 0px" });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  return [ref, cls];
+}
+
 export function Figure({ id, title, desc, children, wide }: { id: string; title: string; desc: ReactNode; children: ReactNode; wide?: boolean }) {
+  const [ref, reveal] = useReveal<HTMLElement>();
   return (
-    <figure className={`chart${wide ? " wide" : ""}`} aria-labelledby={`${id}-t`} aria-describedby={`${id}-d`}>
+    <figure ref={ref} className={`chart${wide ? " wide" : ""}${reveal}`} aria-labelledby={`${id}-t`} aria-describedby={`${id}-d`}>
       <figcaption id={`${id}-t`} className="chart-title">{title}</figcaption>
       {children}
       <p id={`${id}-d`} className="chart-desc">{desc}</p>
@@ -115,7 +142,7 @@ export function StreakRecallChart({ points, xLabel, xMax }: { points: SvrPoint[]
               <line className={`errbar ${s.cls}`} x1={X(p.x)} x2={X(p.x)} y1={Y(p.hi)} y2={Y(p.lo)} />
               <Marker kind={s.marker} x={X(p.x)} y={Y(p.y)} r={6} cls={s.cls} />
               <text className="dlabel" x={X(p.x) + (right ? 12 : -12)} y={Y(p.y) + dy} textAnchor={right ? "start" : "end"}>
-                {p.label} · {p.yText}
+                {p.label}: {p.yText}
               </text>
             </g>
           );
@@ -256,7 +283,7 @@ export function Timeline({ rows, horizon }: { rows: { arm: string; label: string
                 <g key={d}>
                   <title>{`Day ${d}: ${r.available[d] ? (s > 0 ? `${s} reviews` : "available, no practice") : "not available"}`}</title>
                   {!r.available[d] && <rect className="unavail" x={x + 0.5} y={rowH - 10} width={Math.max(1, cell - 1)} height={4} />}
-                  {s > 0 && <rect className={`bar ${ARM_STYLE[r.arm].cls}`} x={x + 0.5} y={rowH - 4 - hh} width={Math.max(1, cell - 1)} height={hh} rx={1} />}
+                  {s > 0 && <rect style={{ "--i": k } as React.CSSProperties} className={`bar ${ARM_STYLE[r.arm].cls}`} x={x + 0.5} y={rowH - 4 - hh} width={Math.max(1, cell - 1)} height={hh} rx={1} />}
                 </g>
               );
             })}
