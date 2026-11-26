@@ -15,7 +15,7 @@ Status (M6, 2026-11-25): clean-clone reproduction completed with actual outputs 
 ## 1. Clean clone (commit ff06d8d)
 
 ```
-$ git clone -q /Users/<owner>/research/labs/streak-learning-retention <scratch>/clone
+$ git clone -q <research root>/labs/streak-learning-retention <scratch>/clone
 $ ../.tools/py/bin/uv sync --frozen --all-groups --all-extras   (installed 9 packages; second run: "Audited 9 packages")
 $ .venv/bin/python -m pytest                                      225 passed in 7.10s
 ```
@@ -117,3 +117,16 @@ $ npm ci --prefer-offline; npm test; npm run build; node tools/a11y_check.mjs di
 ```
 
 Both scratch clones were deleted after the checks.
+
+## 9. Local home paths after the owner's answers (2026-11-26)
+
+Owner, 2026-11-26, decision sheet, B9: absolute local home paths are removed from editable files in a new commit; frozen, append-only and checksummed files are left untouched and history is not rewritten. Removed: `CLAUDE.md` (2 lines, now paths relative to the repository and "the research root" in words), `research/feasibility.md` (4 lines, toolchain table, now relative paths), `scripts/build_pdfs.py` (1) and `src/streak/report.py` (2), whose default tool paths are now computed from the repository location (still overridable with `STREAK_PANDOC` and `STREAK_TYPST_PYTHON`; the PDF build was run after the change), and the clone command of section 1 of this file. The repository is public since 2026-11-25, so the earlier commits keep the removed lines.
+
+Remaining in tracked files (`git ls-files` with `grep -a "/Users/"`): 5 lines in 5 files.
+
+| File | Lines | Why it stays |
+|---|---|---|
+| `results/confirmatory/EXP-001/provenance.json`, `EXP-002/provenance.json`, `EXP-003/provenance.json` | 1 each (the recorded run command) | frozen raw provenance of the confirmatory runs, never edited |
+| `progress.md` | 1 (line 21, the M0 `df -h` command) | append-only log |
+| `tests/test_demo_consistency.py` | 1 | not a path: the test asserts that the string `/Users/` is absent from `results.json` |
+

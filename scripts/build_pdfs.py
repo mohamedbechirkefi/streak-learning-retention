@@ -26,7 +26,7 @@ import tempfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-PANDOC = os.environ.get("STREAK_PANDOC", "/Users/bechir/research/labs/.tools/pandoc")
+PANDOC = os.environ.get("STREAK_PANDOC", str(ROOT.parent / ".tools" / "pandoc"))
 SPDX_TEX = "% SPDX-License-Identifier: LicenseRef-STREAK-NC-Research-1.0\n"
 TEX_NOTE = "% Generated from manuscript.md by pandoc {v}; do not edit by hand.\n"
 
@@ -94,8 +94,14 @@ def render_png(typ: Path, out_dir: Path, stem: str, root: Path, ppi: int) -> Non
 def build_tex() -> Path:
     md = ROOT / "research/paper/manuscript.md"
     tex = md.with_suffix(".tex")
-    body = subprocess.run([PANDOC, md.name, "-s", "-t", "latex"], cwd=md.parent,
-                          capture_output=True, text=True, check=True).stdout
+    # The LaTeX template prints a structured author (name and affiliation) as "true", so the
+    # author line is passed as variables read from the front matter (owner, 2026-11-26, B3).
+    front = md.read_text().split("\n---\n", 2)[1]
+    name = re.search(r'^\s*- name: "(.*)"$', front, re.M).group(1)
+    aff = re.search(r'^\s*affiliation: "(.*)"$', front, re.M).group(1)
+    body = subprocess.run([PANDOC, md.name, "-s", "-t", "latex",
+                           "-V", f"author={name}, {aff[0].lower() + aff[1:]}", "-V", f"author-meta={name}"],
+                          cwd=md.parent, capture_output=True, text=True, check=True).stdout
     tex.write_text(SPDX_TEX + TEX_NOTE.format(v=pandoc_version()) + body)
     return tex
 

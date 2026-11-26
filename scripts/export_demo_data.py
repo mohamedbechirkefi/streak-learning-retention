@@ -544,7 +544,7 @@ def build() -> dict:
                     "not peer reviewed. Protocol 1.0 frozen on 2026-11-24; all three registered experiments "
                     "complete. The title and the funding, competing-interest and AI-assistance statements were "
                     "approved by the owner on 2026-11-25; the owner's full-text review of the manuscript is "
-                    "pending (M6). Not published.")
+                    "pending (M6). The repository is public; no release exists yet.")
     out = {
         "schema": "lab-demo-results",
         "schema_version": "1.0.0",

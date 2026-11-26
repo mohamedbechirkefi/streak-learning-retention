@@ -17,12 +17,12 @@ Status: complete for M0. All values below were confirmed by commands run on 2026
 | Tool | Version | Location | Use |
 |---|---|---|---|
 | Python | 3.12.1 | `/usr/local/bin/python3` | simulation, analysis, tests |
-| uv | 0.9.5 | `/Users/bechir/research/labs/.tools/py/bin/uv` | lockfile, environment |
-| typst (Python package) | 0.15.0 | `/Users/bechir/research/labs/.tools/py/bin/python` | PDF compilation |
+| uv | 0.9.5 | `../.tools/py/bin/uv` (relative to the repository) | lockfile, environment |
+| typst (Python package) | 0.15.0 | `../.tools/py/bin/python` | PDF compilation |
 | pypdf | 6.20.0 | same | PDF inspection |
 | pillow | 11.3.0 | same | figure and page inspection |
-| pandoc | 3.6.3 | `/Users/bechir/research/labs/.tools/pandoc` | Markdown to Typst and LaTeX |
-| Node | v22.23.3 | `/Users/bechir/research/helix/.tools/node/bin` | static demo build (read-only use) |
+| pandoc | 3.6.3 | `../.tools/pandoc` | Markdown to Typst and LaTeX |
+| Node | v22.23.3 | `../../helix/.tools/node/bin` | static demo build (read-only use) |
 | git | 2.42.1 | system | version control (local only) |
 | TeX (tex, pdflatex, xelatex, latexmk) | not found | none | not available |
 

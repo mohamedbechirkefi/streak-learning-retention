@@ -26,8 +26,9 @@ SUMMARY_METRICS = ["R1", "R7", "R30", "R90", "AUC_R", "weakest_decile_R30", "min
                    "residual_slots", "reviews", "active_days", "longest_streak", "final_streak",
                    "missed_unavailable_days", "missed_available_days", "practice_success_rate",
                    "item_coverage"]
-DEFAULT_PANDOC = "/Users/bechir/research/labs/.tools/pandoc"
-DEFAULT_TYPST_PYTHON = "/Users/bechir/research/labs/.tools/py/bin/python"
+# Shared lab tools, one folder above the repository (the labs folder).
+DEFAULT_PANDOC = str(repo_root().parent / ".tools" / "pandoc")
+DEFAULT_TYPST_PYTHON = str(repo_root().parent / ".tools" / "py" / "bin" / "python")
 
 
 # --------------------------------------------------------------------------- analysis

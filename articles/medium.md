@@ -1,9 +1,9 @@
 <!-- SPDX-License-Identifier: LicenseRef-STREAK-NC-Research-1.0 -->
-<!-- Draft for the owner. Not published. Numbers are identical to research/paper/manuscript.md (checked by tests/test_demo_consistency.py). -->
+<!-- Draft for the owner. Not yet posted. Numbers are identical to research/paper/manuscript.md (checked by tests/test_demo_consistency.py). -->
 
 # Busy every day, remembering less: what a learner simulation says about activity streaks
 
-*Mohamed Bechir Kefi. Draft, not published. Independent research, not peer reviewed. An AI system (Claude, Anthropic) was used as a disclosed research and development assistant.*
+*Mohamed Bechir Kefi, independent researcher. Draft, not yet posted. Independent research, not peer reviewed. An AI system (Claude, Anthropic) was used as a disclosed research and development assistant.*
 
 A streak counts the days in a row on which you practised. It is easy to measure and easy to reward. What learning is for, though, is retention: being able to recall something days or weeks later. Those are different quantities. This project asked a narrow question about the gap between them: **when can activity streaks diverge from knowledge retention in a learning model?**
 
@@ -47,8 +47,8 @@ It is an existence example: a scheduling policy can maximise activity measures w
 
 The interactive page shows every result with its interval, including the negative ones, and lets you run the model in your browser. It collects nothing and has no streaks or reminders of its own.
 
-- Repository and manuscript: [repository URL: placeholder, not yet published]
-- Interactive page: [demo URL: placeholder, not yet published]
+- Repository and manuscript: [https://github.com/mohamedbechirkefi/streak-learning-retention](https://github.com/mohamedbechirkefi/streak-learning-retention)
+- Interactive page: [https://streak-learning-retention.kefimohamedbechir.workers.dev](https://streak-learning-retention.kefimohamedbechir.workers.dev)
 - Experiment reports: `research/experiments/EXP-001/report.md`, `EXP-002/report.md`, `EXP-003/report.md`
 
 *Figure suggestion: the "Streak versus recall" chart from the interactive page. Alt text: "Mean R30 against mean active days for four policies; A2 Streak and A3 Spaced share the same activity, 47.55 days, but A2 Streak's recall is far lower."*

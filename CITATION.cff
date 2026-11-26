@@ -3,13 +3,15 @@
 # (custom, source-available, not OSI approved; see LICENSE). It is named here in a
 # comment because it has no standard SPDX license identifier.
 cff-version: 1.2.0
-message: "If you use this work, please cite it as below. Status: independent research manuscript 1.0, preprint draft, not peer reviewed; simulation of synthetic learners, not evidence about real human learning. Repository URL: placeholder, not yet published. Author: Mohamed Bechir Kefi (no affiliation). An AI system (Claude, Anthropic) was used as a disclosed research and development assistant and is not an author. Calibration data: Duolingo half-life regression traces (Settles and Meeder 2016), doi:10.7910/DVN/N8XJME, CC BY-NC 4.0."
+message: "If you use this work, please cite it as below. Status: independent research manuscript 1.0, preprint draft, not peer reviewed; simulation of synthetic learners, not evidence about real human learning. Repository: https://github.com/mohamedbechirkefi/streak-learning-retention. Author: Mohamed Bechir Kefi, independent researcher. An AI system (Claude, Anthropic) was used as a disclosed research and development assistant and is not an author. Calibration data: Duolingo half-life regression traces (Settles and Meeder 2016), doi:10.7910/DVN/N8XJME, CC BY-NC 4.0."
 title: "When activity and retention diverge: item selection, not daily practice, drives the retention cost of a streak-driven policy in a preregistered learner simulation"
 type: software
 authors:
   - family-names: Kefi
     given-names: Mohamed Bechir
+    affiliation: "Independent researcher"
 version: "0.1.0-rc1"
+repository-code: "https://github.com/mohamedbechirkefi/streak-learning-retention"
 keywords:
   - spaced repetition
   - gamification

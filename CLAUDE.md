@@ -43,8 +43,8 @@ Then also check `research/decision_log.md`, `research/experiment_registry.csv` a
 - **G-FREEZE.** Never freeze a protocol yourself: freezing is the owner's decision. Until the owner freezes `research/protocol.md` and the EXP protocols, run no confirmatory experiments. Tiny exploratory smoke checks are allowed and must be labelled exploratory, and they use only the smoke seed range (never the confirmatory seeds).
 
 ### Scope
-- Work only inside this repository. Read-only use of the shared tools: `/usr/local/bin/python3`, `/Users/bechir/research/labs/.tools/py/bin/` (uv, typst, pypdf, pillow), `/Users/bechir/research/labs/.tools/pandoc`, Node at `/Users/bechir/research/helix/.tools/node/bin` (read-only, never modify that folder), git.
-- Do not touch any other folder under `/Users/bechir/research` (hive, helix, cogkt, trading, other labs).
+- Work only inside this repository. Read-only use of the shared tools: `/usr/local/bin/python3`, `../.tools/py/bin/` (uv, typst, pypdf, pillow), `../.tools/pandoc`, Node at `../../helix/.tools/node/bin` (read-only, never modify that folder), and git; the `..` paths are relative to this repository.
+- Do not touch any other folder under the research root, the folder two levels above this repository (hive, helix, cogkt, trading, other labs).
 - Never kill processes you did not start. Never delete anything you did not create in the current session.
 
 ### Truthfulness

@@ -11,7 +11,7 @@
 | Date run | 2026-11-25 local time (2026-11-24 23:41:57 to 23:43:20 UTC) |
 | Report version | 1.0, composed from committed results under the owner's approval of 2026-11-25 (D-017, D-018) and written by the coordinator |
 | Status | complete: full frozen matrix run (6 policy cells × 4 model variants), 0 failed learner-arms |
-| Authorship | Mohamed Bechir Kefi (no affiliation; decision C3). Drafted by the AI research assistant for the owner's review. |
+| Authorship | Mohamed Bechir Kefi, independent researcher (owner, 2026-11-26, decision sheet, B3; replaces "no affiliation" of decision C3). Drafted by the AI research assistant for the owner's review. |
 | Protocol | `research/experiments/EXP-003/protocol.md`, SHA-256 `20fc86cd0d595776589525cfd76153abae7c1c88b5faefbbdcc7b9f0c798cfba`; parent `research/protocol.md`, SHA-256 `57a60597a93cfc07a1d25e9a2f6bac9f23009b554d3d9820828e7707210711ee` |
 | Config | `research/experiments/EXP-003/config.json`, canonical SHA-256 `ab1c1799a45e0eab8091125a7d769e20ecdf642b5f8e1436e0d9a66c31450ff3` |
 | Code revision | `219c05473a3dc573621e54f15db153280cc08ee9` (engine 1.1.0), tracked tree clean (`git_dirty = false`) |

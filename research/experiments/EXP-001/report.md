@@ -11,7 +11,7 @@
 | Date run | 2026-11-25 local time (2026-11-24 23:35:06 to 23:35:37 UTC) |
 | Report version | 1.0. First drafted when the experiment finished (commit 219c054) and removed in cfedba5 after the file tool refused it. Composed again from committed results under the owner's approval of 2026-11-25 (D-017, D-018), after checking every number against the committed outputs, and written by the coordinator. |
 | Status | complete: full frozen matrix run, 0 failed learner-arms |
-| Authorship | Mohamed Bechir Kefi (no affiliation; decision C3). Drafted by the AI research assistant for the owner's review. |
+| Authorship | Mohamed Bechir Kefi, independent researcher (owner, 2026-11-26, decision sheet, B3; replaces "no affiliation" of decision C3). Drafted by the AI research assistant for the owner's review. |
 | Protocol | `research/experiments/EXP-001/protocol.md`, SHA-256 `d618b9f8dbc09079702ad4bb9dd19c0595753b8f2985638e3cbe1fbec4585f32`; parent `research/protocol.md`, SHA-256 `57a60597a93cfc07a1d25e9a2f6bac9f23009b554d3d9820828e7707210711ee` |
 | Config | `research/experiments/EXP-001/config.json`, canonical SHA-256 `c34b1a07816d3f57ff26e1e1c99d66bebbd97a1866455ff2656ce521fffafdd7` |
 | Code revision | `c942be096240103297fcab6f3cc9886961ce8137` (engine 1.1.0, package 0.2.0), tracked tree clean |

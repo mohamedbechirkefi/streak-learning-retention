@@ -467,3 +467,32 @@ Owner review of the release candidate. No push.
 ## 2026-11-25: M6 fresh-clone recheck
 
 Fresh clone of `10d5412`: 231 passed; EXP-001 and EXP-003 analyses regenerated with `git status` clean (F-M6-2 fix confirmed); demo export up to date; LINK-CHECK PASS; demo `npm ci`, 43 tests passed, build, A11Y-CHECK PASS. Scratch clones deleted. Recorded in `research/publication/reproducibility_report.md` section 8.
+
+## 2026-11-26: owner answers of the decision sheet applied
+
+**Authority.** Owner, 2026-11-26, decision sheet (`_shared/owner-decision-sheet-2026-11-26.md`, `_shared/owner-approvals-2026-11-26.md`), brief `_shared/OWNER-ANSWERS-brief.md`. Starting state: `bfe34a4`, working tree clean. Decision D-028.
+
+### Changes
+
+A1 (out-of-date "not published" sentences), B1 (repository URL), B2 (demo URL, `demo/wrangler.jsonc` with assets `./dist`, hosting paragraph in `demo/README.md`), B3 (author line "Mohamed Bechir Kefi, independent researcher": manuscript front matter, three reports, `CITATION.cff`, README, Medium draft, demo footer), B4 (funding and competing-interest sentences), B8, B11, B13 (`release_checklist.md`), B9 (home paths removed from `CLAUDE.md`, `research/feasibility.md`, `scripts/build_pdfs.py`, `src/streak/report.py`, `reproducibility_report.md`; section 9 lists the 5 remaining lines), B12 (README sentence), `author_review.md` section "Owner answers recorded (2026-11-26)" (no box ticked; placeholders remaining: none). `scripts/build_pdfs.py` passes the author line to the LaTeX output (the template printed a structured author as "true"). `scripts/export_demo_data.py` status label and `results.json` re-exported (status label and source hashes only). `tests/test_demo_consistency.py`: the placeholder test now checks the public URLs. No result, analysis, figure, config, seed, frozen protocol or checksummed output changed.
+
+### Commands and actual outputs
+
+```
+$ .venv/bin/python scripts/export_demo_data.py                     wrote demo/public/data/results.json (59639 bytes)
+$ .venv/bin/python -m pytest                                       231 passed in 6.65s
+$ .venv/bin/python scripts/check_links.py                          LINK-CHECK PASS
+$ .venv/bin/python scripts/m4_build_artifact_manifest.py           results 17, figures 4, tables 4, claims 25, missing []; figure copies match: True
+$ .venv/bin/python scripts/m4_evidence_audit.py                    unmatched [] in every file
+  (evidence_audit.json differed only in n_source_values, 63369 to 63436, from sources this session did not change; restored with git checkout, not committed)
+$ ../.tools/py/bin/python -I scripts/build_pdfs.py --png <scratch>   manuscript 12 pages, EXP-001/002/003 reports 8 pages each, manuscript.tex
+  supplementary.pdf and supplementary_tables.pdf restored with git checkout (sources unchanged)
+  inspected: manuscript page 1 (author and "Independent researcher"), page 11 (URL, funding, competing interests); report page 1 of EXP-001, EXP-002, EXP-003 (Authorship row)
+$ npm ci --prefer-offline; npm test; npm run build                 added 53 packages; Tests 43 passed (43); built dist/
+$ node tools/a11y_check.mjs dist                                   A11Y-CHECK PASS (includes "no request leaves the local origin")
+$ grep of dist/ for external hosts                                 only XML namespace strings, react.dev error text and the GitHub link in the footer (a link, not a load)
+```
+
+### Open
+
+B15 (articles), B16 (full-text review and sign-off), B18 (release). No push, no deploy.

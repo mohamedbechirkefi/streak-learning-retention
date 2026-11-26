@@ -145,10 +145,15 @@ def test_public_texts_use_only_verified_decimal_numbers():
     assert pattern.findall(_text("articles/medium.md"))
 
 
-def test_public_texts_keep_owner_placeholders_and_no_stale_status():
+def test_public_texts_carry_public_urls_and_no_stale_status():
+    """Owner, 2026-11-26, decision sheet (B1, B2): the repository and demo URL placeholders
+    are replaced by the public addresses."""
+    repo = "https://github.com/mohamedbechirkefi/streak-learning-retention"
+    demo = "https://streak-learning-retention.kefimohamedbechir.workers.dev"
     for rel in ("README.md", "articles/medium.md", "articles/linkedin.md"):
         t = _text(rel)
-        assert "placeholder" in t, rel
+        assert "placeholder" not in t, rel
+        assert repo in t and demo in t, rel
         assert "has not reviewed" not in t and "No confirmatory experiment has been run" not in t, rel
 
 

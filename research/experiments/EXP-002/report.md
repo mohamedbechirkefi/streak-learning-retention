@@ -11,7 +11,7 @@
 | Date run | 2026-11-25 local time (2026-11-24 23:35:44 to 23:41:39 UTC) |
 | Report version | 1.0, composed from committed results under the owner's approval of 2026-11-25 (D-017, D-018) and written by the coordinator |
 | Status | complete: full frozen matrix run (27 cells), 0 failed learner-arms |
-| Authorship | Mohamed Bechir Kefi (no affiliation; decision C3). Drafted by the AI research assistant for the owner's review. |
+| Authorship | Mohamed Bechir Kefi, independent researcher (owner, 2026-11-26, decision sheet, B3; replaces "no affiliation" of decision C3). Drafted by the AI research assistant for the owner's review. |
 | Protocol | `research/experiments/EXP-002/protocol.md`, SHA-256 `16f54294c4d6db58acf6a7957ebedfed47e7226c5fe997ba42f1841675131c7e`; parent `research/protocol.md`, SHA-256 `57a60597a93cfc07a1d25e9a2f6bac9f23009b554d3d9820828e7707210711ee` |
 | Config | `research/experiments/EXP-002/config.json`, canonical SHA-256 `2ecfe90453c1663db0a03d1118e5d7b0e6cd97b4afc43f7fc4d2bf8d5f02dc46` |
 | Code revision | `c942be096240103297fcab6f3cc9886961ce8137` (engine 1.1.0). Clean at preflight; the run manifest records `git_dirty = true` (deviation 1, section 7). |

@@ -5,7 +5,7 @@
 
 **Manuscript title (owner-approved, 2026-11-25).** *When activity and retention diverge: item selection, not daily practice, drives the retention cost of a streak-driven policy in a preregistered learner simulation.*
 
-**Status.** Independent research manuscript 1.0, preprint draft, not peer reviewed. Protocol 1.0 frozen on the owner's approval (2026-11-24); all three registered experiments complete (70,000 learner-arm simulations, none failed). The title and the funding, competing-interest and AI-assistance statements were approved by the owner on 2026-11-25; the owner's full-text review of the manuscript is pending (M6). Nothing is published. Every result is a simulation of synthetic learners and holds only within the model's assumptions: it is not a claim about real human learning or about any commercial product.
+**Status.** Independent research manuscript 1.0, preprint draft, not peer reviewed. Protocol 1.0 frozen on the owner's approval (2026-11-24); all three registered experiments complete (70,000 learner-arm simulations, none failed). The title and the funding, competing-interest and AI-assistance statements were approved by the owner on 2026-11-25; the owner's full-text review of the manuscript is pending (M6). The repository is public at https://github.com/mohamedbechirkefi/streak-learning-retention (pushed 2026-11-25); no release, tag, DOI or preprint exists yet. Every result is a simulation of synthetic learners and holds only within the model's assumptions: it is not a claim about real human learning or about any commercial product.
 
 ![Screenshot of the STREAK interactive page: the question, the status, three measured key figures from EXP-001 and the streak versus recall chart, in which A2 Streak and A3 Spaced have the same active days but very different recall 30 days after practice.](docs/demo.png)
 
@@ -42,6 +42,8 @@ Learning applications often display activity streaks. Activity and retention are
 | EXP-002 | Robustness across forgetting parameters and availability | complete (confirmatory); relevant negative in 27 of 27 cells |
 | EXP-003 | Timing versus item selection; model-form sensitivity | complete (confirmatory); H-inv not triggered |
 
+The status lines of the three frozen EXP protocols still say "not yet run" because frozen files are not edited; the experiment registry and the experiment reports give the current state.
+
 ## What is implemented
 
 The simulation engine (`src/streak`): synthetic learners with forgetting, retrieval practice and a fixed practice budget; scheduling arms A0 (no practice), A1 (fixed three sessions a week), A2 (streak-driven, easiest first), A3 (threshold-based spaced repetition, r* = 0.9) and the EXP-003 timing-by-selection cells; versioned result schemas, run manifests, a report generator and a CLI. The interactive page (`demo/`) shows the published results and runs a browser port of the engine in a sandbox. Tests: see `progress.md` for the actual counts.
@@ -61,7 +63,7 @@ uv sync --frozen
 cd demo && npm ci && npm run build && npm run preview
 ```
 
-`npm test` runs the page's unit tests, including the comparison of the browser engine port with the Python engine. The page works offline after the first load, collects nothing and contacts no other host. Demo URL: placeholder, not yet published; publication requires the owner's approval.
+`npm test` runs the page's unit tests, including the comparison of the browser engine port with the Python engine. The page works offline after the first load, collects nothing and contacts no other host. Demo URL: https://streak-learning-retention.kefimohamedbechir.workers.dev (Cloudflare Workers static assets, free plan; see [demo/README.md](demo/README.md)).
 
 ## Data
 
@@ -77,4 +79,4 @@ STREAK Source-Available Non-Commercial Research License v1.0 (`LicenseRef-STREAK
 
 ## Citation
 
-See [CITATION.cff](CITATION.cff). Repository URL: placeholder, not yet published; publication requires the owner's approval. AI assistance is disclosed: the AI acts as a research and development assistant; the owner holds authority over hypotheses, protocol freezes, claims and publication.
+See [CITATION.cff](CITATION.cff). Author: Mohamed Bechir Kefi, independent researcher. Repository: https://github.com/mohamedbechirkefi/streak-learning-retention. Funding: no funding was received. Competing interests: the author declares no competing interests. AI assistance is disclosed: the AI acts as a research and development assistant; the owner holds authority over hypotheses, protocol freezes, claims and publication.

@@ -56,6 +56,10 @@ export function App() {
             return: it describes streaks, it does not use them.
           </p>
           <p>Simulated learners are not people. Nothing on this page is evidence about real human learning or about any real product.</p>
+          <p>
+            Mohamed Bechir Kefi, independent researcher. Source, manuscript and reports:{" "}
+            <a href="https://github.com/mohamedbechirkefi/streak-learning-retention">github.com/mohamedbechirkefi/streak-learning-retention</a>.
+          </p>
         </div>
       </footer>
     </>

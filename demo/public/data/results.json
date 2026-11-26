@@ -3,7 +3,7 @@
  "schema_version": "1.0.0",
  "project": "STREAK",
  "question": "When can activity streaks diverge from knowledge retention in a learning model?",
- "status_label": "Simulation of synthetic learners. Independent research manuscript 1.0, preprint draft, not peer reviewed. Protocol 1.0 frozen on 2026-11-24; all three registered experiments complete. The title and the funding, competing-interest and AI-assistance statements were approved by the owner on 2026-11-25; the owner's full-text review of the manuscript is pending (M6). Not published.",
+ "status_label": "Simulation of synthetic learners. Independent research manuscript 1.0, preprint draft, not peer reviewed. Protocol 1.0 frozen on 2026-11-24; all three registered experiments complete. The title and the funding, competing-interest and AI-assistance statements were approved by the owner on 2026-11-25; the owner's full-text review of the manuscript is pending (M6). The repository is public; no release exists yet.",
  "code_revision": "c942be0 (EXP-001, EXP-002, held-out test); 219c054 (EXP-003)",
  "sources": [
   {
@@ -36,7 +36,7 @@
   },
   {
    "path": "research/experiments/EXP-001/report.md",
-   "sha256": "20eac8ed17815ef02fe290db7165c786792506b595e166c5409e39c4d734b99c"
+   "sha256": "8ea95382ca1eb2e979a173635894dd1e14862f282ec4ffa5f7e06367a13489dd"
   },
   {
    "path": "research/experiments/EXP-002/config.json",
@@ -52,7 +52,7 @@
   },
   {
    "path": "research/experiments/EXP-002/report.md",
-   "sha256": "d7697fdd5e030a590458a02a3c07e850a77b6e02605334ddb923f4b2628ab7ee"
+   "sha256": "fdc2fb6186734d06f9bfcb17fcf9e0d1051b5d504a4d22fed637d85ff77dfa3a"
   },
   {
    "path": "research/experiments/EXP-003/config.json",
@@ -64,11 +64,11 @@
   },
   {
    "path": "research/experiments/EXP-003/report.md",
-   "sha256": "5ada3822691daf1847e6984e419e4a2a4cb698061288826e36b827d8ad26b2b3"
+   "sha256": "d55556fd2e5cbb25eb7a3b778ef906f05967131a1275bf3c467a3c61ca629446"
   },
   {
    "path": "research/paper/manuscript.md",
-   "sha256": "0001083738c4b09d472519beb44a471e5e812dd084f53943b90207ea649db138"
+   "sha256": "6e258bfd6f16e923447dae593b6df79d8b21e1da71f2ddfe30f76b35e7cea0b1"
   },
   {
    "path": "research/publication/artifact_manifest.json",

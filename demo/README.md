@@ -25,4 +25,8 @@ Labels distinguish measured results (confirmatory simulation), real-data results
     npm ci && npm test && npm run build && npm run preview
     node tools/a11y_check.mjs dist --screenshots <dir>
 
-The page runs offline after the first load, makes no request to any other host, uses no external font, analytics or storage, and collects nothing from visitors. It has no streaks, rewards, reminders or prompts to return. Demo URL: placeholder, not yet published.
+The page runs offline after the first load, makes no request to any other host, uses no external font, analytics or storage, and collects nothing from visitors. It has no streaks, rewards, reminders or prompts to return. Demo URL: https://streak-learning-retention.kefimohamedbechir.workers.dev.
+
+## Hosting
+
+The built page (`dist/`) is hosted as Cloudflare Workers static assets on the free plan, configured by `wrangler.jsonc` (assets only, no Worker script). It is deployed by the coordinator, not by any script of this repository.

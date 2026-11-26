@@ -2,8 +2,9 @@
 
 ---
 title: "When activity and retention diverge: item selection, not daily practice, drives the retention cost of a streak-driven policy in a preregistered learner simulation"
-author: "Mohamed Bechir Kefi"
-affiliation: "none"
+author:
+  - name: "Mohamed Bechir Kefi"
+    affiliation: "Independent researcher"
 ai-assistance: "An AI system (Claude, Anthropic) was used as a disclosed research and development assistant. It is not an author."
 status: "Independent research manuscript, preprint draft, not peer reviewed. Version 1.0 (M4 synthesis, revised after the second review pass in research/publication/review_pass_2.md), 2026-11-25."
 ---
@@ -249,11 +250,11 @@ In a preregistered simulation at matched practice time, a stylised streak-driven
 
 # Data and code availability
 
-All code, frozen protocols, configs, committed results and reports are in this repository (public URL: placeholder, not yet published; publication requires the owner's approval). Experiment reports: `research/experiments/EXP-001/report.md`, `EXP-002/report.md`, `EXP-003/report.md`. Reproduction: `uv sync --frozen`, `.venv/bin/python -m pytest`, `.venv/bin/python scripts/run_confirmatory.py EXP-00N`, `.venv/bin/python scripts/analyse_confirmatory.py EXP-00N`. The Duolingo file is downloaded by `scripts/download_duolingo.py` and checked against the SHA-256 in `data/manifest.json`. The artifact manifest `research/publication/artifact_manifest.json` maps each number to its source.
+All code, frozen protocols, configs, committed results and reports are in this repository (public URL: https://github.com/mohamedbechirkefi/streak-learning-retention). Experiment reports: `research/experiments/EXP-001/report.md`, `EXP-002/report.md`, `EXP-003/report.md`. Reproduction: `uv sync --frozen`, `.venv/bin/python -m pytest`, `.venv/bin/python scripts/run_confirmatory.py EXP-00N`, `.venv/bin/python scripts/analyse_confirmatory.py EXP-00N`. The Duolingo file is downloaded by `scripts/download_duolingo.py` and checked against the SHA-256 in `data/manifest.json`. The artifact manifest `research/publication/artifact_manifest.json` maps each number to its source.
 
 # Funding, competing interests and AI assistance
 
-No funding. No competing interests. An AI system (Claude, Anthropic) acted as a disclosed research and development assistant: it drafted the protocol, code, tests, analyses, reports and this manuscript under the owner's direction. The owner made every freeze, design and publication decision. Every number was checked against committed outputs by scripts (section S7 of the supplement). The AI's internal review is quality control, not peer review.
+No funding was received. The author declares no competing interests. An AI system (Claude, Anthropic) acted as a disclosed research and development assistant: it drafted the protocol, code, tests, analyses, reports and this manuscript under the owner's direction. The owner made every freeze, design and publication decision. Every number was checked against committed outputs by scripts (section S7 of the supplement). The AI's internal review is quality control, not peer review.
 
 # References
 

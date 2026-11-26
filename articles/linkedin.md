@@ -1,5 +1,5 @@
 <!-- SPDX-License-Identifier: LicenseRef-STREAK-NC-Research-1.0 -->
-<!-- Draft for the owner. Not published. Numbers are identical to research/paper/manuscript.md (checked by tests/test_demo_consistency.py). -->
+<!-- Draft for the owner. Not yet posted. Numbers are identical to research/paper/manuscript.md (checked by tests/test_demo_consistency.py). -->
 
 Can a learning streak keep growing while retention falls behind?
 
@@ -9,5 +9,5 @@ One defensible finding: in the model, a stylised streak-driven policy (practise 
 
 Caveat: these are simulated learners, not people, and not any real app. A held-out test on real Duolingo data did not support the model's forgetting curve, and in a near-total-forgetting regime the sign reversed. Independent research, not peer reviewed; AI assistance disclosed.
 
-Manuscript, reports and code: [repository URL: placeholder]
-Interactive page: [demo URL: placeholder]
+Manuscript, reports and code: [https://github.com/mohamedbechirkefi/streak-learning-retention](https://github.com/mohamedbechirkefi/streak-learning-retention)
+Interactive page: [https://streak-learning-retention.kefimohamedbechir.workers.dev](https://streak-learning-retention.kefimohamedbechir.workers.dev)
